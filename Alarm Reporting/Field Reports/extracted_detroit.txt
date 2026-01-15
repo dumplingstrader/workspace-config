@@ -1,0 +1,710 @@
+=== Page 1 ===
+ Process Solutions                                
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Marathon Detroit 
+ 
+BGP Plus Site Visit Report 
+ 
+12/09/24 - 12/13/24 
+
+
+=== Page 2 ===
+ 
+Revision History 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+Summary of Revisions: 
+Rev. 0.0 Original Version 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Prepared by: Balaram.M 
+   
+Reviewed 
+by: 
+TBD 
+   
+Approved 
+by: 
+ 
+Date : 
+ 
+12/13/24 
+ 
+Date: 
+ 
+TBD 
+ 
+Date: 
+ 
+
+=== Page 3 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 3 
+ 
+Contents 
+1. Introduction ................................................................................................................. 4 
+2. Site Report .................................................................................................................... 5 
+1. Purpose .......................................................................................................................... 5 
+2. Hardware and Software Assessment ................................................................. 5 
+2.0 Software Health Check ................................................................................................... 5 
+2.3.1 L3 Documentation & Enforcer Server ............................................................................ 5 
+2.3.2 L3 Core Metrics & Reporting Server ............................................................................. 9 
+2.3.2 L3.5 SQL Replication Server ........................................................................................ 13 
+2.3.3 L4 Web/SQL Server Database Server (M&R) .............................................................. 14 
+3. Day wise Visit Summary Report .................................................................................. 15 
+4. Future Work ................................................................................................................... 16 
+5. Conclusions ................................................................................................................... 16 
+6. Appendix A - Benefits Guardianship Plus Program Hours Report .......................... 16 
+ 
+
+=== Page 4 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 4 
+ 
+1. Introduction 
+ 
+This BGP Plus Site Trip Report details the activities performed during the BGP Plus 
+Services trip to the Marathon Detroit site between 12/09/24 and 12/13/24.   These 
+services were delivered under the existing Marathon Detroit Benefits Guardianship 
+Plus Program. 
+ 
+Personnel involved in this site trip were: 
+ 
+Balaram M, Honeywell Aftermarket Services 
+(Full time) Nitz Matthew, Marathon Detroit 
+(Part time). 
+
+=== Page 5 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 5 
+ 
+2. Site Report 
+ 
+1. Purpose 
+ 
+The primary objectives of the trip were: 
+ 
+Objective #1 – General health check of the system and upgrade of ACM from 
+R321.12.6 to R321.12.7 
+2. Hardware and Software Assessment 
+ 
+This visit was performed as part of the Benefits Guardianship Plus Program 
+contract. 
+ 
+ 
+2.0 Software Health Check 
+ 
+2.3.1 L3 Documentation & Enforcer Server 
+ 
+Item Description () Comments 
+1.  
+ 
+ 
+ 
+ 
+Server Identification 
+ 
+ 
+ 
+ 
+ 
+Computer name: DETDOCENF 
+Domain: detcon.det.mapllc.com  
+IP: 90.41.128.19 
+OS: Windows Server 2016 Standard 
+User: DETCON\opsadmin 
+Pass: *********** 
+Drive: C Drive (35 free GB / 139 GB) 
+ 
+ACM Version: R321.12.7  
+(After ACM Upgrade performed on 11th Dec) 
+ EAS: R501.6 Server Patch 6 
+2. Are the following services 
+installed and started? 
+• ACM Enforcer Server 
+• ACM Manager Service 
+• ACM Tag Synchronization 
+ 
+ 
+ 
+ 
+Services running normally. 
+3.  
+ 
+ 
+How is ACM Configured to connect 
+to each Control system? 
+ 
+ 
+ 
+ 
+ACM is connecting via DSA to 5 Experion System 
+➢ DET1 
+➢ DET2 
+➢ DET3 
+➢ DET4 
+➢ DET6 
+➢ MRD (Created to configure ACM Tags for 
+Common Areas. But hardly 4 Tags configured) 
+
+=== Page 6 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 6 
+ 
+    
+4. Do the following databases exist for 
+DynAMo? 
+- ACM 
+ 
+ 
+Yes 
+ACM database located on DETMETREP 
+Server  
+E:\ProgramFiles\Microsoft SQL 
+Server\MSSQL14.MSSQLSERVER\MSSQL\ 
+DATA 
+5. Do the following client tools 
+successfully open and connect to 
+the Alarm Management Server? 
+• ACM Database Administration 
+Client 
+• ACM Enforcer Client 
+• ACM Manager Client 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Yes 
+6.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+How many tags are in each ACM 
+Console? 
+ MPC Detroit: 
+• DET1-Complex1 Tags: 4847 
+• DET1-Complex5 Tags:1935 
+• DET2-Complex2 Tags:0 
+• DET2-Complex2A Tags:4701 
+• DET2-Complex2B Tags:3995 
+• DET3-Complex3 Tags:4096 
+• DET4-Complex4 Tags:4600 
+• DET6-Complex6 Tags:8494 
+TOTAL: 32668 tags 
+7. If Enforcement is on a schedule,  
+does it enforce properly without 
+issues? 
+ 
+ 
+ 
+Schedule Enforcements are configured as follows: 
+• DET1-Complex1 Daily @6:11 PM 
+• DET1-Complex5 Daily @8:47 PM 
+• DET2-Complex2 No Schedule 
+• DET2-Complex2A Daily @6:43 PM 
+• DET2-Complex2B Daily @7:15 PM 
+• DET3-Complex3 Daily @7:43 PM 
+• DET4-Complex4 Daily @8:13 PM 
+• DET6-Complex6 Daily @9:13 PM 
+• MRD-Shared            No Schedule 
+ 
+ 
+8. Mode Based Alarm Schedule  • ACM_26: Complex1    Daily@6:11 PM 
+• ACM_27: Complex5    Daily@8:47 PM 
+• ACM_28: Complex2A   Daily@6:43 PM 
+• ACM_29: Complex2B   Daily@7:15 PM 
+
+=== Page 7 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 7 
+ 
+• ACM_30: Complex3    Daily@7:43 PM 
+• ACM_31: Complex4    Daily@8:13 PM 
+• ACM_32: Complex6    Daily@9:13 PM 
+ 
+9. ACM Tag Synchronizations   TagSync/Reconfigure disabled for all Consoles.  
+ Update Secondary Parameters scheduled as follows: 
+• ACM_DET1_UpdateSec  Monthly on 6th @7:10 AM 
+• ACM_DET2_UpdateSec  Monthly on 6th @7:08 AM 
+• ACM_DET3_UpdateSec  Monthly on 6th @7:10 AM 
+• ACM_DET4_UpdateSec  Monthly on 6th @7:08 AM 
+• ACM_DET6_UpdateSec  Monthly on 6th @7:08 AM 
+ 
+9. For each M&R Collector channel,  
+are the ODBC  and Active Alarm  
+Sync and Suppressed Tag Sync 
+channels collecting properly? 
+ 
+ 
+DB Maintenance plan in effect for ACM DB. 
+ 
+Database backup is running Weekly: 
+- Sunday @ 3:00am 
+backup ACM DB. Backup at: 
+C:\_Dynamo_DBBackups 
+- ACM 
+Drive: C Drive (35 free GB / 139 GB) 
+TB 
+            ACM Db size: 3.42 GB 
+ Backup retention: 2 Weeks 
+ 
+ DB file Recovery is Simple 
+
+=== Page 8 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 8 
+ 
+Screenshot: D&E Setup 
+ 
+ 
+ 
+
+
+=== Page 9 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 9 
+ 
+2.3.2 L3 Core Metrics & Reporting Server 
+ 
+Item Description () Comments 
+1.  
+ 
+ 
+ 
+Server Identification 
+ 
+ 
+ 
+ 
+Computer name: DETMETREP 
+Domain: detcon.det.mapllc.com 
+IP: 90.41.128.20 
+OS: Win2016 Standard 
+User: DETCON\svcDynAMo 
+Pass: *********** 
+Drive: C Drive (85 free GB / 139 GB) 
+Drive: E Drive (426 free GB / 899 GB) 
+ 
+M&R Version: R210.1 HF1 
+Experion Component: R511.5 ODBC Client & RDM 
+ACM Web: R120.3 
+2. Are the following services installed 
+and started? 
+• Honeywell DynAMo Analyzer 
+• Honeywell DynAMo Archiver 
+Interface 
+• Honeywell DynAMo Health Service 
+• Honeywell DynAMo M&R Archiver 
+Service 
+• Honeywell DynAMo M&R 
+Collector Service 
+• Honeywell DynAMo M&R 
+Configuration and Data Transfer 
+Service 
+• Honeywell DynAMo Mobility 
+Service 
+• Honeywell DynAMo ExportQueue 
+• Honeywell DynAMo Scheduler 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+All services present and running 
+User: DETCON\SvcDynamo 
+User: DETCON\opsadmin (For M&R Collector 
+Service) 
+ 
+ 
+
+=== Page 10 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 10 
+ 
+3.  
+ 
+ 
+ 
+ 
+ 
+ 
+Does the Archiver have the correct 
+channels present (pushed by collector)? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Yes (5 channels) 
+➢ DET6ES 
+➢ DET2ES 
+➢ DET4ES 
+➢ DET3ES 
+➢ DET1ES 
+4. Where are Rules/PPS files located?  ODBC Channel:  
+E:\_Dynamo_Data\Rules\ 
+ESVT_Collection_ODBC_R200_V9.xml 
+E:\_Dynamo_Data\Rules\ 
+ESVT_Collection_ODBC_R200_V9_MPC_Detroit.vbs 
+ 
+Active Alarm Sync OPC Channel: 
+E:\_Dynamo_Data\Rules\ 
+ESVT_AlarmSync_OPC_R200_V6.xml 
+E:\_Dynamo_Data\Rules\ 
+ESVT_AlarmSync_OPC_R200_V7_MPC_Detroit.vbs 
+ 
+Suppressed Tag Sync OPC Channel: 
+E:\_Dynamo_Data\Rules\ 
+ESVT_Suppressed_OPC_R200_V7.xml 
+E:\_Dynamo_Data\Rules\ 
+ESVT_AlarmSync_OPC_R200_V7.vbs 
+ 
+5. Do the following client tools successfully 
+open and connect to the Alarm 
+Management Server? 
+• Rules Builder (Open only) 
+• Honeywell DynAMo Archiver 
+Configuration 
+ Rules Builder opens, can load Rules file, and auditfiles 
+for review 
+ 
+Archiver interface opens, all channels present and 
+enabled. 
+6. For each M&R Collector channel, are the 
+ODBC and Active Alarm Sync and 
+Suppressed Tag Sync  channels collecting 
+properly? 
+ 
+ 
+5 Control Systems: 
+-Yes. 
+
+=== Page 11 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 11 
+ 
+7.  
+ 
+ 
+ 
+ 
+ 
+ 
+Is the database backup running? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DB Maintenance plan in effect for DynArchive DB. 
+ 
+Database backup is running Weekly: 
+- Sunday @ 3:00am 
+backup DynArchive and Intuition DB. 
+Backup at: C:\_Dynamo_DBBackups 
+- DynArchive 
+- Intuition Databases 
+Free space: C:\ 69 GB free of 136 GB 
+E:\ 466 GB free of 1.63 TB 
+DynArchive size: 170 GB 
+Backup retention: 2 Weeks 
+ 
+DB file Recovery is Simple 
+7.  
+Is data purge running? 
+ 
+X 
+DDMS Purging and Archiving not configured as the L3 
+Archiver data is broadcasted to L4 Archiver through SQL 
+Replication 
+8  Custom Configurations (If Any)  SQL replication configured from L3 Core Server to L3.5 
+SQL Server. 
+ 
+For ACM – All Database Tables are Replicated. 
+ 
+For DynArchive – DynEventQueue, 
+DynSyncBatchInformation, DynSynchQueue tables are 
+Replicated. 
+ 
+ 
+ 
+Screenshot: M&R Home page. 
+ 
+
+
+=== Page 12 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 12 
+ 
+Screenshot: L4 Collector & Archiver 
+ 
+ 
+ 
+
+
+=== Page 13 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 13 
+ 
+2.3.2 L3.5 SQL Replication Server 
+ 
+Item Description () Comments 
+1.  
+ 
+ 
+ 
+Server Identification 
+ 
+ 
+ 
+ 
+Computer name: DETSQLDH101 
+ Domain: Unknown 
+IP: 10.196.177.5 
+OS: Win2016 Standard 
+User: GPC\Honeywell 
+Pass: *********** 
+ 
+MS SQL Server: 2016 
+ 
+
+=== Page 14 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 14 
+ 
+2.3.3 L4 Web/SQL Server Database Server (M&R) 
+ 
+Item Description () Comments 
+1.  
+Server Identification 
+ 
+ 
+Same Core Server: DETRS430 
+Domain: MGROUPNET.COM 
+ 
+M&R Version: R210.1 HF1 
+Experion Component: Unknown 
+ACM Web: R120.3 
+ 
+2. Which release of SQL Server?  SQL Server 2016 Standard x64 – SP3 
+3. Database File locations  E:\MSSQL13.MSSQLSERVER\MSSQL\DATA 
+4. Any Custom configurations  Archiver Config Files from L3 Web Server has been 
+copied here to support the SQL Replication of the 
+DynArchive DB 
+ 
+ACM Web also connects to ACM database replicated 
+from L3 through L3.5 SQL Replication Server 
+ 
+DynArchive Database has been replicated from L3 
+through L3.5 SQL Replication Server database, to 
+broadcast the Reports directly from L3 to L4. 
+5. Is the database backup running?  
+ 
+ 
+ 
+ 
+ 
+ 
+DB Maintenance plan in effect for DynArchive DB. 
+ 
+Database backup is running Weekly: 
+- Sunday @ 3:00am 
+backup DynArchive and 
+Intuition DB. Backup at: 
+DETDD02.mgroupnet.com\DET
+_DB\MPCSQLProd\DETRS430 
+- DynArchive 
+- Intuition Databases 
+1.63 TB DynArchive 
+size: Unknown 
+Backup retention: 2 Weeks 
+ 
+DB file Recovery is Simple 
+
+=== Page 15 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 15 
+ 
+3. Day wise Visit Summary Report 
+ 
+S.No Activities Day Remarks 
+1. DETDOCENF Server Health Check 9-Dec / 
+10-Dec 
+ 
+2. DETMETREP Server Health Check 9-Dec / 
+10-Dec 
+ 
+3. L4 Reporting Server Basic Health Check with 
+Marathon 
+9-Dec  
+3. Custom Alarm Help discussion with Marathon 9-Dec  
+4.  DETDOCENF Server AMS_Proxy Mode Based 
+Enforcement Checks  
+10-Dec  
+5. DETDOCENF Server ACM Migration to 
+R321.12.7 Pre-checks and Planning 
+10-Dec  
+6. DETDOCENF Server ACM Migration to 
+R321.12.7 
+11-Dec SQL Replication had to be removed 
+temporarily in order to apply ACM 
+DB Patches which was done with 
+support from Marathon IT. 
+7. L4 Reporting Server ACM Web Patch Update 
+of R321.12.7 
+11-Dec This activity could not be performed 
+as Matthew did not have enough 
+rights to update the patches in the 
+Server.  
+8. L3 Enforcer Clients ACM R321.12.7 Patch 
+Update (Upto 28 Clients). 
+Note: Activity performed with support from 
+Marathon team 
+11-Dec 12 Nos of ACM Clients still need to 
+be patched as Marathon OT is 
+awaiting for Admin rights on those 
+Clients to apply the patches. 
+9. Bad/Invalid tags removal from following ACM 
+Consoles in MADB: 
+Complex 1 
+Complex 2A (No Bad Tags) 
+Complex 2B (No Bad Tags) 
+Complex 3 
+Complex 5 (No Bad Tags) 
+12-Dec For Complex 4 & 6 Bad/Invalid Tag 
+Parameters were not removed as 
+recommended by MPC, Detroit 
+10. System Data Collection  12-Dec  
+11. BGP Report Preparation 13-Dec  
+12. BGP Visit Discussion and Closure 13-Dec  
+  
+
+=== Page 16 ===
+Marathon Detroit 
+Benefits Guardianship Plus Program 
+BGP Plus Services 
+Page 16 
+ 
+4. Future Work 
+ 
+• Upgrade DynAMo Reporting from R210.1 HF1 to R2.2.1 
+• Upgrade the Operating System of DynAMo Servers at L3, L3.5 and L4 
+from Windows Server 2016 Standard to Windows Server 2019 or 
+above. 
+• Recommend replacing SQL Replication of ACM/DynArchive database 
+from L3 to L4 with Honeywell Standard Architecture of HAM Router at 
+L3.5. 
+• Continue with Health Check site visits. 
+ 
+5. Conclusions 
+ 
+• Recommend to keep using the DynAMo Alarm System for better Alarm 
+Performance in Plant. 
+ 
+6. Appendix A - Benefits Guardianship Plus Program Hours Report 
+ 
+ 
+Hours Activity 
+ 
+52 
+Preparing for the trip (home office) 
+Site visit including travel time 
+Follow-up documentation 
+ 
+ 

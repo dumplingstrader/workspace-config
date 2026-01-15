@@ -231,3 +231,29 @@ wb.move_sheet(sheet, offset=target_position - current_position)
 - Training files: `BC-LAR-ENGPRO###(-session).xlsx` pattern
 - Output: `Training_Attendance_Tracker.xlsx` (singular, underscores)
 - Utility scripts: lowercase with underscores (e.g., `consolidate_training_data.py`)
+
+## User Preferences
+
+### Markdown Documentation Formatting
+
+When creating or editing markdown files that are **technical documentation** (reports, analysis, vendor feedback, system documentation), automatically include page breaks for better printing and PDF conversion:
+
+- **Add page breaks** using `<div style="page-break-after: always;"></div>` 
+- **Placement**: After major sections (executive summary, site visits, analysis sections, corrective actions, conclusions)
+- **Purpose**: Professional formatting for printing or converting to PDF/Word
+- **Pattern**: Insert after the `---` horizontal rule and before the next `##` heading
+
+**Example:**
+```markdown
+---
+
+<div style="page-break-after: always;"></div>
+
+## Next Major Section
+```
+
+**When NOT to add page breaks:**
+- README files or general project documentation
+- Code documentation or API references
+- Small documents (< 3 major sections)
+- When user explicitly requests no page breaks

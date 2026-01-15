@@ -19,8 +19,17 @@ def extract_text_from_pdf(pdf_path):
                 print(page_text)
             
             return text
+    except FileNotFoundError as e:
+        print(f"Error reading PDF '{pdf_path}': file not found ({e}).")
+        return None
+    except PermissionError as e:
+        print(f"Error reading PDF '{pdf_path}': permission denied ({e}).")
+        return None
+    except PyPDF2.errors.PdfReadError as e:
+        print(f"Error reading PDF '{pdf_path}': invalid or corrupted PDF file ({e}).")
+        return None
     except Exception as e:
-        print(f"Error reading PDF: {e}")
+        print(f"Unexpected error reading PDF '{pdf_path}': {e}")
         return None
 
 if __name__ == "__main__":

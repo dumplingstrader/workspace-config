@@ -1,9 +1,15 @@
 import openpyxl
+from pathlib import Path
 
-wb = openpyxl.load_workbook('Training/Training_Attendance_Tracker.xlsx')
-if 'By Employee' in wb.sheetnames:
-    wb.remove(wb['By Employee'])
-    wb.save('Training/Training_Attendance_Tracker.xlsx')
-    print('Removed By Employee sheet')
+TRACKER_PATH = Path("Training") / "Training_Attendance_Tracker.xlsx"
+
+if not TRACKER_PATH.exists():
+    print(f"Tracker file not found: {TRACKER_PATH}")
 else:
-    print('By Employee sheet not found')
+    wb = openpyxl.load_workbook(TRACKER_PATH)
+    if 'By Employee' in wb.sheetnames:
+        wb.remove(wb['By Employee'])
+        wb.save(TRACKER_PATH)
+        print('Removed By Employee sheet')
+    else:
+        print('By Employee sheet not found')
