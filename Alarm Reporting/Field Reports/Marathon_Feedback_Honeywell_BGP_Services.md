@@ -67,7 +67,9 @@ Despite the report stating the system is "healthy" and "running normally," **pos
 
 - **Collection not working for one channel** - alarm data not being captured
 - **Synchronization (Standard Suppressed Sync) not working for all of the channels**
-- Critical alarm management functions compromised
+- **ACM Enforcements not working** - alarm enforcement rules not functioning
+- **Alarm Help updates not working for one system** - could not propose or update alarm help documentation
+- **Critical non-functional features not recorded or escalated** during the site visit
 - "System healthy" conclusion contradicts actual system state
 - This discrepancy suggests incomplete testing or validation during the site visit
 
@@ -244,14 +246,65 @@ These items represent the **minimum standard procedures** that should be perform
 
 ## Site Visit: Salt Lake City
 
+**Site Visit Dates:** November 17-21, 2025
+
 ### Reported Outcomes vs. Operational Status
+
+#### ❌ **Critical Data Loss: Known Export Bug Not Communicated, Led to Loss of Alarm Notes**
+
+**Operational Status:**
+
+- **Special characters in Note fields** (e.g., "1.", "2.") cause export to split data into separate rows
+- **Engineer observed the anomalous rows during export**, commented "I don't know why those are there"
+- **No corrective action taken** despite recognizing the issue
+- **Entire database re-imported** instead of only changed columns/rows
+- **Critical Note data lost** (basis, consequence, response documentation)
+- This is a **known issue also affecting Detroit site**, yet BGP Plus personnel were not briefed
+
+**Expected Action:**
+
+- Known technical issues should be communicated to field engineers before site visits
+- Only import changed columns/rows, not entire database (risk mitigation)
+- Validate data integrity after import operations
+- Flag and escalate unexpected data during export/import operations
+
+**Marathon's Concern:**
+A known bug that causes data loss should have been communicated to field personnel before the visit. The engineer's comment "I don't know why those are there" reveals lack of knowledge transfer about existing issues. Importing an entire database instead of only modified fields represents poor change control. This failure destroyed critical alarm documentation that supports our safety and operational response procedures.
+
+---
+
+#### ❌ **Catastrophic Data Loss: Bulk Approve Operation Lost 1200+ SCADA Tag Configurations**
+
+**Operational Status:**
+
+- Engineer requested Marathon approve/release SCADA tags to allow bulk Propose and Approve of his Alarm Manager Client changes
+- **Unbeknownst to site and engineer**: Most SCADA tags were in "in progress" state from prior reconfigurations
+- **Known issue (existing TAC ticket)**: Tags contained incorrect empty rows with no data
+- **Approving/releasing made empty rows "highest visible"** in Alarm Help and Alarm Manager Client
+- **Result: Lost alarm, priority, and note data for 1200+ SCADA tags** (tags originally built in older ACM version, now on R321.12.9)
+- **Engineer left site unaware anything was wrong**
+- **System health check showed no findings** despite massive data loss
+- **Forced rollback to 11/16/25 backup** to recover correct Released versions
+- **Site remains unable to make changes or release SCADA tags** (ongoing TAC ticket with Roy/Honeywell support)
+
+**Expected Action:**
+
+- Pre-visit assessment of system state, including pending reconfigurations and known TAC tickets
+- Awareness of existing issues that could be triggered by bulk operations
+- Post-change validation before declaring work complete
+- System health check should detect missing alarm data for 1200 tags
+
+**Marathon's Concern:**
+This is the most severe data loss incident: a bulk operation triggered a known bug (with active TAC ticket), destroying configurations for over 1200 SCADA tags. The engineer left without detecting the issue, and the system health check failed to identify massive data loss. This demonstrates inadequate coordination between field services and TAC support, absence of post-change validation, and ineffective health check procedures. We are now **blocked from making any SCAMA tag changes indefinitely** due to this incident.
+
+---
 
 #### ❌ **Critical Failure: Cleanup and Merge Tasks Required System Rollback**
 
 **Operational Status:**
 
 - **Cleanup and merge tasks were incomplete and caused system instability**
-- **Rollback to pre-visit backup was required** to restore system functionality
+- **Rollback to pre-visit backup was required** to restore system functionality (specifically 11/16/25 backup)
 - Work performed during site visit had to be **completely undone**
 - System left in worse state than before visit
 
