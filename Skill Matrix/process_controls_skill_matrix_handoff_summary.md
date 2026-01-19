@@ -237,30 +237,34 @@ Found in **Process_Controls_Skill_Matrix_Enhanced.xlsx**
 ### **Sheets:**
 
 1. **Summary** – Dashboard with overview, statistics, and usage instructions
-2. **Individual_Assessments** – Main data entry table with **40 employees populated** from training data
+2. **Individual_Assessments** – Main data entry table (manually add employees and proficiency levels)
+   - **Columns:** First Name | Last Name | Role | Assessment Date | 60 skill columns
+   - **Proficiency scale in Row 1** – Quick reference: "1=Forming | 2=Developing | 3=Applying | 4=Leading | 5=Shaping"
+   - Includes 3 sample employee rows as template
+   - Add employees manually based on current roster
 3. **Role_Requirements** – Target proficiency levels (1-5) populated for all 10 roles across 60 skills
+   - **Proficiency scale in Row 1** – Same quick reference for easy lookup
 4. **Proficiency_Scale** – MPC 1-5 scale reference with detailed descriptions
 5. **Skill_Dictionary** – All 60 skills with category and definition
 
 ### **Key Features:**
 
 * **60 total skills** organized across 10 categories
-* **40 employees imported** from Training_Attendance_Tracker.xlsx with training-based proficiency levels
+* **Manual employee entry** - Add employees with First Name and Last Name columns
 * **Role requirements populated** based on career progression framework (Engineer I → Lead → Technologist)
-* **Training-to-skill mapping** applied (formal training = proficiency 2-3 baseline)
 * **People as rows** layout for easy individual assessment entry
+* **Proficiency scale in Row 1** on both Individual_Assessments and Role_Requirements tabs
 * **Category headers** merged above skill columns for visual grouping
-* **Frozen panes** for easy navigation during data entry
+* **Frozen panes** at First Name/Last Name/Role/Date columns for easy navigation
 * **Professional formatting** with color-coded headers and borders
+* **Sample rows** provided as template for adding new employees
 
 ### **Data Sources Integrated:**
 
-1. **Training_Attendance_Tracker.xlsx** – 11 courses mapped to relevant skills
-   - Triconex/SIS training: 36 total completions
-   - ControlLogix training: 14 completions
-   - Mark VIe training: 11 completions
-   - DCS training: 9 completions
-   - Python training: 4 completions
+1. **Training_Attendance_Tracker.xlsx** – Reference for employee names and training completions
+   - Use as reference when manually adding employees to skill matrix
+   - 11 courses tracked: Triconex/SIS, ControlLogix, Mark VIe, DCS, Python
+   - Training completion data can inform proficiency level assessments
    
 2. **Career progression framework** – Role-based proficiency targets aligned with MPC career levels
 
@@ -275,7 +279,9 @@ Another agent must adhere to the following:
 * **Proficiency scale = MPC 1–5 (Forming, Developing, Applying, Leading, Shaping)**
 * **60 skills total** across 10 categories
 * **Individual assessments use people-as-rows layout** for efficient data entry
-* **Training completion baseline = Level 2-3** (ready for manual adjustment)
+* **Manual employee entry with First Name and Last Name columns** - Separate columns for better data organization
+* **Proficiency scale displayed in Row 1** on both Individual_Assessments and Role_Requirements tabs
+* **File protection** - enhance_skill_matrix.py blocks execution if workbook exists to prevent overwriting manual data
 * **Role proficiency targets follow career progression** (Engineer I=1-2, II=2-3, Senior=3-4, Lead=4-5)
 * **MPC competencies must not be modified**
 * **Skill Dictionary definitions are the canonical reference**
@@ -289,9 +295,9 @@ Another agent must adhere to the following:
 
 Future agents may continue work by adding:
 
-* ~~**Training data integration**~~ ✓ Complete – 40 employees imported
 * ~~**Role requirements population**~~ ✓ Complete – All 10 roles populated
-* **Manual refinement** – Adjust proficiency levels based on experience and manager input
+* **Individual assessments** – Manually add employees and enter proficiency data
+* **Training reference** – Use Training_Attendance_Tracker.xlsx when assessing proficiency levels
 * **Data validation** – Add Excel data validation to restrict assessment cells to 1-5
 * **Gap analysis formulas** – Automated comparison of current vs target proficiency
 * **Development plan generator** – Create personalized training paths from gaps
@@ -313,9 +319,10 @@ To continue seamlessly, the new agent/chat should be given:
 1. **This Handoff Summary** (process_controls_skill_matrix_handoff_summary.md)
 2. **The generated workbook** (Process_Controls_Skill_Matrix_Enhanced.xlsx)
 3. **The Python generator scripts**:
-   - `enhance_skill_matrix.py` – Main workbook generator
-   - `populate_role_requirements.py` – Role requirements population logic
-   - `import_training_to_assessments.py` – Training data import automation
+   - `enhance_skill_matrix.py` – Main workbook generator (adds scale to Row 1, First/Last Name columns)
+     - **PROTECTED**: Blocks execution if workbook exists to prevent overwriting manual data
+     - Only run for initial creation or after manual backup/deletion
+   - `populate_role_requirements.py` – Role requirements population logic (safe to run repeatedly)
 4. **The source data files**:
    - Training_Attendance_Tracker.xlsx – Current employee training records
    - Refining_IC_Career Guide_Final (1).pdf – MPC career framework reference
@@ -327,6 +334,17 @@ Then instruct:
 
 The new agent will have 100% of the necessary context.
 
+### **Safe Workflow (After Manual Data Entry)**
+
+⚠️ **IMPORTANT**: Once Individual_Assessments contains manual data, follow this workflow:
+
+1. **DO NOT run `enhance_skill_matrix.py`** - It will block execution to protect your data
+2. **To update role requirements**: Run `populate_role_requirements.py` (safe, only updates Role_Requirements tab)
+3. **To regenerate from scratch**: 
+   - Manually backup Process_Controls_Skill_Matrix_Enhanced.xlsx
+   - Delete the original file
+   - Run `enhance_skill_matrix.py` followed by `populate_role_requirements.py`
+
 ---
 
 ## 12. **Summary Statistics**
@@ -334,13 +352,13 @@ The new agent will have 100% of the necessary context.
 * **Total Skills:** 60
 * **Categories:** 10 (Control Platforms → Process Knowledge → Programming → APC → Enterprise Systems → Infrastructure → Implementation → Engineering Tools → Professional Development → Business & Leadership)
 * **Roles:** 10 (Process Controls Engineers I-Lead, APC Engineers II-Lead, Technologists P3-P5)
-* **Employees Tracked:** 40 (imported from training tracker)
-* **Proficiency Scale:** MPC 1-5 (Forming, Developing, Applying, Leading, Shaping)
+* **Employee Entry:** Manual - Add employees as needed
+* **Proficiency Scale:** MPC 1-5 displayed in Row 1 (Forming, Developing, Applying, Leading, Shaping)
 * **Layout:** People as rows, skills as columns
-* **Training Courses Mapped:** 11 courses → 16 skill mappings
+* **Training Reference:** Training_Attendance_Tracker.xlsx available for reference
 * **Data Status:**
   - Role Requirements: ✓ Populated (all 10 roles × 60 skills)
-  - Individual Assessments: ✓ Baseline from training (ready for manual refinement)
+  - Individual Assessments: ⏳ Ready for manual employee and proficiency entry
   - Skill Dictionary: ✓ Complete
 * **Generated:** January 2026
-* **Status:** Ready for manual refinement and gap analysis
+* **Status:** Ready for individual assessment data collection

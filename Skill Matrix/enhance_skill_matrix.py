@@ -245,21 +245,26 @@ def create_individual_assessment_sheet(wb):
     """Create the Individual Assessment entry table - PEOPLE AS ROWS"""
     ws = wb.create_sheet("Individual_Assessments")
     
-    # Title and instructions
-    title_cell = ws.cell(1, 1, "Individual Skill Assessments")
-    title_cell.font = Font(bold=True, size=14, color='366092')
-    ws.merge_cells('A1:D1')
+    # Proficiency scale in Row 1
+    scale_text = ws.cell(1, 1, "Scale: 1=Forming (awareness)  |  2=Developing (guided)  |  3=Applying (independent)  |  4=Leading (expert)  |  5=Shaping (SME)")
+    scale_text.font = Font(italic=True, size=9, color='366092')
+    ws.merge_cells('A1:E1')
     
+    # Instructions in Row 2
     instr_cell = ws.cell(2, 1, "Enter proficiency level (1-5) for each person. Leave blank if not applicable.")
     instr_cell.font = Font(italic=True, size=9)
-    ws.merge_cells('A2:D2')
+    ws.merge_cells('A2:E2')
     
-    # Build column structure: Employee Name | Role | Category:Skill columns
+    # Build column structure: First Name | Last Name | Role | Assessment Date | Category:Skill columns
     col = 1
     
     # Fixed columns
-    ws.cell(4, col, "Employee Name")
-    ws.column_dimensions[get_column_letter(col)].width = 25
+    ws.cell(4, col, "First Name")
+    ws.column_dimensions[get_column_letter(col)].width = 18
+    col += 1
+    
+    ws.cell(4, col, "Last Name")
+    ws.column_dimensions[get_column_letter(col)].width = 18
     col += 1
     
     ws.cell(4, col, "Role")
@@ -296,27 +301,28 @@ def create_individual_assessment_sheet(wb):
         # Skill row (row 4)
         apply_cell_style(ws.cell(4, c), create_header_style())
     
-    # Freeze panes (freeze first 4 rows and first 3 columns)
-    ws.freeze_panes = 'D5'
+    # Freeze panes (freeze first 4 rows and first 4 columns)
+    ws.freeze_panes = 'E5'
     
     # Add sample rows for demonstration
     sample_employees = [
-        ("John Smith", "Process Controls Engineer II", "2026-01-19"),
-        ("Jane Doe", "APC Engineer III / Senior", "2026-01-19"),
-        ("Bob Johnson", "Lead Process Controls Engineer", "2026-01-19"),
+        ("John", "Smith", "Process Controls Engineer II", "2026-01-19"),
+        ("Jane", "Doe", "APC Engineer III / Senior", "2026-01-19"),
+        ("Bob", "Johnson", "Lead Process Controls Engineer", "2026-01-19"),
     ]
     
-    for i, (name, role, date) in enumerate(sample_employees, 5):
-        ws.cell(i, 1, name)
-        ws.cell(i, 2, role)
-        ws.cell(i, 3, date)
+    for i, (first_name, last_name, role, date) in enumerate(sample_employees, 5):
+        ws.cell(i, 1, first_name)
+        ws.cell(i, 2, last_name)
+        ws.cell(i, 3, role)
+        ws.cell(i, 4, date)
         
         # Apply data style to fixed columns
-        for c in range(1, 4):
+        for c in range(1, 5):
             apply_cell_style(ws.cell(i, c), create_data_style())
         
         # Apply data style to skill columns (leave empty for data entry)
-        for c in range(4, col):
+        for c in range(5, col):
             apply_cell_style(ws.cell(i, c), create_data_style())
     
     return ws
@@ -325,11 +331,12 @@ def create_role_requirements_sheet(wb):
     """Create Role Requirements sheet with target proficiency levels"""
     ws = wb.create_sheet("Role_Requirements")
     
-    # Title
-    title_cell = ws.cell(1, 1, "Role-Based Skill Requirements")
-    title_cell.font = Font(bold=True, size=14, color='366092')
+    # Proficiency scale in Row 1
+    scale_text = ws.cell(1, 1, "Scale: 1=Forming (awareness)  |  2=Developing (guided)  |  3=Applying (independent)  |  4=Leading (expert)  |  5=Shaping (SME)")
+    scale_text.font = Font(italic=True, size=9, color='366092')
     ws.merge_cells('A1:C1')
     
+    # Instructions in Row 2
     instr_cell = ws.cell(2, 1, "Target proficiency levels (1-5) for each role")
     instr_cell.font = Font(italic=True, size=9)
     ws.merge_cells('A2:C2')
@@ -438,6 +445,23 @@ def main():
     """Main function to create the enhanced skill matrix workbook"""
     print("Creating Enhanced Process Controls Skill Matrix...")
     
+    import os
+    from pathlib import Path
+    
+    output_file = "Process_Controls_Skill_Matrix_Enhanced.xlsx"
+    file_exists = Path(output_file).exists()
+    
+    if file_exists:
+        # Workbook exists - preserve Individual_Assessments data
+        print(f"⚠️  {output_file} already exists!")
+        print("⚠️  Individual_Assessments tab contains manual data.")
+        print("⚠️  Run populate_role_requirements.py instead to update role targets only.")
+        print("\nTo regenerate from scratch (will lose Individual_Assessments data):")
+        print(f"  1. Backup {output_file}")
+        print(f"  2. Delete {output_file}")
+        print("  3. Run this script again")
+        return
+    
     # Create workbook
     wb = openpyxl.Workbook()
     
@@ -462,7 +486,6 @@ def main():
     create_skill_dictionary_sheet(wb)
     
     # Save workbook
-    output_file = "Process_Controls_Skill_Matrix_Enhanced.xlsx"
     wb.save(output_file)
     print(f"\n✓ Enhanced workbook created: {output_file}")
     

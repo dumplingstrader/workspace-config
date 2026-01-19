@@ -1,0 +1,25 @@
+ACM to APO Migration: A Practitioner's Guide to Alarm Database Migration Excellence
+
+With ACM End of Support on December 31, 2027, hundreds of plants face forced migration to Alarm Performance Optimizer (APO). This whitepaper addresses the critical gap between "migration complete" and "operational excellence."
+
+Based on real-world Marathon Petroleum Corporation pilot implementations and decades of alarm management expertise across multiple Fortune 500 refineries, we provide honest, practical guidance for successful APO migrations.
+
+Key Topics:
+- Pre-migration assessment and cleanup (6-12 months required, not weeks)
+- License optimization strategies (cannot reclaim excess after ordering)
+- Essential custom solutions (health checks, enhanced sync, maintenance tools)
+- Alternative Active Sync methodology (near 100% accuracy vs 50-95% standard)
+- Realistic timelines and resource requirements
+- Testing, validation, and post-migration sustainment
+
+Critical Lessons:
+- Vendor tools alone are insufficient for operational excellence
+- Database cleanup MUST precede migration; post-migration fixes are exponentially harder
+- Standard sync requires significant enhancements for accurate KPIs
+- Dynamic enforcements need extended parallel operations
+- Ghost tags can represent 30-40% of database, inflating costs and degrading performance
+
+Target Audience: Alarm management professionals, control system engineers, operations leadership, project managers planning ACM to APO migrations.
+
+---
+Character count: 1098 characters (under 1100 limit)
