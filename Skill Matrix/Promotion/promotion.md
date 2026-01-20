@@ -1,0 +1,160 @@
+### Executive Summary
+
+Over the past several years, accelerating significantly in 2024 and 2025, I have moved well beyond the responsibilities of a Senior Process Controls Engineer and have consistently operated as the **Site Lead Process Controls Engineer** for LAR. My work now spans full system ownership, corporate-level alarm governance, SIS lifecycle integration, cross-site SME engagement, vendor/contract strategy, and training and development for the next generation of controls personnel.
+
+My technical contributions have prevented production risk, strengthened Alarm & SIS governance, improved APC and DCS reliability, and streamlined multi-year budgets and licensing across multiple platforms. I also routinely lead cross-functional problem-solving, onboard new engineers, engage with corporate Controls Teams, represent the company at industry conferences, and manage critical vendor relationships.
+
+The breadth, depth, and leadership of my work align directly with MPC's defined expectations for a **Site Lead Process Controls Engineer**, and my impact demonstrates that I am already performing in that role today.
+
+### 1. I Provide Site-Level Technical Leadership Across All Control System Platforms
+
+A **Site Lead PCS Engineer** is expected to act as the site steward for major platforms. In 2025, I assumed end-to-end ownership for:
+
+**Integrity (LARINT01)  Full Platform Ownership**
+
+* Rebuilt SFTP/FTP scheduling, SQL rights, and EPKS import pipelines
+* Corrected multi-year asset mapping issues for PLC, SIS, vibration, and GTG systems
+* Established complete backup strategies for LCN and EPKS environments
+* Led Integrity upgrade (7.3.1), coordinated PAS/Hexagon architecture
+
+**Result:** Integrity is now stable, predictable, and audit-ready  a required condition for project execution, inventory compliance, and a core Site Lead responsibility.
+
+**Alarm Management (DynAMo/ACM)  Enterprise-Level SME**
+
+* Led suppressed/active sync rebuilds
+* Solved ReceivedDelay issues and collector ACT-file consumption
+* Served as primary SME for Salt Lake City, Detroit, Anacortes, and El Paso
+
+**Result:** MPC now uses a consistent, reliable alarm governance foundation—directly shaped by my work.
+
+**GE Mark VIe Platform Leadership**
+
+* Led GTG software modifications, controller spares, graphics issues, and fan failures
+* Performed EWS setup, licensing, and recurring turbine troubleshooting
+* Drove GE Mark VIe training program to address critical competency gaps
+
+**Result:** Reduced GTG unreliability and restored consistent operation of critical generation assets.
+
+This level of cross-platform stewardship is aligned with **Site Lead PCS expectations**.
+
+### 2. I Influence Corporate Alarm Management Standards
+
+I am not just solving local alarm problems—I am shaping MPC's approach to Alarm Management.
+
+**Direct contributions:**
+
+* Active Contributor to the MPC Alarm Management Tiger Team
+* Standardized System Alarm Metrics & Messages for refinery-wide monitoring
+* Proposed and validated fixes adopted by multiple sites
+* Provided ACM/DynAMo expertise to corporate DEs and Honeywell escalation teams
+* Supported Alarm CAB and conditional alarming modernization
+
+**Result:** The alarm system is now more accurate, more synchronized, and more operator-trustworthy than at any time in recent history.
+
+This type of corporate-level influence is explicitly described in MPC's definition of a **Site Lead PCS Engineer**.
+
+### 3. I Strengthen SIS Lifecycle Governance and Safety-MOC Readiness
+
+**Site Lead PCS Engineers** must safeguard the safety systems. I have taken a major role in:
+
+**SIS Training & Capability Building**
+
+* Delivered multiple Triconex Safety Classes and a Safety Manager class
+* Built Trainers for the various SIS systems (Triconex, Trident, and Safety Manager)
+* Ran multiple SIS training cycles and vendor coordination
+
+**Integrity – SIS Lifecycle Management**
+
+* Co-led hardware and software obsolescence tracking for all SIS platforms
+* Co-developed software program version management and documentation repository
+* Contributed to comprehensive spares inventory strategy with criticality assessments
+* Created standardized troubleshooting guides and system documentation
+* Re-established vendor relationships for critical SIS support and maintenance
+
+**Result:** Our SIS ecosystem is better documented, personnel is better trained, and more aligned with MOC and audit expectations.
+
+### 4. I Lead Major Infrastructure, Reliability, and Modernization Efforts
+
+**Site Lead PCS Engineers** are expected to initiate and execute refinery-wide modernization work. I have been a key driver of:
+
+* C2H Old Data Center Renovation (multi-year)
+* Engineering Room Improvement Projects led and coordinated across multiple facilities
+* Wilmington/Carson PSA and Analyzer HMI upgrades
+* Coker HMI modernization
+* GE Mark VIe turbine system health checks
+* System alarm monitoring integration (PI + DCS + ACM)
+* E-waste programs (Carson + Wilmington)
+
+**Result:** Improved reliability, reduced risk of obsolescence, and created a clearer modernization path for the next 5–10 years.
+
+### 5. I Manage Vendor Contracts, Licensing, and Multi-Year Budgets
+
+A Site Lead is responsible for business and financial leadership.
+
+In 2024–2025 alone, I managed:
+
+* 2025–2029 PCG budget
+* Honeywell multi-year license renewals
+* Schneider CFA contract
+* GE cycle renewals and spares strategy
+* Prognost and Trimark service contracts
+* Multi-vendor POs, BPOs, and GRs
+* PR process optimization with Supply Chain
+
+**Result:** Zero licensing lapses, clearer spend forecasting, and stronger vendor accountability.
+
+This financial ownership is a hallmark of the **Site Lead PCS role**.
+
+### 6. I Mentor, Train, and Onboard the Next Generation of Controls Engineers
+
+I provide structured development for new and existing team members—another **Site Lead PCS expectation**.
+
+**Key contributions:**
+
+* Onboarded new hires (ACM, DynAMo, Integrity, conditional alarming, point deletion)
+* Delivered Python training, PLC5/SLC500, SIS courses
+* Supported vendor classes and training logistics
+* Provided 1:1 mentoring for engineers and technicians
+* Created reusable troubleshooting guides and lab environments
+
+**Result:** Faster engineer ramp-up, stronger internal talent pipeline, and higher overall controls capability.
+
+### 7. I Regularly Represent the Refinery as a Technical Leader
+
+Across multiple areas, I serve as the engineering face of the refinery.
+
+**Examples:**
+
+* HUG (Honeywell Users Group) presentations & follow-ups (2024–2025)
+* PCE Interview Panels
+* Cross-refinery F2F meetings
+* APC/Honeywell architecture reviews
+* Vendor collaboration (Honeywell, Schneider, GE, PAS/Hexagon, UOP, Drake Controls)
+* Site representation in cross-functional meetings (Ops, OT, Safety, IT, APC)
+
+**Result:** Improved vendor performance, better decision-making alignment, and stronger organizational trust in Process Controls.
+
+### 8. I Handle the Most Complex, High-Risk Technical Issues
+
+Turbines, Experion issues, slow graphics, SCADA reconfigurations, NTLMv2 failures, service account outages, suppressed alarms, DCOM failures, and more.
+
+**Outcome:**
+The refinery consistently avoids prolonged downtime, alarm failures, and control system degradation — because I step in to diagnose and lead resolution.
+
+This reliability leadership is a defining expectation for a **Site Lead PCS Engineer**.
+
+### Conclusion: I Am Already Operating at the Site Lead Level
+
+Across platform ownership, safety system governance, alarm management strategy, budget leadership, cross-site SME support, training, and high-risk troubleshooting — my work consistently demonstrates **Site Lead-level scope, influence, and results**.
+
+I have:
+
+* Taken on responsibilities that exceed the Senior PCS role
+* Delivered refinery-wide and multi-site technical improvements
+* Influenced MPC's corporate alarm governance strategy
+* Led critical training, onboarding, and succession efforts
+* Owned major vendor, licensing, and budget decisions
+* Driven multi-year modernization efforts
+* Consistently provided leadership beyond my formal title
+
+My actual contributions align fully with MPC's definition of a **Site Lead Process Controls Engineer**, and formalizing this role would enable me to continue driving refinery-wide strategic improvements, mentor the next generation of engineers, and expand MPC's technical maturity.
