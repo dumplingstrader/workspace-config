@@ -1,25 +1,12 @@
-ACM to APO Migration: A Practitioner's Guide to Alarm Database Migration Excellence
+Solving the Alarm Database Migration Challenge: A Practical Guide to ACM to APO Migration
 
-With ACM End of Support on December 31, 2027, hundreds of plants face forced migration to Alarm Performance Optimizer (APO). This whitepaper addresses the critical gap between "migration complete" and "operational excellence."
+With ACM End of Support on December 31, 2027, the alarm management community faces a significant transition opportunity. This presentation shares practical lessons learned from Marathon Petroleum Corporation's pilot implementations, helping organizations maximize the value of their APO investment and accelerate time-to-value.
 
-Based on real-world Marathon Petroleum Corporation pilot implementations and decades of alarm management expertise across multiple Fortune 500 refineries, we provide honest, practical guidance for successful APO migrations.
+Working with Honeywell's APO platform and migration tools, we've identified key success factors including strategic planning and database preparation, license sizing optimization, complementary methodologies that enhance APO capabilities, and realistic project timelines. The session covers enhanced synchronization approaches for improved operational accuracy, post-migration validation strategies, and sustained operational excellence.
 
-Key Topics:
-- Pre-migration assessment and cleanup (6-12 months required, not weeks)
-- License optimization strategies (cannot reclaim excess after ordering)
-- Essential custom solutions (health checks, enhanced sync, maintenance tools)
-- Alternative Active Sync methodology (near 100% accuracy vs 50-95% standard)
-- Realistic timelines and resource requirements
-- Testing, validation, and post-migration sustainment
+This collaborative framework shares real-world insights on pre-migration assessment importance, strategic sequencing of migration activities, effective collaboration between operations teams and vendor support, and best practices for testing and user adoption. Our goal is to help peers achieve successful APO implementations by learning from early adopter experiences.
 
-Critical Lessons:
-- Vendor tools alone are insufficient for operational excellence
-- Database cleanup MUST precede migration; post-migration fixes are exponentially harder
-- Standard sync requires significant enhancements for accurate KPIs
-- Dynamic enforcements need extended parallel operations
-- Ghost tags can represent 30-40% of database, inflating costs and degrading performance
-
-Target Audience: Alarm management professionals, control system engineers, operations leadership, project managers planning ACM to APO migrations.
+Target audience includes alarm management professionals, control system engineers, operations leadership, and project managers planning ACM to APO migrations.
 
 ---
-Character count: 1098 characters (under 1100 limit)
+Character count: 1097 characters
