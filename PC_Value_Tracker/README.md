@@ -81,12 +81,24 @@ python scripts/generate_quarterly_insights.py --input data/master_combined.json 
 
 ### Report Templates
 
-Pre-formatted templates for custom presentations:
+Pre-formatted templates with **dual-mode capability**:
 
-**Generate templates** (one-time):
+**Blank Template Mode** (default):
 ```bash
 python scripts/create_monthly_report_template.py
 python scripts/create_leadership_presentation_template.py
+```
+
+**Auto-Fill Mode** (from quarterly data):
+```bash
+# Generate presentation with actual Q4 2025 data
+python scripts/create_leadership_presentation_template.py --quarter 2025-Q4 --input data/master_combined.json
+
+# Custom output path
+python scripts/create_leadership_presentation_template.py --quarter 2025-Q4 --input data/master_combined.json --output output/Q4_Custom.pptx
+
+# Force blank template even with data
+python scripts/create_leadership_presentation_template.py --blank
 ```
 
 **Excel Template** (`templates/Monthly_Report_Template.xlsx`):
@@ -97,15 +109,17 @@ python scripts/create_leadership_presentation_template.py
 - Notes section for observations
 
 **PowerPoint Template** (`templates/Leadership_Presentation_Template.pptx`):
-- 7-slide professional deck (teal and coral design)
+- **Blank Mode**: 7-slide professional deck (teal and coral design) with [placeholders]
+- **Auto-Fill Mode**: Automatically populates slides with quarterly metrics from JSON data
 - Title, executive summary, metrics dashboard, system breakdown, success stories, recommendations, Q&A
-- All placeholders marked with [brackets]
+- Smart recommendations based on workload trends
+- Visual system breakdown from actual data
 
 **How to use:**
-1. Run automated scripts to get raw metrics
-2. Copy key numbers into template placeholders
-3. Add narrative context and success stories
-4. Insert charts and customize for audience
+1. **Automated approach**: Use `--quarter` and `--input` flags to generate filled presentations directly
+2. **Manual approach**: Run automated scripts → Copy metrics into blank template → Add narrative
+3. Customize success stories and recommendations based on specific achievements
+4. Insert additional charts and tailor for audience
 
 ---
 
@@ -166,7 +180,7 @@ pc-value-tracker\
 │   ├── generate_monthly_report.py      ← ✨ NEW: Monthly summary reports
 │   ├── generate_quarterly_insights.py  ← ✨ NEW: Quarterly trend analysis
 │   ├── create_monthly_report_template.py     ← ✨ NEW: Excel template generator
-│   ├── create_leadership_presentation_template.py  ← ✨ NEW: PowerPoint template generator
+│   ├── create_leadership_presentation_template.py  ← ✨ NEW: Dual-mode PowerPoint generator (blank or auto-fill)
 │   ├── archive_processed_files.py ← Clean up data folder
 │   ├── create_template.py       ← Generate contributor template
 │   ├── aggregate_submissions.py ← Combine team submissions
