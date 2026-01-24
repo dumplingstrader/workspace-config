@@ -22,3 +22,11 @@ node_modules/
 
 # PDF outputs (optional - remove if you want to track PDFs)
 *.pdf
+
+# PC Value Tracker - Private files (personal opinions, raw data)
+PC_Value_Tracker/docs/HANDOFF_INTERNAL.md
+PC_Value_Tracker/data/*.xlsx
+PC_Value_Tracker/data/*.csv
+PC_Value_Tracker/data/*.json
+PC_Value_Tracker/output/*.xlsx
+PC_Value_Tracker/output/*.json

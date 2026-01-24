@@ -40,6 +40,113 @@
 
 ---
 
+## Reporting and Analysis
+
+### Monthly Reports
+
+Generate standardized monthly summaries with metrics and issue breakdowns:
+
+```bash
+python scripts/generate_monthly_report.py --input data/master_combined.json --month 2026-01 --output output/monthly_report_2026-01.xlsx
+```
+
+**Output includes:**
+- Summary sheet with key metrics (total issues, by system, by area, by complexity)
+- Complete issue list for the month
+- System breakdown showing workload distribution
+- High complexity issues requiring detailed attention
+
+**When to use:** End of each month for documentation, quarterly reviews, annual performance review prep
+
+---
+
+### Quarterly Insights
+
+Generate strategic trend analysis and improvement recommendations:
+
+```bash
+python scripts/generate_quarterly_insights.py --input data/master_combined.json --quarter 2026-Q1 --output output/quarterly_insights_2026-Q1.xlsx
+```
+
+**Output includes:**
+- Executive summary of key findings
+- Monthly trends (volume trajectory)
+- Recurring issues (systemic problem identification)
+- Training needs (knowledge gap detection)
+- Equipment reliability concerns (high-burden systems)
+
+**When to use:** End of quarter for strategic planning, budget justification, leadership presentations
+
+---
+
+### Report Templates
+
+Pre-formatted templates for custom presentations:
+
+**Generate templates** (one-time):
+```bash
+python scripts/create_monthly_report_template.py
+python scripts/create_leadership_presentation_template.py
+```
+
+**Excel Template** (`templates/Monthly_Report_Template.xlsx`):
+- Executive summary with metric placeholders
+- Issue detail table
+- System breakdown with chart area
+- Action items and recommendations
+- Notes section for observations
+
+**PowerPoint Template** (`templates/Leadership_Presentation_Template.pptx`):
+- 7-slide professional deck (teal and coral design)
+- Title, executive summary, metrics dashboard, system breakdown, success stories, recommendations, Q&A
+- All placeholders marked with [brackets]
+
+**How to use:**
+1. Run automated scripts to get raw metrics
+2. Copy key numbers into template placeholders
+3. Add narrative context and success stories
+4. Insert charts and customize for audience
+
+---
+
+### Complete Reporting Workflow
+
+**Monthly Cycle:**
+```bash
+# 1. Weekly data capture (Copilot prompts)
+# 2. Combine into master database
+python scripts/combine_excel_files.py
+
+# 3. Convert to JSON
+python scripts/excel_to_json.py
+
+# 4. Generate monthly report
+python scripts/generate_monthly_report.py --month 2026-01
+
+# 5. (Optional) Update Excel template with custom narrative
+```
+
+**Quarterly Cycle:**
+```bash
+# 1. Generate insights report
+python scripts/generate_quarterly_insights.py --quarter 2026-Q1
+
+# 2. Create leadership presentation from template
+#    - Copy metrics from insights report
+#    - Add success stories and recommendations
+#    - Insert charts from Excel
+
+# 3. Present to leadership or use for annual review
+```
+
+**Report Examples** (based on 215 entries):
+- Average 25 issues per month
+- DCS systems: 45% of workload
+- High complexity: 10.7% (23 major/significant issues)
+- Cross-site activities: 11% (24 issues)
+
+---
+
 ## Folder Structure
 
 ```
@@ -56,12 +163,18 @@ pc-value-tracker\
 │   ├── combine_excel_files.py   ← Combine Copilot exports
 │   ├── excel_to_json.py         ← Convert Excel to JSON
 │   ├── export_simple_tracker.py ← Generate Excel tracker
+│   ├── generate_monthly_report.py      ← ✨ NEW: Monthly summary reports
+│   ├── generate_quarterly_insights.py  ← ✨ NEW: Quarterly trend analysis
+│   ├── create_monthly_report_template.py     ← ✨ NEW: Excel template generator
+│   ├── create_leadership_presentation_template.py  ← ✨ NEW: PowerPoint template generator
 │   ├── archive_processed_files.py ← Clean up data folder
 │   ├── create_template.py       ← Generate contributor template
 │   ├── aggregate_submissions.py ← Combine team submissions
 │   └── archive\                 ← Unused legacy scripts
 │
 ├── templates\
+│   ├── Monthly_Report_Template.xlsx  ← ✨ NEW: Pre-formatted Excel report
+│   ├── Leadership_Presentation_Template.pptx  ← ✨ NEW: PowerPoint deck
 │   └── PC_Value_Template.xlsx   ← Blank template for contributors
 │
 ├── submissions\                 ← Team submissions go here
@@ -73,11 +186,15 @@ pc-value-tracker\
 │   └── (new Copilot exports here)   ← Add new files, run combine script
 │
 ├── output\                      ← Generated reports
-│   └── (pc_value_tracker.xlsx, aggregated_data.xlsx)
+│   ├── pc_value_tracker.xlsx        ← 9-sheet analysis workbook
+│   ├── monthly_report_YYYY-MM.xlsx  ← ✨ NEW: Monthly summaries
+│   ├── quarterly_insights_YYYY-QN.xlsx  ← ✨ NEW: Quarterly trends
+│   └── aggregated_data.xlsx     ← Team rollout aggregation
 │
 └── docs\
-    ├── METHODOLOGY.md           ← ✅ Share with leadership
+    ├── METHODOLOGY.md           ← ✅ Share with leadership (UPDATED with reporting details)
     ├── COPILOT_PROMPTS.md       ← ✅ Share - data extraction prompts
+    ├── COPILOT_PROMPTS_QUICKSTART.md  ← ✅ Share - 5-min weekly guide
     ├── DATA_COLLECTION_PROCEDURE.md  ← ✅ Share - contributor guide
     ├── SUPERVISOR_BRIEFING.md   ← ✅ Share - supervisor overview
     └── HANDOFF_INTERNAL.md      ← ❌ PRIVATE - AI context

@@ -113,40 +113,149 @@ Issues are categorized by root cause to identify patterns:
 
 ## Analysis and Reporting
 
-### Monthly Metrics
+### Monthly Report Generation
 
-| Metric | Description |
-|--------|-------------|
-| **Volume** | Total issues handled |
-| **By Category** | Breakdown by root cause |
-| **By System** | Which platforms generate most work |
-| **Resolution Rate** | % resolved vs. escalated vs. handed off |
-| **Time Investment** | Total hours by category |
+**Automated Script**: `generate_monthly_report.py`
 
-### Quarterly Insights
+**Purpose**: Generate standardized monthly summaries from the master database for documentation and leadership review.
 
-- Recurring issue identification
-- Trend analysis (increasing/decreasing workload)
-- Training needs identification
-- Equipment reliability concerns
-- Project delivery quality feedback
+**How to Generate**:
+```bash
+python scripts/generate_monthly_report.py --input data/master_combined.json --month 2026-01 --output output/monthly_report_2026-01.xlsx
+```
+
+**Output Structure** (4 sheets):
+1. **Summary**: Quick stats (total issues, by system, by area, by complexity, by department)
+2. **All Issues**: Complete filtered list for the month
+3. **By System**: Breakdown showing which platforms generate most work
+4. **High Complexity**: Major/Significant issues requiring detailed attention
+
+**Key Metrics Tracked**:
+- **Volume**: Total issues handled (target: 15-25 per month)
+- **System Distribution**: DCS vs PLC vs SIS vs Network breakdown
+- **Complexity**: Routine vs Major vs Significant (aim for <30% high complexity)
+- **Cross-Site**: Multi-site coordination activities
+- **Departmental Breakdown**: Which departments request most support
+
+**Example Output** (based on 215 entries across 2024-2026):
+- Average 25 issues per month
+- DCS systems: 45% of workload
+- PLC troubleshooting: 30% of workload
+- High complexity issues: 23 (10.7% of total)
+- Cross-site activities: 24 (11% of total)
+
+**When to Use**:
+- End of each month for documentation
+- Quarterly reviews with supervisor
+- Annual performance review preparation
+
+---
+
+### Quarterly Insights Report
+
+**Automated Script**: `generate_quarterly_insights.py`
+
+**Purpose**: Identify trends, recurring issues, training needs, and strategic improvement opportunities over 3-month periods.
+
+**How to Generate**:
+```bash
+python scripts/generate_quarterly_insights.py --input data/master_combined.json --quarter 2026-Q1 --output output/quarterly_insights_2026-Q1.xlsx
+```
+
+**Output Structure** (5 sheets):
+1. **Executive Summary**: Key findings for leadership presentation
+2. **Monthly Trends**: Volume trends (increasing/decreasing)
+3. **Recurring Issues**: Systems with repeated problems (suggests systemic issues)
+4. **Training Needs**: Common questions indicating knowledge gaps
+5. **Equipment Reliability**: High-burden systems flagged for monitoring
+
+**Strategic Analysis Includes**:
+- **Trend Detection**: Is workload increasing or decreasing?
+- **Pattern Recognition**: Same system generating multiple issues?
+- **Training Opportunities**: Where are teams asking "how-to" questions?
+- **Reliability Concerns**: Which equipment needs proactive maintenance?
+- **Resource Planning**: Data to support headcount or tooling requests
+
+**Example Insights**:
+- "DCS System 2 generated 18 issues in Q1 (up from 9 in Q4) - investigate reliability"
+- "5 separate PLC training questions from Operations - schedule training session"
+- "Cross-site support increased 40% - consider standardization project"
+
+**When to Use**:
+- End of quarter for strategic planning
+- Budget justification for training/resources
+- Leadership presentations on team value
+
+---
+
+### Manual Report Templates
+
+For custom presentations or detailed analysis, use pre-formatted templates:
+
+**Excel Template**: `templates/Monthly_Report_Template.xlsx`
+
+**Includes**:
+- Executive Summary with metrics placeholders
+- Issue Detail table (copy/paste from generated reports)
+- System Breakdown with chart area
+- Action Items / Recommendations section
+- Notes for observations and trends
+
+**PowerPoint Template**: `templates/Leadership_Presentation_Template.pptx`
+
+**Slide Structure** (7 slides):
+1. Title slide (customize period and presenter)
+2. Executive Summary (key achievements, trends, impact)
+3. Key Metrics Dashboard (6 visual metric cards)
+4. System Breakdown (chart placeholder)
+5. Success Stories (3 impact examples)
+6. Recommendations (action items for leadership)
+7. Questions (contact info)
+
+**Design**: Professional teal and coral palette with metric cards and visual hierarchy
+
+**How to Use Templates**:
+1. Run automated scripts to get raw metrics
+2. Copy key numbers into template placeholders (marked with [brackets])
+3. Add narrative context and success stories
+4. Insert charts from Excel into PowerPoint
+5. Customize for specific audience (leadership, peers, annual review)
+
+---
 
 ### Sample Questions This Data Answers
 
 1. *"How much of our time goes to issues that aren't actually Process Controls problems?"*
-   → Root cause category breakdown shows % handed off to other groups
+   → Root Cause category breakdown in monthly report shows % handed off
 
 2. *"What systems generate the most support requests?"*
-   → System breakdown shows where effort is concentrated
+   → System Breakdown sheet shows workload concentration (DCS 45%, PLC 30%)
 
 3. *"Are we seeing the same problems repeatedly?"*
-   → Recurring issue analysis identifies systemic problems
+   → Quarterly Insights Recurring Issues sheet identifies systemic patterns
 
 4. *"What's the impact of project delivery quality on our workload?"*
-   → Project Delivery category quantifies post-handoff burden
+   → Project Delivery category in master database quantifies post-handoff burden
 
 5. *"Where should we focus training efforts?"*
-   → Training/Knowledge Gap category reveals common questions
+   → Quarterly Insights Training Needs sheet reveals common knowledge gaps
+
+6. *"How has workload changed over time?"*
+   → Quarterly Insights Monthly Trends sheet shows volume trajectory
+
+7. *"Which issues required the most complex problem-solving?"*
+   → High Complexity sheet in monthly report (currently 23 major/significant issues)
+
+---
+
+### Report Frequency Recommendations
+
+| Report Type | Frequency | Audience | Purpose |
+|-------------|-----------|----------|---------|
+| **Automated Monthly Report** | Monthly | Self, supervisor | Documentation, pattern tracking |
+| **Quarterly Insights** | Quarterly | Leadership, manager | Strategic planning, resource requests |
+| **Leadership Presentation** | Quarterly or annual | Senior leadership | Demonstrate team value, justify resources |
+| **Ad-hoc Analysis** | As needed | Project teams, operations | Answer specific questions, support decisions |
 
 ---
 
@@ -179,18 +288,110 @@ Issues are categorized by root cause to identify patterns:
 ## Tools and Implementation
 
 ### Data Capture
-- Outlook email analysis (via Copilot)
-- Manual logging for phone/in-person requests
-- Integration with existing systems where possible
 
-### Storage
-- Excel workbook for pilot phase
-- Potential SAP integration for long-term
+**Primary Method**: GitHub Copilot + Outlook Email Analysis
+- Use Copilot prompts (see COPILOT_PROMPTS_QUICKSTART.md) to extract structured data from sent emails
+- Run weekly or monthly: "Extract all troubleshooting/technical assistance from my sent emails"
+- Copilot automatically categorizes System, Complexity, Root Cause, and My Role
 
-### Reporting
-- Monthly summary reports
-- Quarterly trend analysis
-- Ad-hoc analysis as needed
+**Manual Logging**: For phone calls, in-person discussions, or non-email work
+- Add entries directly to Excel exports or master database
+
+**Frequency**: Weekly recommended (Friday end-of-week review) to maintain accuracy
+
+---
+
+### Data Storage
+
+**Master Database**: `data/master_combined_issues.xlsx`
+- **Persistent database** - source of truth for all work history
+- Cumulative and never loses data when adding new exports
+- Current size: 215 unique entries (2024-2026)
+
+**JSON Format**: `data/master_combined.json`
+- Converted from master Excel for script processing
+- Used by reporting scripts
+
+**Backup Strategy**: Git version control + network folder sharing
+
+---
+
+### Data Processing Scripts
+
+Located in `scripts/` directory:
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `combine_excel_files.py` | Merge new Copilot exports into persistent master database | `python scripts/combine_excel_files.py` |
+| `excel_to_json.py` | Convert master Excel to JSON for reporting | `python scripts/excel_to_json.py` |
+| `export_simple_tracker.py` | Generate 9-sheet analysis workbook | `python scripts/export_simple_tracker.py` |
+| `generate_monthly_report.py` | Monthly summary report | `python scripts/generate_monthly_report.py --month 2026-01` |
+| `generate_quarterly_insights.py` | Quarterly trends and insights | `python scripts/generate_quarterly_insights.py --quarter 2026-Q1` |
+
+**Key Design Pattern**: Persistent database mode
+- combine_excel_files.py loads existing master FIRST
+- New exports are appended and deduplicated
+- Guarantees no data loss when adding new entries
+
+---
+
+### Reporting Tools
+
+**Automated Reports**:
+- Monthly reports: 4 sheets with metrics, issue lists, system breakdown
+- Quarterly insights: 5 sheets with trends, recurring issues, training needs
+
+**Manual Templates**:
+- Excel template: Pre-formatted monthly report with placeholders
+- PowerPoint template: 7-slide leadership presentation deck
+
+**Template Generators** (run once to create templates):
+```bash
+python scripts/create_monthly_report_template.py
+python scripts/create_leadership_presentation_template.py
+```
+
+Templates saved to `templates/` directory for reuse
+
+---
+
+### Technology Stack
+
+- **Python 3.13+**: Data processing and automation
+- **pandas**: Data manipulation and Excel processing
+- **openpyxl**: Excel file creation and formatting
+- **python-pptx**: PowerPoint template generation
+- **Virtual Environment**: Isolated dependencies at `.venv/`
+
+**Environment Setup** (one-time):
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install pandas openpyxl python-pptx
+```
+
+---
+
+### Workflow Summary
+
+1. **Weekly Data Capture**:
+   - Run Copilot prompt on sent emails → Export to Excel
+   - Save as `data/Troubleshooting_Emails_WeekOf_[Date]_[Name].xlsx`
+
+2. **Monthly Consolidation**:
+   - Run `combine_excel_files.py` to merge all exports into master database
+   - Run `excel_to_json.py` to convert for reporting
+   - Generate monthly report with `generate_monthly_report.py`
+
+3. **Quarterly Analysis**:
+   - Generate insights report with `generate_quarterly_insights.py`
+   - Use templates to create leadership presentation
+   - Review trends and identify improvement opportunities
+
+4. **Annual Review**:
+   - Aggregate all quarterly reports
+   - Create comprehensive PowerPoint from template
+   - Highlight key achievements and strategic contributions
 
 ---
 
