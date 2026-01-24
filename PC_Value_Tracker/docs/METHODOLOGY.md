@@ -343,15 +343,24 @@ Located in `scripts/` directory:
 
 **Manual Templates**:
 - Excel template: Pre-formatted monthly report with placeholders
-- PowerPoint template: 7-slide leadership presentation deck
+- PowerPoint template: 7-slide leadership presentation deck (dual-mode capable)
 
-**Template Generators** (run once to create templates):
+**Template Generators**:
 ```bash
+# Excel template (run once)
 python scripts/create_monthly_report_template.py
+
+# PowerPoint template - Blank mode (default)
 python scripts/create_leadership_presentation_template.py
+
+# PowerPoint - Auto-fill mode (from quarterly data)
+python scripts/create_leadership_presentation_template.py --quarter 2025-Q4 --input data/master_combined.json
+
+# PowerPoint - Custom output path
+python scripts/create_leadership_presentation_template.py --quarter 2025-Q4 --input data/master_combined.json --output presentations/Q4_Review.pptx
 ```
 
-Templates saved to `templates/` directory for reuse
+Templates saved to `templates/` directory, auto-filled presentations to `output/` directory
 
 ---
 
@@ -360,7 +369,8 @@ Templates saved to `templates/` directory for reuse
 - **Python 3.13+**: Data processing and automation
 - **pandas**: Data manipulation and Excel processing
 - **openpyxl**: Excel file creation and formatting
-- **python-pptx**: PowerPoint template generation
+- **python-pptx**: PowerPoint template and presentation generation
+- **argparse**: Command-line interface for script modes
 - **Virtual Environment**: Isolated dependencies at `.venv/`
 
 **Environment Setup** (one-time):

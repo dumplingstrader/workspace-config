@@ -114,7 +114,21 @@ python scripts/generate_quarterly_insights.py --input data/master_combined.json 
 - All placeholders marked with [brackets]
 - Modern corporate design optimized for readability
 
-**Generated with:** `python scripts/create_leadership_presentation_template.py`
+**Generated with:** 
+```bash
+# Blank template mode (default)
+python scripts/create_leadership_presentation_template.py
+
+# Auto-fill mode (from quarterly data)
+python scripts/create_leadership_presentation_template.py --quarter 2025-Q4 --input data/master_combined.json
+```
+
+**Dual-Mode Capability (Added January 24, 2026):**
+- **Blank Mode**: Generates template with [placeholders] for manual customization
+- **Auto-Fill Mode**: Reads quarterly insights JSON and automatically populates all slides with real metrics
+- Smart recommendations based on workload trends
+- Visual system breakdown from actual data
+- Single script replaces multiple one-off presentation generators
 
 ---
 
