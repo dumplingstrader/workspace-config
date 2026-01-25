@@ -1,22 +1,18 @@
 {
   "_description": "Process Controls Value Tracker - Configuration",
-  "_instructions": "Update the paths below to match your business laptop setup",
-  
+  "_instructions": "Update the paths below as needed",
+
   "data": {
-    "input_file": "data/work-history-entries.json",
-    "description": "Path to your extracted Outlook/OneNote data"
+    "input_file": "data/master_combined.json",
+    "excel_file": "data/master_combined_issues.xlsx",
+    "description": "Master database from Copilot exports"
   },
-  
+
   "output": {
     "enriched_json": "output/enriched_entries.json",
     "excel_file": "output/pc_value_tracker.xlsx",
     "description": "Where generated files will be saved"
   },
-  
-  "enrichment": {
-    "min_score": 20,
-    "description": "Minimum score threshold for processing entries"
-  },
-  
+
   "keywords_file": "config/keywords.json"
 }

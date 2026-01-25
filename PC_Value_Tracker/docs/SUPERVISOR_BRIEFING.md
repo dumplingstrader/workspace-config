@@ -1,162 +1,161 @@
-# Process Controls Value Tracking — Supervisor Briefing
+# Process Controls Value Tracking V2.0 — Supervisor Briefing
 
-**Purpose:** Brief supervisors on the value tracking pilot and request their support in data collection.
+**Purpose:** Brief supervisors on the redesigned value tracking initiative.
 
-**Prepared by:** Tony Chiu, Senior Process Controls Engineer  
 **Date:** January 2026
+**Version:** 2.0
 
 ---
 
-## Executive Summary
+## What Changed from V1.0
 
-I'm piloting a methodology to systematically document the work performed by our Process Controls team. The goal is to create data-driven visibility into:
-
-- **What we do** — Volume and types of issues handled
-- **Where our time goes** — Breakdown by system, area, and root cause
-- **What's NOT our job** — Issues we diagnose and hand off to other groups
-- **Patterns** — Recurring problems that deserve attention
-
-**I'm requesting your support to:**
-1. Participate by running Copilot prompts on your own email (10-15 min/week)
-2. Encourage your team to participate
-3. Provide feedback on the methodology
+| V1.0 | V2.0 |
+|------|------|
+| "Prove we're busy" | "Demand specific changes" |
+| 12+ fields per issue | 6 core fields |
+| 7 different prompts | 1 unified prompt |
+| Generic reports | Stream-specific scorecards |
+| Defensive posture | Offensive posture |
 
 ---
 
-## Why This Matters
+## The Five Streams
 
-### The Perception Problem
-Process Controls is sometimes perceived as "not helpful" when we determine an issue isn't ours to fix. But that diagnostic work — figuring out what's actually wrong — is valuable and invisible.
+Instead of tracking everything in one pile, V2.0 organizes work into **five streams**, each targeting a specific audience with a specific ask.
 
-### The Visibility Gap
-Currently, we don't track:
-- How many issues we handle
-- How much time we spend
-- What percentage are actually PC problems vs. other groups' issues
-- Impact of project delivery quality on our workload
-
-### The Opportunity
-With data, we can:
-- Demonstrate the value we provide
-- Identify recurring issues that deserve permanent fixes
-- Make resource cases based on actual workload
-- Provide feedback loops to Projects on delivery quality
+| Stream | What We Track | Who Sees It | What We Ask For |
+|--------|---------------|-------------|-----------------|
+| **Project** | AMP/capital project handoff failures | Projects team | PC acceptance gate before phase close |
+| **Day-to-Day** | Routine support and troubleshooting | Leadership | Resource planning data |
+| **Legacy** | Obsolete equipment issues | Capital Planning | Fund the obsolescence backlog |
+| **Diagnostic** | Time diagnosing non-PC issues | Ops, Maintenance | Restore first-line troubleshooting |
+| **After-Hours** | Off-hours calls and emergencies | HR, Leadership | Fair on-call compensation |
 
 ---
 
-## How It Works
+## Why This Matters to Supervisors
 
-### Data Collection (Weekly)
-1. Run a Copilot prompt on your sent emails (5-10 minutes)
-2. Review and add your judgment (5 minutes)
-3. Submit Excel file to shared location
+### 1. After-Hours Visibility (Stream 5)
 
-### Aggregation (Monthly)
-1. All submissions combined into master dataset
-2. Patterns analyzed
-3. Summary report generated
+**The problem:** After-hours calls go through supervisors but aren't tracked. Leadership doesn't see the off-hours burden.
 
-### Reporting (Quarterly)
-- Team-level statistics (not individual evaluation)
-- Root cause breakdown
-- Time investment by category
-- Recommendations for improvement
+**V2.0 solution:** Supervisors log after-hours calls. This creates visibility for:
+- Staffing discussions
+- On-call compensation
+- Coverage planning
+
+**Time commitment:** 2-5 minutes per call-out
+
+### 2. Project Accountability (Stream 1)
+
+**The problem:** Projects hands over broken systems and declares victory. Your team inherits the cleanup.
+
+**V2.0 solution:** Track post-handoff issues by project/phase. Create a scorecard that shows:
+- How many issues each phase created
+- How many PC hours to remediate
+- What percentage was preventable
+
+**The ask:** PC sign-off required before project phases close.
+
+### 3. Legacy Equipment Risk (Stream 3)
+
+**The problem:** AMP deferred PLC upgrades. We're running 35-year-old equipment. When it fails, it's a crisis.
+
+**V2.0 solution:** Maintain a Technical Debt Register showing:
+- Equipment age and failure history
+- Risk scores
+- Replacement cost estimates
+
+**The ask:** Fund obsolescence backlog before catastrophic failure.
 
 ---
 
-## What I Need From You
+## How You Can Help
 
-### Option A: You Participate Directly
-- Run the Copilot prompts on your own email
-- See what issues you're handling
-- Takes 10-15 minutes per week
+### Option A: After-Hours Tracking (Minimal Effort)
 
-### Option B: Encourage Your Team
-- Share the DATA_COLLECTION_PROCEDURE.md with your engineers
-- Ask them to participate in the pilot
-- Collect their submissions
+Log call-outs as they occur:
+- Date/time
+- Who was called
+- Issue summary
+- Duration
+
+This takes 2-5 minutes per call and provides critical visibility.
+
+### Option B: Encourage Team Participation
+
+Share the QUICK_START guide with your engineers. Ask them to:
+- Run the weekly Copilot prompt (10 min/week)
+- Tag issues with the correct stream
 
 ### Option C: Both (Ideal)
-- Your participation shows leadership buy-in
-- Team participation gives comprehensive data
 
----
-
-## Materials Provided
-
-| Document | Purpose |
-|----------|---------|
-| **DATA_COLLECTION_PROCEDURE.md** | Step-by-step guide for running Copilot prompts |
-| **PC_Value_Template.xlsx** | Standardized Excel template for submissions |
-| **METHODOLOGY.md** | Full methodology explanation (shareable) |
-| **COPILOT_PROMPTS.md** | Ready-to-use prompts |
-
----
-
-## Time Commitment
-
-| Activity | Frequency | Time | Who |
-|----------|-----------|------|-----|
-| Weekly extraction | Friday | 10-15 min | Participating engineers |
-| Team submission collection | Weekly | 5 min | Supervisor (optional) |
-| Review aggregated report | Monthly | 15 min | Supervisors |
+- You track after-hours calls
+- Team tracks day-to-day work
+- Combined data tells the full story
 
 ---
 
 ## What This Is NOT
 
 - ❌ Individual performance evaluation
-- ❌ Micromanagement of daily activities  
-- ❌ Mandatory time tracking
-- ❌ Additional burden on an overwhelmed team
+- ❌ Micromanagement
+- ❌ Additional burden on overwhelmed team
+- ❌ Another initiative that goes nowhere
 
 ## What This IS
 
-- ✅ Voluntary pilot to demonstrate value
-- ✅ Data to support resource discussions
-- ✅ Visibility into systemic issues
-- ✅ Evidence for improvement recommendations
+- ✅ Data to demand specific changes
+- ✅ Visibility into invisible work
+- ✅ Evidence for resource discussions
+- ✅ Accountability for project quality
 
 ---
 
-## Privacy and Anonymization
+## Outputs You'll See
 
-- Individual submissions are combined into team totals
-- Reports to leadership show aggregate statistics
-- Individual names are not highlighted in leadership reports
-- This is about TEAM value, not individual evaluation
+### Monthly: One-Page Summary
+
+Single page showing volume, trends, and key findings. Takes 5 minutes to review.
+
+### Quarterly: Stream Scorecards
+
+Specific reports for specific audiences:
+- Project Handoff Scorecard → Goes to Projects
+- Technical Debt Register → Goes to Capital Planning
+- After-Hours Burden Report → Goes to HR/Leadership
 
 ---
 
-## Pilot Timeline
+## Timeline
 
-| Phase | Dates | Activity |
-|-------|-------|----------|
-| **Week 1-2** | Jan 20 - Feb 2 | Initial data collection, refine process |
-| **Month 1** | February | First monthly aggregation and analysis |
-| **Month 2-3** | Mar-Apr | Expand participation, refine categories |
-| **Quarter 1 Report** | End of Q1 | First summary report for leadership |
+| Phase | When | Activity |
+|-------|------|----------|
+| **Now** | January | Pilot with existing data |
+| **Month 1** | February | First monthly summary |
+| **Month 2-3** | March-April | Refine, expand if valuable |
+| **Q1 End** | April | First quarterly scorecards |
 
 ---
 
 ## Questions?
 
-Contact: Tony Chiu
-- Email: [your email]
-- Teams: [your handle]
-- Extension: [your extension]
+Contact the project coordinator to discuss:
+- How this fits with your team's workflow
+- What level of participation makes sense
+- How to handle specific situations
 
 ---
 
 ## Next Steps
 
-If you're willing to support this pilot:
+If you're willing to support this:
 
-1. **Let me know** which option (A, B, or C) works for you
-2. **I'll send** the materials to you or your team
-3. **First submissions** due end of January
-4. **Feedback welcome** — this is a pilot, we can adjust
+1. **Indicate** which option (A, B, or C) works for you
+2. **Start** logging after-hours calls (if Option A or C)
+3. **Share** the QUICK_START guide with your team (if Option B or C)
+4. **Provide feedback** as we refine the approach
 
 ---
 
-*Thank you for considering this initiative. Your support helps demonstrate the value our team provides.*
+*V2.0 — Less tracking, more changing.*

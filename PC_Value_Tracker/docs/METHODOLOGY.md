@@ -121,8 +121,10 @@ Issues are categorized by root cause to identify patterns:
 
 **How to Generate**:
 ```bash
-python scripts/generate_monthly_report.py --input data/master_combined.json --month 2026-01 --output output/monthly_report_2026-01.xlsx
+python scripts/report/generate_monthly_report.py --month 2026-01 --verbose
 ```
+
+**Data Source**: Reads from `data/master.json` (permanent database).
 
 **Output Structure** (4 sheets):
 1. **Summary**: Quick stats (total issues, by system, by area, by complexity, by department)
@@ -159,8 +161,10 @@ python scripts/generate_monthly_report.py --input data/master_combined.json --mo
 
 **How to Generate**:
 ```bash
-python scripts/generate_quarterly_insights.py --input data/master_combined.json --quarter 2026-Q1 --output output/quarterly_insights_2026-Q1.xlsx
+python scripts/report/generate_quarterly_report.py --quarter 2026-Q1 --verbose
 ```
+
+**Data Source**: Reads from `data/master.json` (permanent database).
 
 **Output Structure** (5 sheets):
 1. **Executive Summary**: Key findings for leadership presentation

@@ -60,12 +60,12 @@
     "mechanical_electrical": {
       "description": "Issues that are NOT Process Controls responsibility",
       "keywords": ["mechanical", "electrical", "wiring", "power supply", "fuse", "breaker", "motor", "valve stuck", "instrument air", "pneumatic", "physical damage"],
-      "notes": "NEEDS REFINEMENT - Tony to add more keywords"
+      "notes": "Refine based on analysis results"
     },
     "pc_legitimate": {
       "description": "Issues that ARE legitimately Process Controls problems",
       "keywords": ["configuration", "logic error", "programming", "tuning", "calibration", "alarm config", "graphics", "HMI", "display", "control loop", "PID", "interlock logic", "code"],
-      "notes": "NEEDS REFINEMENT - Tony to add more keywords"
+      "notes": "Refine based on analysis results"
     },
     "network_infrastructure": {
       "description": "Network or OT infrastructure issues",
@@ -91,17 +91,17 @@
   "system_platforms": {
     "dcs": ["Experion", "EPKS", "TDC", "DCS", "C300", "HPM", "APM"],
     "plc": ["PLC", "ControlLogix", "CompactLogix", "PLC-5", "SLC", "Allen-Bradley", "Rockwell"],
-    "sis": ["SIS", "Triconex", "Tricon", "Safety Manager", "HIMA", "safety system", "interlock"],
+    "sis": ["SIS", "Triconex", "Tricon", "Safety Manager", "HIMA", "safety system", "interlock", "Integrity"],
     "hmi": ["HMI", "graphics", "console", "display", "screen", "operator station", "OWS"],
     "alarm": ["alarm", "DynAMo", "ACM", "annunciator", "alert"],
+    "historian": ["PHD", "PI", "historian", "OSIsoft", "Uniformance", "trend", "archive"],
     "apc": ["APC", "DMC", "Imubit", "advanced control", "multivariable", "optimizer"],
     "network": ["network", "switch", "OPC", "firewall", "SCADA"]
   },
   
   "_metadata": {
-    "version": "1.0",
+    "version": "1.1",
     "created": "2026-01-24",
-    "author": "Tony Chiu / Claude",
-    "notes": "Initial keyword set - refine based on analysis results"
+    "notes": "Keyword set for auto-categorization - refine based on analysis results"
   }
 }
