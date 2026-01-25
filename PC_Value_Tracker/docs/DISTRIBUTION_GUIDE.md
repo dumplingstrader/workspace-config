@@ -75,12 +75,21 @@ PC_Value_Tracker/
 | `.git\` | No remote repo - not needed |
 | `__pycache__\` | Python cache - regenerated |
 | `*.pyc` | Compiled Python - regenerated |
-| `data\master.json` | User's personal data |
-| `data\raw\*.xlsx` | User's Copilot exports |
-| `output\monthly\*.xlsx` | Generated reports |
-| `output\quarterly\*.xlsx` | Generated reports |
-| `output\scorecards\*.xlsx` | Generated scorecards |
 | `.claude\` | Claude Code settings - user-specific |
+
+### Pilot Data INCLUDED (Examples for Recipients)
+
+The distribution **includes pilot data** to serve as real-world examples:
+
+| Item | Purpose |
+|------|---------|
+| `data\master.json` | 63 pilot records showing actual tracked issues |
+| `data\raw\*.xlsx` | Example Copilot exports |
+| `data\archive\` | Archived raw files demonstrating file management |
+| `output\monthly\*.xlsx` | Example monthly reports |
+| `output\quarterly\*.xlsx` | Example quarterly reports |
+
+Recipients can review the pilot data to understand the system, then start their own tracking by adding new exports to `data\raw\`.
 
 ---
 
@@ -154,9 +163,13 @@ Write-Host "  - README.md (user guide)"
 Write-Host "  - scripts\ (collect, report, util)"
 Write-Host "  - config\ (streams.json)"
 Write-Host "  - docs\ (all documentation)"
-Write-Host "  - Empty folders: data\raw\, output\, templates\"
+Write-Host "  - data\master.json (pilot data - 63 records)"
+Write-Host "  - data\raw\ (pilot raw files)"
+Write-Host "  - data\archive\ (archived files)"
+Write-Host "  - output\ (example reports)"
 Write-Host ""
-Write-Host "Upload to shared network location for distribution." -ForegroundColor Cyan
+Write-Host "Included pilot data as examples for recipients." -ForegroundColor Cyan
+Write-Host "Upload to shared network location for distribution." -ForegroundColor Magenta
 ```
 
 ---
@@ -174,14 +187,7 @@ Remove-Item -Recurse -Force .claude -ErrorAction SilentlyContinue
 Remove-Item -Recurse -Force __pycache__ -ErrorAction SilentlyContinue
 Get-ChildItem -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
 
-# Remove user data files
-Remove-Item data\master.json -ErrorAction SilentlyContinue
-Remove-Item data\raw\*.xlsx -ErrorAction SilentlyContinue
-
-# Remove generated outputs
-Remove-Item output\monthly\*.xlsx -ErrorAction SilentlyContinue
-Remove-Item output\quarterly\*.xlsx -ErrorAction SilentlyContinue
-Remove-Item output\scorecards\*.xlsx -ErrorAction SilentlyContinue
+# Note: Pilot data (master.json, raw files, outputs) stays in the zip as examples
 ```
 
 ### Step 2: Create zip
