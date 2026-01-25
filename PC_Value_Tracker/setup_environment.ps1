@@ -1,6 +1,11 @@
 # PC Value Tracker - Automated Environment Setup Script
 # Run this on new machine to set up Python environment
-# Usage: .\setup_environment.ps1
+# Usage: .\setup_environment.ps1 or run from any directory
+
+# Get script directory and change to it
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location $ScriptDir
+Write-Host "Working directory: $ScriptDir" -ForegroundColor Gray
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan

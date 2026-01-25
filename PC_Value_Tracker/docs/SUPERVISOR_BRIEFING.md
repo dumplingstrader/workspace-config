@@ -1,15 +1,15 @@
-# Process Controls Value Tracking V2.0 — Supervisor Briefing
+# Process Controls Value Tracking V2.1 — Supervisor Briefing
 
 **Purpose:** Brief supervisors on the redesigned value tracking initiative.
 
 **Date:** January 2026
-**Version:** 2.0
+**Version:** 2.1
 
 ---
 
 ## What Changed from V1.0
 
-| V1.0 | V2.0 |
+| V1.0 | V2.1 |
 |------|------|
 | "Prove we're busy" | "Demand specific changes" |
 | 12+ fields per issue | 6 core fields |
@@ -19,49 +19,50 @@
 
 ---
 
-## The Five Streams
+## The Six Streams
 
-Instead of tracking everything in one pile, V2.0 organizes work into **five streams**, each targeting a specific audience with a specific ask.
+Instead of tracking everything in one pile, V2.1 organizes work into **six streams**, each targeting a specific audience with a specific ask.
 
 | Stream | What We Track | Who Sees It | What We Ask For |
 |--------|---------------|-------------|-----------------|
 | **Project** | AMP/capital project handoff failures | Projects team | PC acceptance gate before phase close |
 | **Day-to-Day** | Routine support and troubleshooting | Leadership | Resource planning data |
-| **Legacy** | Obsolete equipment issues | Capital Planning | Fund the obsolescence backlog |
+| **Legacy Modernization** | Obsolete equipment issues | Capital Planning | Fund the obsolescence backlog |
 | **Diagnostic** | Time diagnosing non-PC issues | Ops, Maintenance | Restore first-line troubleshooting |
 | **After-Hours** | Off-hours calls and emergencies | HR, Leadership | Fair on-call compensation |
+| **Applications** | DynAMo, Integrity, Historian support | Ops, IT/OT | Recognize application expertise |
 
 ---
 
 ## Why This Matters to Supervisors
 
-### 1. After-Hours Visibility (Stream 5)
+### 1. After-Hours Visibility
 
 **The problem:** After-hours calls go through supervisors but aren't tracked. Leadership doesn't see the off-hours burden.
 
-**V2.0 solution:** Supervisors log after-hours calls. This creates visibility for:
+**V2.1 solution:** Supervisors log after-hours calls. This creates visibility for:
 - Staffing discussions
 - On-call compensation
 - Coverage planning
 
 **Time commitment:** 2-5 minutes per call-out
 
-### 2. Project Accountability (Stream 1)
+### 2. Project Accountability
 
 **The problem:** Projects hands over broken systems and declares victory. Your team inherits the cleanup.
 
-**V2.0 solution:** Track post-handoff issues by project/phase. Create a scorecard that shows:
+**V2.1 solution:** Track post-handoff issues by project/phase. Create a scorecard that shows:
 - How many issues each phase created
 - How many PC hours to remediate
 - What percentage was preventable
 
 **The ask:** PC sign-off required before project phases close.
 
-### 3. Legacy Equipment Risk (Stream 3)
+### 3. Legacy Equipment Risk
 
 **The problem:** AMP deferred PLC upgrades. We're running 35-year-old equipment. When it fails, it's a crisis.
 
-**V2.0 solution:** Maintain a Technical Debt Register showing:
+**V2.1 solution:** Maintain a Technical Debt Register showing:
 - Equipment age and failure history
 - Risk scores
 - Replacement cost estimates
@@ -74,13 +75,22 @@ Instead of tracking everything in one pile, V2.0 organizes work into **five stre
 
 ### Option A: After-Hours Tracking (Minimal Effort)
 
-Log call-outs as they occur:
-- Date/time
-- Who was called
-- Issue summary
-- Duration
+**Two ways to capture after-hours work:**
 
-This takes 2-5 minutes per call and provides critical visibility.
+**1. Copilot Query (Weekly - 5 minutes)**
+Use the After-Hours Copilot Prompt in `docs/COPILOT_PROMPT_AFTER_HOURS.md`:
+- Run weekly to catch emails sent outside normal hours
+- Captures: Date, Time, Engineer, Issue, System, Duration, Resolution
+- Save results to `data/raw/AfterHours_[Date]_[Name].xlsx`
+
+**2. Quick Manual Log (Per Call-Out - 2 minutes)**
+For phone calls not captured in email:
+
+| Date | Time | Engineer | Issue Summary | System | Duration | Resolution | Remote/Onsite |
+|------|------|----------|---------------|--------|----------|------------|---------------|
+| 2026-01-20 | 11:30 PM | J. Smith | Compressor trip | DCS | 45 min | Fixed | Remote |
+
+Save to same file as Copilot results.
 
 ### Option B: Encourage Team Participation
 
@@ -98,17 +108,17 @@ Share the QUICK_START guide with your engineers. Ask them to:
 
 ## What This Is NOT
 
-- ❌ Individual performance evaluation
-- ❌ Micromanagement
-- ❌ Additional burden on overwhelmed team
-- ❌ Another initiative that goes nowhere
+- NOT individual performance evaluation
+- NOT micromanagement
+- NOT additional burden on overwhelmed team
+- NOT another initiative that goes nowhere
 
 ## What This IS
 
-- ✅ Data to demand specific changes
-- ✅ Visibility into invisible work
-- ✅ Evidence for resource discussions
-- ✅ Accountability for project quality
+- Data to demand specific changes
+- Visibility into invisible work
+- Evidence for resource discussions
+- Accountability for project quality
 
 ---
 
@@ -158,4 +168,4 @@ If you're willing to support this:
 
 ---
 
-*V2.0 — Less tracking, more changing.*
+*V2.1 — Less tracking, more changing.*

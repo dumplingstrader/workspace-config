@@ -149,7 +149,7 @@ def create_stream_sheet(records):
     
     for stream in sorted(by_stream.keys()):
         stream_records = by_stream[stream]
-        rows.append([f'=== {stream.upper()} ===', '', '', '', '', ''])
+        rows.append([f' === {stream.upper()} ===', '', '', '', '', ''])  # Space prefix prevents Excel formula error
         rows.append(['Date', 'System', 'Summary', 'Complexity', 'Resolution', 'Impact'])
         
         for r in sorted(stream_records, key=lambda x: x['date'] or ''):
@@ -195,7 +195,7 @@ def create_system_sheet(records):
     
     for cat in sorted(by_system.keys()):
         cat_records = by_system[cat]
-        rows.append([f'=== {cat.upper()} ===', '', '', '', ''])
+        rows.append([f' === {cat.upper()} ===', '', '', '', ''])  # Space prefix prevents Excel formula error
         rows.append(['Date', 'System', 'Summary', 'Stream', 'Complexity'])
         
         for r in sorted(cat_records, key=lambda x: x['date'] or ''):

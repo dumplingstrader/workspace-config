@@ -45,13 +45,18 @@ def read_v2_format(file_path):
     
     records = []
     for _, row in df.iterrows():
+        # Handle resolution: default blank to "Unknown" for easier spotting
+        resolution = str(row.get('Resolution', '')).strip() if pd.notna(row.get('Resolution')) else ''
+        if not resolution:
+            resolution = 'Unknown'
+        
         record = {
             'date': normalize_date(row.get('Date')),
             'system': str(row.get('System', '')).strip() if pd.notna(row.get('System')) else '',
             'summary': str(row.get('Summary', '')).strip() if pd.notna(row.get('Summary')) else '',
             'stream': str(row.get('Stream', '')).strip() if pd.notna(row.get('Stream')) else '',
             'complexity': str(row.get('Complexity', '')).strip() if pd.notna(row.get('Complexity')) else '',
-            'resolution': str(row.get('Resolution', '')).strip() if pd.notna(row.get('Resolution')) else '',
+            'resolution': resolution,
             'business_impact': str(row.get('Business Impact', '')).strip() if pd.notna(row.get('Business Impact')) else '',
             'source_file': file_path.name
         }
@@ -91,7 +96,7 @@ def read_historical_format(file_path):
             'summary': summary,
             'stream': stream,
             'complexity': str(row.get('Complexity', '')).strip() if pd.notna(row.get('Complexity')) else '',
-            'resolution': '',  # Not in historical format
+            'resolution': 'Unknown',  # Historical format doesn't have resolution - mark as Unknown
             'business_impact': str(row.get('Business Impact', '')).strip() if pd.notna(row.get('Business Impact')) else '',
             'source_file': file_path.name,
             'reference': str(row.get('Reference', '')).strip() if pd.notna(row.get('Reference')) else ''

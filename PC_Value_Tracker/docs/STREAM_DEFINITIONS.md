@@ -1,6 +1,6 @@
-# PC Value Tracker V2.0 — Stream Definitions
+# PC Value Tracker V2.1 — Stream Definitions
 
-Detailed guide to the five tracking streams.
+Detailed guide to the six tracking streams.
 
 ---
 
@@ -11,6 +11,17 @@ Each stream is designed with:
 - **Target audience** — Who needs to see it
 - **Key metric** — What we measure
 - **The ask** — What change we're demanding
+
+## Stream Summary
+
+| Stream | Focus | The Ask |
+|--------|-------|---------|
+| Project | Capital project handoff failures | Require PC acceptance gate |
+| Day-to-Day | Routine support work | Resource planning |
+| Legacy Modernization | Obsolete equipment issues | Fund obsolescence |
+| Diagnostic | Work diagnosing non-PC issues | Restore Maintenance capability |
+| After-Hours | Off-hours calls and emergencies | Fair on-call compensation |
+| Applications | Specialized application support (DynAMo, Integrity, Historian) | Recognize application expertise |
 
 ---
 
@@ -292,6 +303,58 @@ calls this quarter, working 34 hours outside normal schedule.
 
 ---
 
+## Stream 6: Applications
+
+### Purpose
+Track specialized application support work that requires deep expertise in specific platforms.
+
+### What Belongs Here
+- **Alarm Management**: DynAMo, ACM, APO, ASM configuration and support
+- **Asset Integrity**: PAS Integrity, CyberIntegrity, change control systems
+- **Historian**: PHD, PI, PI Vision, data trending and quality
+- Alarm rationalization activities (ISA-18.2)
+- Suppression review and cleanup
+- Configuration backups and verification
+- Asset inventory and hierarchy maintenance
+
+### Examples
+- "Reviewed suppression exposure for Unit 4 console"
+- "Ran secondary parameter update in ACM"
+- "Verified transfer job execution to Integrity server"
+- "Updated asset hierarchy for SIS systems"
+- "Troubleshot PHD collection issues"
+- "Configured PI Vision display for Operations"
+
+### Key Metrics
+- Application-specific issues handled
+- System uptime/availability
+- Compliance status (alarm rationalization %)
+- Backup coverage percentage
+
+### The Dashboard
+```
+APPLICATIONS — Q1 2026
+
+Issues by Application:
+  DynAMo/ACM: 18
+  Integrity: 12
+  Historian: 8
+
+Alarm Rationalization: 72% complete
+Backup Coverage: 90%
+Hours Invested: 86
+```
+
+### Audience
+- Operations leadership
+- Reliability Engineering
+- IT/OT coordination
+
+### The Ask
+**"These specialized applications require dedicated expertise. Here's the workload. Recognize application support as a distinct skill set."**
+
+---
+
 ## Stream Decision Tree
 
 ```
@@ -299,8 +362,12 @@ Is this related to a capital project, AMP, or MOC?
 ├─ YES → PROJECT stream
 └─ NO ↓
 
+Is this specialized application work (DynAMo, Integrity, Historian)?
+├─ YES → APPLICATIONS stream
+└─ NO ↓
+
 Is this obsolete equipment (PLC-5, SLC, TDC, 20+ years)?
-├─ YES → LEGACY stream
+├─ YES → LEGACY MODERNIZATION stream
 └─ NO ↓
 
 Did I hand this off to another group (Electrical, Mechanical, etc.)?
@@ -324,7 +391,9 @@ Sometimes an issue could fit multiple streams. Pick the PRIMARY driver:
 | Weekend call for routine support | AFTER-HOURS (timing is notable) |
 | Project issue I handed off | PROJECT (project is the source) |
 | Legacy equipment call at night | AFTER-HOURS (burden is the story) |
+| DynAMo work during project | APPLICATIONS (application is primary) |
+| Integrity backup after hours | APPLICATIONS (application is primary) |
 
 ---
 
-*V2.0 — Every stream has an ask. Every ask drives change.*
+*V2.1 — Six streams, six asks. Every stream drives change.*

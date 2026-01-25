@@ -222,7 +222,7 @@ def create_stream_scorecard(records):
     # Now add detailed breakdown for each stream
     for stream in sorted(by_stream.keys()):
         stream_records = by_stream[stream]
-        rows.append([f'=== {stream.upper()} ({len(stream_records)} issues) ===', '', '', '', ''])
+        rows.append([f' === {stream.upper()} ({len(stream_records)} issues) ===', '', '', '', ''])  # Space prefix prevents Excel formula error
         rows.append(['Date', 'System', 'Summary', 'Complexity', 'Impact'])
         
         for r in sorted(stream_records, key=lambda x: x['date'] or ''):

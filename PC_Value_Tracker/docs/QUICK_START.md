@@ -1,4 +1,4 @@
-# PC Value Tracker V2.0 — Quick Start
+# PC Value Tracker V2.1 — Quick Start
 
 Get up and running in 5 minutes.
 
@@ -6,15 +6,16 @@ Get up and running in 5 minutes.
 
 ## What This Is
 
-A tracking system that organizes Process Controls work into **five streams**, each with a specific audience and action.
+A tracking system that organizes Process Controls work into **six streams**, each with a specific audience and action.
 
 | Stream | What It Tracks | The Ask |
 |--------|----------------|---------|
 | **Project** | Capital project handoff failures | Require PC acceptance gate |
-| **Day-to-Day** | Routine support work | Resource planning |
-| **Legacy** | Obsolete equipment issues | Fund obsolescence |
+| **Day-to-Day** | Routine support, unit support, troubleshooting | Resource planning |
+| **Legacy Modernization** | Obsolete equipment issues | Fund obsolescence |
 | **Diagnostic** | Work diagnosing non-PC issues | Restore Maintenance capability |
 | **After-Hours** | Off-hours calls and emergencies | Fair on-call compensation |
+| **Applications** | DynAMo, Integrity, Historian support | Recognize application expertise |
 
 ---
 
@@ -98,13 +99,28 @@ Open reports in `output/monthly/` or `output/quarterly/`
 
 **Project:** AMP, cutover, commissioning, contractor, MOC
 
-**Day-to-Day:** Support request, troubleshooting, configuration
+**Day-to-Day:** Support request, troubleshooting, configuration, unit support
 
-**Legacy:** PLC-5, SLC-500, TDC, obsolete, end-of-life
+**Legacy Modernization:** PLC-5, SLC-500, TDC, obsolete, end-of-life
 
 **Diagnostic:** "Not ours", handed off to Electrical/Mechanical
 
 **After-Hours:** Weekend, evening, emergency, call-out
+
+**Applications:** DynAMo, ACM, Integrity, PHD, PI, alarm rationalization
+
+---
+
+## Resolution Tracking
+
+The system automatically infers resolution status from summary keywords:
+- **Closed**: "fixed", "resolved", "completed", "confirmed"
+- **Pending**: "pending", "waiting", "investigating"
+- **Escalated**: "escalated", "vendor", "SR opened"
+- **Handed Off**: "handed off", "transferred to"
+- **Workaround**: "workaround", "temporary fix"
+
+If resolution can't be inferred, it shows as **Unknown**.
 
 ---
 
@@ -113,7 +129,9 @@ Open reports in `output/monthly/` or `output/quarterly/`
 - Full methodology: `docs/METHODOLOGY.md`
 - Stream details: `docs/STREAM_DEFINITIONS.md`
 - Copilot tips: `docs/COPILOT_PROMPT.md`
+- **Supervisor after-hours**: `docs/COPILOT_PROMPT_AFTER_HOURS.md`
+- Data management: `docs/DATA_MANAGEMENT.md`
 
 ---
 
-*V2.0 — Track less, change more.*
+*V2.1 — Six streams, resolution tracking, actionable data.*
