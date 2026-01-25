@@ -26,6 +26,7 @@ New-Item -ItemType Directory -Path "$tempFolder\templates" | Out-Null
 
 # Copy root files
 Copy-Item "setup_environment.ps1" $tempFolder
+Copy-Item "create_distribution.ps1" $tempFolder
 Copy-Item "README.md" $tempFolder
 Copy-Item "requirements.txt" $tempFolder
 
@@ -81,6 +82,7 @@ Write-Host "Distribution package created: $zipName" -ForegroundColor Green
 Write-Host ""
 Write-Host "Contents:" -ForegroundColor Yellow
 Write-Host "  - setup_environment.ps1 (run first)"
+Write-Host "  - create_distribution.ps1 (create future distributions)"
 Write-Host "  - README.md (user guide)"
 Write-Host "  - scripts\collect\ (aggregate_raw_data.py)"
 Write-Host "  - scripts\report\ (generate_monthly_report.py, generate_quarterly_report.py)"
