@@ -44,11 +44,17 @@ When you have new Excel exports from Copilot:
 ```
 
 **What happens with --archive:**
-1. Loads existing 63 records from master.json
+1. Loads existing records from master.json
 2. Reads new data from Excel files in data/raw/
-3. Adds only NEW records (deduplicates)
-4. Saves updated master.json with all records
-5. **Moves processed files to data/archive/YYYY-MM/**
+3. **V3.0: Auto-classifies Resolution, Business Impact, and Stream** (see `config/classification_rules.json`)
+4. Adds only NEW records (deduplicates)
+5. Saves updated master.json with all records
+6. **Moves processed files to data/archive/YYYY-MM/**
+
+**V3.0 Auto-Classification:** The aggregation script automatically corrects blank/Unknown values:
+- Resolution defaults to "Informational" (most SME work is advisory)
+- Alarm admin work (ACM, DynAMo, suppression) → Compliance (not Safety)
+- Use `--no-classify` flag to disable auto-classification
 
 ### 2. Archive Raw Files (Optional)
 
@@ -248,4 +254,4 @@ This happens when:
 
 ---
 
-*Last Updated: January 2026*
+*Last Updated: January 2026 (V3.0 — Auto-Classification)*

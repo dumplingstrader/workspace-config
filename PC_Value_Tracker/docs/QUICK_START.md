@@ -1,4 +1,4 @@
-# PC Value Tracker V2.0 — Quick Start
+# PC Value Tracker V3.0 — Quick Start
 
 Get up and running in 5 minutes.
 
@@ -6,15 +6,16 @@ Get up and running in 5 minutes.
 
 ## What This Is
 
-A tracking system that organizes Process Controls work into **five streams**, each with a specific audience and action.
+A tracking system that organizes Process Controls work into **six streams**, each with a specific audience and action.
 
 | Stream | What It Tracks | The Ask |
 |--------|----------------|---------|
 | **Project** | Capital project handoff failures | Require PC acceptance gate |
-| **Day-to-Day** | Routine support work | Resource planning |
-| **Legacy** | Obsolete equipment issues | Fund obsolescence |
+| **Day-to-Day** | Routine support, unit support, troubleshooting | Resource planning |
+| **Legacy Modernization** | Obsolete equipment issues | Fund obsolescence |
 | **Diagnostic** | Work diagnosing non-PC issues | Restore Maintenance capability |
 | **After-Hours** | Off-hours calls and emergencies | Fair on-call compensation |
+| **Applications** | DynAMo, Integrity, Historian support | Recognize application expertise |
 
 ---
 
@@ -98,13 +99,35 @@ Open reports in `output/monthly/` or `output/quarterly/`
 
 **Project:** AMP, cutover, commissioning, contractor, MOC
 
-**Day-to-Day:** Support request, troubleshooting, configuration
+**Day-to-Day:** Support request, troubleshooting, configuration, unit support
 
-**Legacy:** PLC-5, SLC-500, TDC, obsolete, end-of-life
+**Legacy Modernization:** PLC-5, SLC-500, TDC, obsolete, end-of-life
 
 **Diagnostic:** "Not ours", handed off to Electrical/Mechanical
 
 **After-Hours:** Weekend, evening, emergency, call-out
+
+**Applications:** DynAMo, ACM, Integrity, PHD, PI, alarm rationalization
+
+---
+
+## Resolution Tracking (V3.0 Auto-Classification)
+
+The system automatically classifies Resolution based on summary keywords:
+
+| Resolution | When Used | Example Keywords |
+|------------|-----------|------------------|
+| **Fixed** | Work completed, action taken | "completed", "executed", "verified", "investigated" |
+| **Informational** | Advisory work, knowledge transfer | "explained", "clarified", "recommended", "pointed to" |
+| **Pending** | Waiting on someone else | "waiting on", "requested files", "P1 troubleshooting" |
+| **Escalated** | Handed to vendor/L3 | "SR submitted", "escalated", "defects documented" |
+| **Workaround** | Temporary fix in place | "workaround", "mitigation", "temporary fix" |
+
+**Default:** Informational (most SME work is advisory)
+
+**Business Impact Note:** Alarm admin work (ACM, DynAMo, suppression) = **Compliance**, not Safety.
+
+See `config/classification_rules.json` for full regex patterns.
 
 ---
 
@@ -113,7 +136,9 @@ Open reports in `output/monthly/` or `output/quarterly/`
 - Full methodology: `docs/METHODOLOGY.md`
 - Stream details: `docs/STREAM_DEFINITIONS.md`
 - Copilot tips: `docs/COPILOT_PROMPT.md`
+- **Supervisor after-hours**: `docs/COPILOT_PROMPT_AFTER_HOURS.md`
+- Data management: `docs/DATA_MANAGEMENT.md`
 
 ---
 
-*V2.0 — Track less, change more.*
+*V3.0 — Six streams, auto-classification, actionable data.*

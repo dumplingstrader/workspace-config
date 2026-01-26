@@ -1,4 +1,4 @@
-# PC Value Tracker V2.1 — Stream Definitions
+# PC Value Tracker V3.0 — Stream Definitions
 
 Detailed guide to the six tracking streams.
 
@@ -396,4 +396,4 @@ Sometimes an issue could fit multiple streams. Pick the PRIMARY driver:
 
 ---
 
-*V2.1 — Six streams, six asks. Every stream drives change.*
+*V3.0 — Six streams, six asks. Every stream drives change.*

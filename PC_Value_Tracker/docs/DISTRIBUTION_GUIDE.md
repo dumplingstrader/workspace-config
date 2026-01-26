@@ -48,7 +48,9 @@ PC_Value_Tracker/
 │   ├── QUICK_START.md
 │   ├── STREAM_DEFINITIONS.md
 │   ├── COPILOT_PROMPT.md
+│   ├── COPILOT_PROMPT_AFTER_HOURS.md  <- For supervisors
 │   ├── SUPERVISOR_BRIEFING.md
+│   ├── DATA_MANAGEMENT.md
 │   └── DISTRIBUTION_GUIDE.md
 |
 ├── data/                       <- Include empty structure

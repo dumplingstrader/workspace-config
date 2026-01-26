@@ -1,9 +1,11 @@
-# PC Value Tracker V2.1 — Unified Copilot Prompt
+# PC Value Tracker V3.0 — Unified Copilot Prompt
 
 **Purpose:** One prompt to extract and categorize all technical support work.
 
-**Version:** 2.1
+**Version:** 3.0
 **Updated:** January 2026
+
+**V3.0 Changes:** Added "Informational" resolution for advisory work, improved classification guidance.
 
 ---
 
@@ -77,27 +79,38 @@ Complexity: Effort level (REQUIRED):
 - Major: Multi-day effort
 
 Resolution: Current status (REQUIRED - pick one):
-- Fixed: Issue resolved
-- Pending: Still in progress
-- Handed Off: Transferred to another group
-- Escalated: Sent to vendor or higher support
+- Fixed: Work completed, action taken, investigation finished
+- Informational: Answered a question or provided guidance (no issue to fix)
+- Pending: Waiting on someone else to respond or act
+- Escalated: Sent to vendor or higher support (SR submitted)
 - Workaround: Temporary fix in place
+- Handed Off: Transferred to another internal group
 
 Business Impact: Why this matters (REQUIRED - pick one):
-- Safety: Involved safety systems, hazards, or potential incidents
+- Safety: Involved actual safety systems (SIS, Triconex, ESD) or hazards
 - Production: Affected throughput, yield, or unit operation
-- Compliance: Affected regulatory requirements or audit items
-- Efficiency: Affected optimization or performance
+- Compliance: Alarm management, rationalization, regulatory, audit items
+- Efficiency: Optimization, diagnostics, backups, architecture work
 - Low: Minimal operational impact
+
+NOTE: Alarm admin work (ACM, DynAMo, suppression, Tag Sync) = Compliance, NOT Safety
 
 INSTRUCTIONS:
 - ALL 7 COLUMNS ARE REQUIRED - do not leave any field blank
 - Focus on emails where I provided technical assistance or coordination
 - Skip routine administrative emails, meeting invites, FYI messages
 - If an issue fits multiple streams, pick the PRIMARY driver
-- If Resolution is unclear, use "Pending"
-- If Business Impact is unclear, infer from keywords (urgent, critical, safety, down)
 - Format as a table I can copy to Excel
+
+RESOLUTION GUIDANCE (important!):
+- If I EXPLAINED, CLARIFIED, or PROVIDED GUIDANCE → Informational
+- If I COMPLETED, INVESTIGATED, or DIAGNOSED something → Fixed
+- If I am WAITING ON SOMEONE else to respond → Pending
+- If unclear, default to Informational (advisory work is valuable)
+
+BUSINESS IMPACT GUIDANCE:
+- Alarm management work (ACM, DynAMo, suppression) → Compliance
+- Actual safety systems (SIS, Triconex, ESD) → Safety
 ```
 
 ---
@@ -125,8 +138,12 @@ If Copilot returns rows with blank fields, run this immediately:
 ```
 Review the previous table. For any rows with blank or missing fields:
 - Summary: Describe what action was taken based on the email content
-- Resolution: If unclear, mark as "Pending"
-- Business Impact: Infer from urgency words (safety, production, down, critical)
+- Resolution: Use these rules:
+  - If I explained/clarified/advised → "Informational"
+  - If I completed/investigated/fixed → "Fixed"
+  - If waiting on someone → "Pending"
+  - If unclear → "Informational"
+- Business Impact: Alarm admin work = Compliance, SIS/Triconex = Safety
 
 Return the complete table with all fields filled.
 ```
@@ -196,8 +213,12 @@ Example: `Weekly_2026-01-24_TChiu.xlsx`
 - PAS Integrity or CyberIntegrity work
 - PHD or PI historian issues
 - Alarm rationalization activities
+- Tag Sync, INHIBIT/DISABLE, suppression work
 - Configuration backups and change control
+- APO alarm analysis work
 - Specialized application troubleshooting
+
+**Key distinction:** If the PRIMARY focus is the alarm app (ACM, DynAMo, APO, Integrity), use Applications. If you're supporting a DCS issue that happens to involve alarms, use Day-to-Day.
 
 ---
 
@@ -222,16 +243,17 @@ After Copilot returns results, scan for blank cells. Run the "Fix Missing Fields
 
 ---
 
-## Comparison: V1.0 vs V2.1
+## Comparison: V1.0 vs V2.1 vs V3.0
 
-| Aspect | V1.0 | V2.1 |
-|--------|------|------|
-| Prompts | 7 different prompts | 1 unified prompt |
-| Fields | 12+ scattered | 7 required |
-| Business Impact | Follow-up prompt | In main prompt |
-| Resolution | Often missing | Required field |
-| Stream options | 5 | 6 (added Applications) |
-| Batch guidance | None | Max 30 days |
+| Aspect | V1.0 | V2.1 | V3.0 |
+|--------|------|------|------|
+| Prompts | 7 different | 1 unified | 1 unified |
+| Fields | 12+ scattered | 7 required | 7 required |
+| Resolution options | 4 | 5 | 6 (+Informational) |
+| Default Resolution | Pending | Pending | Informational |
+| Alarm admin Impact | Safety | Safety | Compliance |
+| Stream guidance | Basic | Basic | Detailed |
+| Auto-classification | None | None | Python rules |
 
 ---
 
@@ -267,10 +289,18 @@ COMPLEXITY:
   Medium (half day) | High (full day) | Major (multi-day)
 
 RESOLUTION:
-  Fixed | Pending | Handed Off | Escalated | Workaround
+  Fixed | Informational | Pending | Escalated | Workaround | Handed Off
+
+  Explained/Clarified → Informational
+  Completed/Investigated → Fixed
+  Waiting on someone → Pending
+  Default → Informational
 
 BUSINESS IMPACT:
   Safety | Production | Compliance | Efficiency | Low
+
+  Alarm admin (ACM/DynAMo/suppression) → Compliance
+  Actual safety systems (SIS/Triconex) → Safety
 ```
 
 ---
@@ -299,4 +329,4 @@ This separate file is designed to be shared directly with supervisors for tracki
 
 ---
 
-*V2.1 — All fields required, batch size guidance, 6 streams, supervisor after-hours prompt.*
+*V3.0 — Added Informational resolution, improved classification guidance, alarm admin = Compliance.*

@@ -1,20 +1,21 @@
-# Process Controls Value Tracking V2.1 — Supervisor Briefing
+# Process Controls Value Tracking V3.0 — Supervisor Briefing
 
 **Purpose:** Brief supervisors on the redesigned value tracking initiative.
 
 **Date:** January 2026
-**Version:** 2.1
+**Version:** 3.0
 
 ---
 
 ## What Changed from V1.0
 
-| V1.0 | V2.1 |
+| V1.0 | V3.0 |
 |------|------|
 | "Prove we're busy" | "Demand specific changes" |
-| 12+ fields per issue | 6 core fields |
+| 12+ fields per issue | 7 core fields |
 | 7 different prompts | 1 unified prompt |
 | Generic reports | Stream-specific scorecards |
+| Manual cleanup | Auto-classification |
 | Defensive posture | Offensive posture |
 
 ---
@@ -168,4 +169,4 @@ If you're willing to support this:
 
 ---
 
-*V2.1 — Less tracking, more changing.*
+*V3.0 — Less tracking, more changing. Auto-classification eliminates manual cleanup.*

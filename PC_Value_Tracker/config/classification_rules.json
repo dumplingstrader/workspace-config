@@ -1,0 +1,176 @@
+{
+  "version": "3.3",
+  "enabled": true,
+  "default_resolution": "Informational",
+
+  "_comment": "LOGIC: Pending = ONLY when waiting on someone else. Most SME work is Informational (advisory) or Fixed (completed action).",
+
+  "_changelog": {
+    "3.3": "Jan 2026 - Added reverse patterns for licensing/quote before safety system keywords.",
+    "3.2": "Jan 2026 - Expanded SIS/Safety admin rule to catch licensing, spares, quotes, HIMA, Tri-GP, Integrity ingestion patterns. Added HIMA and Tri-GP to Safety keywords.",
+    "3.1": "Jan 2026 - Added SIS/Safety admin work rule to separate documentation/training from actual safety system work. Refined Production rule to only match actual process disruptions. Added alarm flood KPI analysis to Compliance.",
+    "3.0": "Initial auto-classification with Resolution, Business Impact, and Stream rules."
+  },
+
+  "resolution_rules": [
+    {
+      "_name": "PENDING - Waiting on others or active troubleshooting",
+      "pattern": "(?i)\\b(waiting on|awaiting|requested .*(files|info|data|response)|needs? (response|action|follow-?up)|pending (vendor|response|reply)|for follow-?up|P1 troubleshooting|active troubleshooting)\\b",
+      "resolution": "Pending",
+      "priority": 5,
+      "description": "Explicit waiting indicators or active P1/urgent troubleshooting"
+    },
+    {
+      "_name": "ESCALATED - Handed off to vendor/L3",
+      "pattern": "(?i)\\b(SR (needed|submitted|opened|tracking)|escalated|sent to vendor|raised (with|to) (vendor|L3)|opened ticket|waiting on vendor|defects? (documented|reported)|UTT fix available)\\b",
+      "resolution": "Escalated",
+      "priority": 10,
+      "description": "Escalation to vendor or L3 support"
+    },
+    {
+      "_name": "WORKAROUND - Temporary fix in place",
+      "pattern": "(?i)\\b(workaround|temporary (fix|solution)|mitigation|interim solution|short-?term (fix|solution))\\b",
+      "resolution": "Workaround",
+      "priority": 15,
+      "description": "Temporary fix, permanent solution still needed"
+    },
+    {
+      "_name": "FIXED - Delivered something tangible",
+      "pattern": "(?i)\\b((provided|shared) .*(lists?|files?|data|report|script|procedure))\\b",
+      "resolution": "Fixed",
+      "priority": 18,
+      "description": "Delivered tangible output (lists, files, reports, procedures) - not just advice"
+    },
+    {
+      "_name": "FIXED - Completed action verbs",
+      "pattern": "(?i)\\b(completed|finished|resolved|fixed|migrated|executed|implemented|deployed|installed|enabled|closed|to close|verified|ran .*(update|script|job)|issued .*(lists?|report)|done)\\b",
+      "resolution": "Fixed",
+      "priority": 20,
+      "description": "Past-tense action verbs indicating completed work"
+    },
+    {
+      "_name": "FIXED - Confirmed/recovered",
+      "pattern": "(?i)\\b(confirmed .*(recovered|resolved|fixed|working)|self-?recovered|recovered the following)\\b",
+      "resolution": "Fixed",
+      "priority": 21,
+      "description": "Confirmation that issue resolved itself or was fixed"
+    },
+    {
+      "_name": "FIXED - Completed investigation/diagnosis",
+      "pattern": "(?i)\\b(investigated|diagnosed|checked .*(scan|rate|config|setting|status)|captured .*(actions?|results?|data))\\b",
+      "resolution": "Fixed",
+      "priority": 22,
+      "description": "Completed investigation or diagnosis - found the answer"
+    },
+    {
+      "_name": "INFORMATIONAL - Advisory verbs (BROAD - this is most SME work)",
+      "pattern": "(?i)\\b(explained|clarified|provided (guidance|information|guidance for)|described|answered|advised|recommended|discussed|pointed (to|out)|noted|shared|questioned|raised|proposed|reviewed|supported|cautioned|coordinated|assessed|flagged|analyzed|investigated|diagnosed|checked|captured|warned)\\b",
+      "resolution": "Informational",
+      "priority": 30,
+      "description": "Advisory verbs - knowledge transfer, analysis, recommendations"
+    }
+  ],
+
+  "business_impact_rules": [
+    {
+      "_name": "COMPLIANCE - Alarm compliance activities (narrow)",
+      "pattern": "(?i)\\b(alarm rationalization|suppress(ion|ed)? (report|exposure|audit)|INHIBIT.?DISABLE|UnSuppress|NTE report|CAR.?PAR|Tag Sync|replication|heartbeat|alarm discrepanc|alarm flood.*(KPI|analysis|report))\\b",
+      "business_impact": "Compliance",
+      "priority": 5,
+      "description": "Specific alarm compliance activities - rationalization, suppression audits, flood analysis"
+    },
+    {
+      "_name": "COMPLIANCE - SIS/Safety admin work (not actual safety system work)",
+      "pattern": "(?i)((SIS|Triconex|Trident|Tricon|Safety Manager|HIMA|Tri-?GP).*(asset hierarchy|training|class|access|jump box|procedure|proposal|inventory|spreadsheet|compliance|licens|spare|parts|quote|config.?files|Integrity|reservations?|coordinator))|(asset hierarchy.*(SIS|Triconex|Trident|TRX|TS1131))|(training.*(SIS|Triconex|EDM|fault|8921C))|(compliance.*(Tristation|SIS))|(Integrity.*(SIS|Triconex|HIMA|ingestion|population))|(spare.*(Tricon|Triconex|HIMA|SIS|Safety Manager))|(licens.*(Safety Manager|Triconex|HIMA|SIS|Tricon))|(quote.*(Safety Manager|Triconex|HIMA|SIS|Tricon))",
+      "business_impact": "Compliance",
+      "priority": 8,
+      "description": "Administrative/documentation work ABOUT safety systems - licensing, training, spares, asset management"
+    },
+    {
+      "_name": "SAFETY - Actual safety systems",
+      "pattern": "(?i)\\b(SIS|Triconex|Trident|Tricon|hazard|PSM|LOPA|SIL|Safety Manager|BMS|emergency|ESD|safety.?critical|safety.?system|HIMA|Tri-?GP)\\b",
+      "business_impact": "Safety",
+      "priority": 10,
+      "description": "Actual safety system keywords"
+    },
+    {
+      "_name": "PRODUCTION - Active process impact",
+      "pattern": "(?i)\\b(down|offline|trip(?!\\s*(log|file))|unit down|production loss|throughput|yield|outage|P1|priority.?1)\\b",
+      "business_impact": "Production",
+      "priority": 20,
+      "description": "Production impact and urgent support keywords - actual process disruptions"
+    },
+    {
+      "_name": "COMPLIANCE - Regulatory and system management",
+      "pattern": "(?i)\\b(compliance|audit|regulatory|EPA|OSHA|MOC|CAR|PAR|NTE|documentation|rationalization|Integrity|migration|reservation|config files|incident|server build)\\b",
+      "business_impact": "Compliance",
+      "priority": 30,
+      "description": "Compliance, regulatory, and configuration management"
+    },
+    {
+      "_name": "EFFICIENCY - Optimization and diagnostics",
+      "pattern": "(?i)\\b(optimization|efficiency|performance|tuning|APC|DMC|inferential|loop tuning|diagnostic|backup|remote diagnostic|service option|APO.*(template|strategy|architecture)|ACM.*(DB|database|parameter)|DynAMo.*(activit|action))\\b",
+      "business_impact": "Efficiency",
+      "priority": 40,
+      "description": "Efficiency, optimization, diagnostic, and alarm system architecture"
+    }
+  ],
+
+  "complexity_rules": [
+    {
+      "pattern": "(?i)\\b(multi-day|weeks|major effort|extensive|migration of.*1000|large scale)\\b",
+      "complexity": "Major",
+      "priority": 10,
+      "description": "Multi-day effort indicators"
+    },
+    {
+      "pattern": "(?i)\\b(full day|all day|significant effort|entire day)\\b",
+      "complexity": "High",
+      "priority": 20,
+      "description": "Full day effort indicators"
+    },
+    {
+      "pattern": "(?i)\\b(half day|several hours|most of the morning|most of the afternoon)\\b",
+      "complexity": "Medium",
+      "priority": 30,
+      "description": "Half day effort indicators"
+    },
+    {
+      "pattern": "(?i)\\b(quick|brief|simple|straightforward|few minutes)\\b",
+      "complexity": "Quick",
+      "priority": 90,
+      "description": "Quick effort indicators"
+    }
+  ],
+
+  "stream_rules": [
+    {
+      "_name": "APPLICATIONS - Alarm management tools and concepts",
+      "pattern": "(?i)\\b(APO|ACM|DynAMo|Tag Sync|INHIBIT|DISABLE|UnSuppress|suppress(ion|ed)?|SUPP events?|alarm discrepanc|alarm rationalization|alarm management|Integrity|PHD|PI Vision|alarm.*(help|loss))",
+      "stream": "Applications",
+      "priority": 10,
+      "description": "Specialized alarm/app tools - APO, ACM, DynAMo, Integrity, suppression"
+    },
+    {
+      "_name": "LEGACY MODERNIZATION - Obsolete systems",
+      "pattern": "(?i)\\b(TDC|PLC-?5|SLC-?500|MicroLogix|HPM|Hiway|end.?of.?life|obsolete|legacy)\\b",
+      "stream": "Legacy Modernization",
+      "priority": 20,
+      "description": "Obsolete equipment - TDC, PLC-5, SLC-500"
+    },
+    {
+      "_name": "DIAGNOSTIC - Handed off to others",
+      "pattern": "(?i)\\b(handed off|transferred to (Electrical|Mechanical|I&E)|not (a )?PC issue|outside PC scope)\\b",
+      "stream": "Diagnostic",
+      "priority": 30,
+      "description": "Investigated but handed off to another group"
+    }
+  ],
+
+  "notes": {
+    "key_insight": "Pending = ONLY when waiting on someone else. Default is Informational because most SME work is advisory.",
+    "priority": "Lower number = higher priority. First matching rule wins.",
+    "pattern_syntax": "Python regex with (?i) for case-insensitive matching",
+    "default_resolution": "Applied when no rules match and original value is blank/Unknown"
+  }
+}
