@@ -88,6 +88,43 @@ Create comprehensive industry guidance whitepaper on ACM (Alarm & Event Manager)
 - Timing checkpoints every 6 minutes
 - Visual recommendations (countdown clock, traffic lights, line charts, decision tree)
 - Audience engagement points (3 interactive questions)
+
+#### 5. **ACM_to_APO_Migration_Comprehensive_Checklist.xlsx** (NEW - January 27, 2026)
+- **Status**: Complete and ready for use
+- **Format**: 11-sheet Excel workbook with Barbara's preferred structure
+- **Sheet count**: Executive Summary + 9 phase sheets (Phase 0-9)
+- **Task count**: 250+ comprehensive tasks covering full migration lifecycle
+
+**Structure** (Barbara's chart method):
+- Owner column (Site, Vendor, Custom, IT/OT)
+- Status dropdown (☐ Not Started, ⏳ In Progress, ✓ Complete, ✗ Blocked, ⚠️ On Hold)
+- Notes column for lessons learned
+- Prerequisites column for dependencies
+- Auto-numbering system (1.1, 1.2, 2.1, etc.)
+- Collapsible sections with Excel grouping/outlining
+- Color-coded headers and critical tasks
+
+**Phase Structure**:
+- Phase 0: Pre-Migration Assessment (6-12 months)
+- Phase 1: Database Cleanup (Before License Order)
+- Phase 2: Custom Solutions & Gap Mitigation
+- Phase 3: APO Installation Planning
+- Phase 4: OSW Completion
+- Phase 5: Migration Execution Readiness
+- Phase 6: APO Migration Execution
+- Phase 7: Validation & Parallel Operations
+- Phase 8: Cutover & Decommission
+- Phase 9: Post-Migration Optimization
+
+**Key Features**:
+- Executive Summary with top 5 failure reasons and Critical Success Factors
+- 30-40% ghost tag license savings documented
+- ACM→APO feature gaps enumerated (8 major gaps)
+- Marathon custom solutions list (9 proven tools)
+- Training requirements ("what was lost" focus)
+- Standards compliance checkpoints (ISA 18.2, EEMUA 191)
+
+**Barbara's Feedback**: "I really like Excel format!!!" - Preferred over Word for tracking/checklist purposes
 - Anticipated Q&A with 7 prepared responses
 - Post-presentation follow-up strategy (QR code, email deck, consultation offers)
 
@@ -272,7 +309,19 @@ Total characters including:
    - Convert to high-quality images (PNG/SVG)
    - Add to presentation slides
 
-### Phase 2: Whitepaper Content Writing
+### Phase 2: Comprehensive Checklist Validation
+1. **Review with Barbara** (When she returns)
+   - Share ACM_to_APO_Migration_Comprehensive_Checklist.xlsx for validation
+   - Verify custom solutions match Marathon's actual tools
+   - Confirm timeline estimates (6-12 months Phase 0, etc.)
+   - Get final approval before any public sharing
+
+2. **Optional Excel Hierarchy Documentation** (If Barbara requests)
+   - Create additional spreadsheet showing section hierarchy
+   - Purpose: Visual roadmap of checklist structure
+   - Format: Tree/outline view with phase dependencies
+
+### Phase 3: Whitepaper Content Writing
 1. **Expand outline sections into full prose** (priority order):
    - Section 1: Introduction (2-3 pages)
    - Section 2: Understanding Migration Landscape (4-5 pages)
@@ -365,6 +414,8 @@ C:\Users\GF99\Documentation\Alarm Reporting\APO\
 ├── Executive_Summary_Conference_Submission.txt (1097 chars - for conference)
 ├── Executive_Summary_Conference_Submission_Paragraph_Format.txt (1197 chars - backup)
 ├── Presentation_Outline_Conference.md (20 slides, 35 min)
+├── ACM_to_APO_Migration_Comprehensive_Checklist.xlsx (11 sheets, 250+ tasks)
+├── CHECKLIST_CREATION_SUMMARY.md (checklist documentation)
 └── PROJECT_HANDOFF_SUMMARY.md (this document)
 ```
 
@@ -445,6 +496,13 @@ C:\Users\GF99\Documentation\Alarm Reporting\APO\
 
 10. **Use multi-replace for efficiency**: When making multiple independent edits, use multi_replace_string_in_file tool rather than sequential replace_string_in_file calls.
 
+11. **Excel formatting best practices** (from checklist creation):
+    - **Avoid openpyxl conditional formatting**: Causes XML errors when opening in Excel. Use manual color highlighting instead.
+    - **Use data validation dropdowns**: Reliable for status columns and controlled vocabularies.
+    - **Use Excel grouping/outlining**: `ws.row_dimensions.group()` for collapsible sections works perfectly.
+    - **Test in Excel**: Always verify generated files open without recovery prompts.
+    - **Hierarchical numbering**: Maintain auto-numbering systems (1.1, 1.2, 2.1) for easy add/rearrange.
+
 ### Common User Requests to Anticipate:
 - "Create PowerPoint slides from presentation outline"
 - "Start writing Section [X] of whitepaper"
@@ -454,10 +512,21 @@ C:\Users\GF99\Documentation\Alarm Reporting\APO\
 - "Make conference materials more/less collaborative"
 - "Add case study about [topic]"
 - "Develop Appendix [X]"
+- "Create/modify Excel checklist" (uses create_comprehensive_checklist.py with openpyxl)
 
 ---
 
 ## Version History
+
+**v1.2** - January 27, 2026
+- Added comprehensive checklist spreadsheet (11 sheets, 250+ tasks)
+- Enhanced with Barbara's feedback: auto-numbering, dropdowns, collapsible sections
+- Fixed Excel XML errors by removing conditional formatting
+- Added Excel formatting best practices to AI Agent Instructions
+
+**v1.1** - January 25, 2026
+- Minor documentation updates
+- Conference submission preparation
 
 **v1.0** - January 20, 2026
 - Initial handoff summary created

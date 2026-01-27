@@ -1,0 +1,179 @@
+{
+  "_comment": "License cost estimates from POs. Use placeholder_cost from settings.json for unknowns.",
+  "_format": "unit_cost is cost per 'per' units. E.g., $45 per 50 points.",
+
+  "PROCESSPOINTS": {
+    "unit_cost": 45.00,
+    "per": 50,
+    "category": "Points",
+    "description": "Process I/O points"
+  },
+  "SCADAPOINTS": {
+    "unit_cost": 35.00,
+    "per": 50,
+    "category": "Points",
+    "description": "SCADA/remote points"
+  },
+  "CDA_IO_ANA": {
+    "unit_cost": 100.00,
+    "per": 1,
+    "category": "Points",
+    "description": "CDA Analog I/O",
+    "is_placeholder": true
+  },
+  "CDA_IO_DIG": {
+    "unit_cost": 100.00,
+    "per": 1,
+    "category": "Points",
+    "description": "CDA Digital I/O",
+    "is_placeholder": true
+  },
+
+  "STATIONS": {
+    "unit_cost": 2500.00,
+    "per": 1,
+    "category": "Stations",
+    "description": "Flex stations"
+  },
+  "MULTISTATIONS": {
+    "unit_cost": 1800.00,
+    "per": 1,
+    "category": "Stations",
+    "description": "Multi-window stations"
+  },
+  "DIRECTSTATIONS": {
+    "unit_cost": 1500.00,
+    "per": 1,
+    "category": "Stations",
+    "description": "Direct connect stations"
+  },
+  "DIRECTCLIENTS": {
+    "unit_cost": 1200.00,
+    "per": 1,
+    "category": "Stations",
+    "description": "Direct connect clients"
+  },
+
+  "DUAL": {
+    "unit_cost": 15000.00,
+    "per": 1,
+    "category": "Redundancy",
+    "description": "Server redundancy"
+  },
+  "MULTI_SERVER": {
+    "unit_cost": 10000.00,
+    "per": 1,
+    "category": "Redundancy",
+    "description": "Multi-server support",
+    "is_placeholder": true
+  },
+
+  "DAS": {
+    "unit_cost": 8000.00,
+    "per": 1,
+    "category": "Features",
+    "description": "Data Acquisition Service"
+  },
+  "API": {
+    "unit_cost": 5000.00,
+    "per": 1,
+    "category": "Features",
+    "description": "API access"
+  },
+  "SQL": {
+    "unit_cost": 4000.00,
+    "per": 1,
+    "category": "Features",
+    "description": "SQL access",
+    "is_placeholder": true
+  },
+  "LAS": {
+    "unit_cost": 3000.00,
+    "per": 1,
+    "category": "Features",
+    "description": "License Administration Service",
+    "is_placeholder": true
+  },
+  "DSPBLD": {
+    "unit_cost": 5000.00,
+    "per": 1,
+    "category": "Features",
+    "description": "Display Builder",
+    "is_placeholder": true
+  },
+
+  "CDA": {
+    "unit_cost": 6000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "CDA Interface",
+    "is_placeholder": true
+  },
+  "TPS": {
+    "unit_cost": 12000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "TPS/TDC Integration"
+  },
+  "FSC": {
+    "unit_cost": 8000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "FSC Safety Interface",
+    "is_placeholder": true
+  },
+  "MODICON": {
+    "unit_cost": 3000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "Modbus/Modicon Interface",
+    "is_placeholder": true
+  },
+  "AB": {
+    "unit_cost": 4000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "Allen Bradley Interface",
+    "is_placeholder": true
+  },
+  "AB_ETH": {
+    "unit_cost": 4500.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "Allen Bradley Ethernet",
+    "is_placeholder": true
+  },
+  "DNP3": {
+    "unit_cost": 5000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "DNP3 Protocol",
+    "is_placeholder": true
+  },
+  "OPC_DA": {
+    "unit_cost": 3500.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "OPC DA Server"
+  },
+  "OPC_UA_CLIENT": {
+    "unit_cost": 4000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "OPC UA Client",
+    "is_placeholder": true
+  },
+
+  "VIRTUALIZATION": {
+    "unit_cost": 2000.00,
+    "per": 1,
+    "category": "Virtualization",
+    "description": "Server virtualization CAL"
+  },
+  "VIRTUALIZATION_CLIENT": {
+    "unit_cost": 1500.00,
+    "per": 1,
+    "category": "Virtualization",
+    "description": "Client virtualization CAL"
+  }
+}

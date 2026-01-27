@@ -1,0 +1,9 @@
+﻿option_name,unit_cost,per,category,description
+PROCESSPOINTS,45.00,50,Points,Process I/O points
+SCADAPOINTS,35.00,50,Points,SCADA/remote points
+STATIONS,2500.00,1,Stations,Flex stations
+MULTISTATIONS,1800.00,1,Stations,Multi-window stations
+DUAL,15000.00,1,Redundancy,Server redundancy
+DAS,8000.00,1,Features,Dynamic Alarm Suppress
+API,5000.00,1,Features,Server Automation
+TPS,12000.00,1,Interfaces,TPS/TDC Integration
