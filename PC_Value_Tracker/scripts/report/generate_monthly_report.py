@@ -269,12 +269,16 @@ def generate_report(master_file, month, output_dir, verbose=False):
         summary_sheet.column_dimensions['A'].width = 30
         summary_sheet.column_dimensions['B'].width = 15
         
-        # Bold headers
+        # Bold headers (title, section headers, not data rows)
         from openpyxl.styles import Font, Alignment
-        for row in [1, 5, 8, 8+len(stats['streams'])+3]:
-            if row <= summary_sheet.max_row:
-                cell = summary_sheet.cell(row=row, column=1)
-                cell.font = Font(bold=True, size=12)
+        for row_idx in range(1, summary_sheet.max_row + 1):
+            cell_value = summary_sheet.cell(row=row_idx, column=1).value
+            if cell_value and isinstance(cell_value, str):
+                # Bold only these specific headers
+                if cell_value in ['PC VALUE TRACKER — MONTHLY SUMMARY', 'TOTAL ISSUES', 
+                                  'BY STREAM', 'BY SYSTEM', 'BY COMPLEXITY', 
+                                  'BY BUSINESS IMPACT', 'BY RESOLUTION']:
+                    summary_sheet.cell(row=row_idx, column=1).font = Font(bold=True, size=12)
     
     print(f"\n✅ Report generated!")
     print(f"   Month: {month_name}")

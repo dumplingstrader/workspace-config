@@ -56,7 +56,7 @@ For each issue or request that comes to Process Controls:
 | **Issue Summary** | Brief description | "Graphics loading slowly on console 4" |
 | **Root Cause Category** | Categorized cause | See categories below |
 | **Time Spent** | Hours invested | 2.5 hours |
-| **Resolution** | Outcome | Fixed, Informational, Pending, Escalated, Workaround |
+| **Resolution** | Outcome | Fixed, Handed off, Workaround, Escalated |
 | **Business Impact** | What was at stake | Production, Safety, Compliance, Efficiency |
 
 ### Root Cause Categories
@@ -78,13 +78,11 @@ Issues are categorized by root cause to identify patterns:
 
 | Impact | Description |
 |--------|-------------|
-| **Safety** | Actual safety systems (SIS, Triconex, ESD) or hazards |
 | **Production** | Affects throughput, yield, or unit operation |
-| **Compliance** | Alarm management, rationalization, regulatory, audit items |
+| **Safety** | Involves safety systems, interlocks, or hazard mitigation |
+| **Compliance** | Affects regulatory requirements or permits |
 | **Efficiency** | Affects optimization, energy use, or performance |
-| **Low** | Minimal operational impact |
-
-**V3.0 Note:** Alarm admin work (ACM, DynAMo, suppression, Tag Sync) = **Compliance**, not Safety.
+| **None/Low** | Minimal operational impact |
 
 ---
 
