@@ -1,0 +1,227 @@
+{
+  "slide-1": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-2": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-10": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-11": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-12": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-13": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-14": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  },
+  "slide-15": {
+    "shape-0": {
+      "left": 0.42,
+      "top": 0.25,
+      "width": 9.25,
+      "height": 0.92,
+      "placeholder_type": "TITLE",
+      "default_font_size": 28.0,
+      "paragraphs": [
+        {
+          "text": "Title of Slide"
+        }
+      ]
+    }
+  }
+}

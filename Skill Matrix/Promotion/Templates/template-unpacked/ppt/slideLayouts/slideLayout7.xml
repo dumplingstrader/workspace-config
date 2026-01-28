@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="ascii"?>
+<p:sldLayout xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" showMasterSp="0" preserve="1">
+  <p:cSld name="Section Header">
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="574466" name="Rectangle 2"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noChangeArrowheads="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="ctrTitle"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4953000" y="663575"/>
+            <a:ext cx="3868738" cy="1114425"/>
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr lIns="0" rIns="0" anchor="ctr"/>
+          <a:lstStyle>
+            <a:lvl1pPr algn="r">
+              <a:defRPr sz="3000">
+                <a:solidFill>
+                  <a:schemeClr val="tx2"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl1pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US"/>
+              <a:t>Click to edit Master title style</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="574467" name="Rectangle 3"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noChangeArrowheads="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="subTitle" idx="1"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4953000" y="1979612"/>
+            <a:ext cx="3868738" cy="276999"/>
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" rIns="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle>
+            <a:lvl1pPr marL="0" indent="0" algn="r">
+              <a:spcBef>
+                <a:spcPct val="20000"/>
+              </a:spcBef>
+              <a:buFont typeface="Wingdings" pitchFamily="2" charset="2"/>
+              <a:buNone/>
+              <a:defRPr sz="1800" b="0">
+                <a:solidFill>
+                  <a:schemeClr val="tx2"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl1pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US"/>
+              <a:t>Click to edit Master subtitle style</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3075" name="AutoShape 3"/>
+          <p:cNvSpPr>
+            <a:spLocks noChangeAspect="1" noChangeArrowheads="1" noTextEdit="1"/>
+          </p:cNvSpPr>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="0" y="4762500"/>
+            <a:ext cx="9153525" cy="1155700"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="9525">
+            <a:noFill/>
+            <a:miter lim="800000"/>
+            <a:headEnd/>
+            <a:tailEnd/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" numCol="1" anchor="t" anchorCtr="0" compatLnSpc="1">
+            <a:prstTxWarp prst="textNoShape">
+              <a:avLst/>
+            </a:prstTxWarp>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3077" name="Freeform 5"/>
+          <p:cNvSpPr>
+            <a:spLocks/>
+          </p:cNvSpPr>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="0" y="4778375"/>
+            <a:ext cx="9153525" cy="847725"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst>
+              <a:cxn ang="0">
+                <a:pos x="0" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="1570" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="1570" y="534"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="0" y="534"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="0" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="0" y="0"/>
+              </a:cxn>
+            </a:cxnLst>
+            <a:rect l="0" t="0" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="1570" h="534">
+                <a:moveTo>
+                  <a:pt x="0" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="1570" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="1570" y="534"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="534"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="0"/>
+                </a:lnTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="005DAA"/>
+          </a:solidFill>
+          <a:ln w="9525">
+            <a:noFill/>
+            <a:round/>
+            <a:headEnd/>
+            <a:tailEnd/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" numCol="1" anchor="t" anchorCtr="0" compatLnSpc="1">
+            <a:prstTxWarp prst="textNoShape">
+              <a:avLst/>
+            </a:prstTxWarp>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3086" name="Freeform 14"/>
+          <p:cNvSpPr>
+            <a:spLocks/>
+          </p:cNvSpPr>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="0" y="5729288"/>
+            <a:ext cx="9153525" cy="188913"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst>
+              <a:cxn ang="0">
+                <a:pos x="2" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="5766" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="5766" y="119"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="0" y="119"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="2" y="0"/>
+              </a:cxn>
+              <a:cxn ang="0">
+                <a:pos x="2" y="0"/>
+              </a:cxn>
+            </a:cxnLst>
+            <a:rect l="0" t="0" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="5766" h="119">
+                <a:moveTo>
+                  <a:pt x="2" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="5766" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="5766" y="119"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="119"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="2" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="2" y="0"/>
+                </a:lnTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="ED174F"/>
+          </a:solidFill>
+          <a:ln w="9525">
+            <a:noFill/>
+            <a:round/>
+            <a:headEnd/>
+            <a:tailEnd/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" numCol="1" anchor="t" anchorCtr="0" compatLnSpc="1">
+            <a:prstTxWarp prst="textNoShape">
+              <a:avLst/>
+            </a:prstTxWarp>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="8" name="Picture Placeholder 7"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="pic" sz="quarter" idx="10"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="381000" y="381000"/>
+            <a:ext cx="4191000" cy="4114800"/>
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US"/>
+              <a:t>Click icon to add picture</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="Slide Number Placeholder 15"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldNum" sz="quarter" idx="4"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8668511" y="6615656"/>
+            <a:ext cx="211596" cy="215444"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="none" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle>
+            <a:lvl1pPr algn="r">
+              <a:defRPr sz="1400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl1pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:fld id="{AA2FB921-8A01-44EF-B97D-FE21C6BAD609}" type="slidenum">
+              <a:rPr lang="en-US" smtClean="0"/>
+              <a:pPr/>
+              <a:t>&#8249;#&#8250;</a:t>
+            </a:fld>
+            <a:endParaRPr lang="en-US" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sldLayout>
