@@ -1,0 +1,34 @@
+Category,License Option,Detail Type,ESVT2
+Collate header,Collate date,License,1/27/2026 9:52:21 AM
+Collate header,Server name,License,ESVT2A
+Collate header,IP address 1,License,10.10.30.65
+Collate header,License type,License,Active
+License certificate,System number,License,68851
+License certificate,License version,License,22
+License certificate,MSID/ESID,License,M8564
+License certificate,License description,License,M8564
+License certificate,Customer name,License,Watson Cogeneration Co
+License certificate,Generated date,License,5/15/2024 
+License certificate,Product name,License,EXP_PKS
+License certificate,Product,License,Experion PKS Server
+License certificate,Release,License,520
+General,Engineering permitted,License,Licensed
+General,Off-process capability,License,Unlicensed
+System sizing - Points,Composite Device point(s),License,0
+System sizing - Points,Composite Device point(s),Used,0
+System sizing - Points,Analog IO Point(s),License,200
+System sizing - Points,Analog IO Point(s),Used,150
+System sizing - Points,Digital IO Point(s),License,600
+System sizing - Points,Digital IO Point(s),Used,450
+System sizing - Points,Process point(s),License,3600
+System sizing - Points,Process point(s),Used,3332
+System sizing - Points,SCADA point(s),License,3100
+System sizing - Points,SCADA point(s),Used,2274
+System sizing - Stations,Console station(s),License,6
+System sizing - Stations,Console station(s),Used,4
+System sizing - Stations,Multi window flex station(s),License,2
+System sizing - Stations,Multi window flex station(s),Used,1
+System sizing - Stations,Flex station(s),License,6
+System sizing - Stations,Flex station(s),Used,2
+System sizing - Other,Distributed server(s),License,60
+System sizing - Other,Distributed server(s),Used,9

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<licensefile>
+	<authority publisher="Honeywell International Sarl" sigkey="hwl:2" signature="test123" />
+	<license format="1">
+		<details>
+			<detail name="number" desc="System number" value="60806" />
+			<detail name="version" desc="License version" value="40" />
+			<detail name="msid" desc="MSID/ESID" value="M0614" />
+			<detail name="name" desc="License description" value="M0614" />
+			<detail name="customer" desc="Customer name" value="Marathon Petroleum Corp" />
+			<detail name="generated" desc="Generated date" value="2025-01-15" />
+			<detail name="product" desc="Product name" value="EXP_PKS" />
+			<detail name="proddesc" desc="Product" value="Experion PKS Server" />
+			<detail name="release" desc="Release" value="520" />
+		</details>
+		<options>
+			<option name="PROCESSPOINTS" value="4750" />
+			<option name="SCADAPOINTS" value="1500" />
+			<option name="DIRECTSTATIONS" value="6" />
+			<option name="STATIONS" value="3" />
+			<option name="CDA_IO_ANA" value="200" />
+			<option name="CDA_IO_DIG" value="600" />
+			<option name="API" value="1" />
+			<option name="OPC_DA" value="1" />
+		</options>
+	</license>
+</licensefile>

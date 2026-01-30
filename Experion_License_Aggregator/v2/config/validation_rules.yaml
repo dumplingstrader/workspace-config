@@ -1,0 +1,241 @@
+# Validation Rules Configuration
+
+# Purpose: Business rules for data quality validation
+# Applied during pipeline validation stage
+
+---
+
+# Schema Validation Rules
+# Check required fields and data types
+schema:
+  license_data:
+    required_fields:
+      - msid
+      - system_number
+      - cluster
+      - release
+      - product
+    
+    field_types:
+      msid: string
+      system_number: string  # Numeric string
+      cluster: string
+      release: string
+      product: string
+      file_version: int
+      license_date: datetime
+    
+    constraints:
+      msid:
+        not_empty: true
+        not_equals: "Unknown"
+        regex: "^M[0-9]+"  # Must start with M followed by digits
+      
+      system_number:
+        min_length: 5
+        max_length: 6
+        numeric: true
+      
+      cluster:
+        allowed_values: ["Carson", "Wilmington", "Salt Lake City"]
+      
+      product:
+        allowed_values: ["PKS", "HS", "EAS"]
+      
+      file_version:
+        min_value: 0
+        max_value: 100
+
+  usage_data:
+    required_fields:
+      - msid
+      - system_number
+      - cluster
+    
+    constraints:
+      # Usage values must be non-negative integers
+      usage_values:
+        min_value: 0
+        type: int
+
+---
+
+# Business Validation Rules
+# Domain-specific validation logic
+business:
+  
+  # Customer Name Validation
+  customer_name:
+    severity: warning
+    rule: must_contain_pattern
+    patterns:
+      - "Marathon"
+      - "MPC"
+      - "Marathon Petroleum"
+    message: "Customer name should contain 'Marathon' or 'MPC'"
+  
+  # License Age Validation
+  license_age:
+    severity: warning
+    rule: max_age_days
+    threshold: 730  # 2 years
+    message: "License is older than 2 years - may be stale"
+  
+  # Release Version Validation
+  release_version:
+    severity: info
+    rule: known_releases
+    valid_releases:
+      - "R410"
+      - "R431"
+      - "R500"
+      - "R510"
+      - "R520"
+      - "R51X"
+      - "R52X"
+    message: "Release version not in known list"
+  
+  # Licensed Quantity Sanity Checks
+  licensed_quantities:
+    PROCESSPOINTS:
+      severity: warning
+      min: 50
+      max: 50000
+      message: "Process points outside typical range (50-50,000)"
+    
+    SCADAPOINTS:
+      severity: warning
+      min: 0
+      max: 100000
+      message: "SCADA points outside typical range (0-100,000)"
+    
+    DIRECTSTATIONS:
+      severity: warning
+      min: 1
+      max: 50
+      message: "Direct stations outside typical range (1-50)"
+  
+  # Utilization Validation (when usage data available)
+  utilization:
+    severity: warning
+    rule: usage_exceeds_licensed
+    message: "Usage exceeds licensed quantity - possible data error"
+  
+  # Duplicate System Check
+  duplicates:
+    severity: error
+    rule: unique_system_identifier
+    key: [cluster, msid, system_number]
+    message: "Duplicate system found - check for multiple versions"
+
+---
+
+# Matching Validation Rules
+# Validate XML-to-CSV matching quality
+matching:
+  
+  # Exact Match Requirements
+  exact_match:
+    required_fields: [cluster, msid, system_number]
+    case_sensitive: false
+  
+  # Fuzzy Match Thresholds
+  fuzzy_match:
+    # MSID fuzzy matching
+    msid_similarity:
+      algorithm: levenshtein
+      min_confidence: 0.8
+      max_distance: 2  # Max character edits
+    
+    # System number matching
+    system_number_match:
+      exact_only: true  # No fuzzy matching for numbers
+  
+  # Match Quality Reporting
+  reporting:
+    log_all_matches: true
+    flag_low_confidence: true
+    confidence_threshold: 0.9  # Flag matches below 90% confidence
+
+---
+
+# Data Quality Thresholds
+# Overall pipeline health checks
+quality_thresholds:
+  
+  # Minimum valid extraction rate
+  extraction_success_rate:
+    min_percent: 90
+    severity: error
+    message: "Less than 90% of XML files parsed successfully"
+  
+  # Minimum matching rate
+  utilization_match_rate:
+    min_percent: 50
+    severity: warning
+    message: "Less than 50% of licenses matched with usage data"
+  
+  # Validation pass rate
+  validation_pass_rate:
+    min_percent: 80
+    severity: warning
+    message: "Less than 80% of records passed validation"
+
+---
+
+# Error Handling
+error_handling:
+  
+  # Severity levels
+  levels:
+    error: "Critical issue - blocks processing"
+    warning: "Potential issue - allow processing with flag"
+    info: "Informational - log only"
+  
+  # Actions by severity
+  actions:
+    error:
+      - stop_processing: false  # Continue but flag
+      - log_to_file: true
+      - add_to_report: true
+      - exclude_from_output: false  # Include but mark as invalid
+    
+    warning:
+      - stop_processing: false
+      - log_to_file: true
+      - add_to_report: true
+      - flag_in_output: true  # Color code in Excel
+    
+    info:
+      - stop_processing: false
+      - log_to_file: true
+      - add_to_report: false
+
+---
+
+# Custom Validation Functions
+# Placeholder for complex business rules
+custom_validators:
+  
+  # Check for known problematic systems
+  known_issues:
+    function: check_known_issues
+    config:
+      issues_file: known_system_issues.json
+  
+  # Validate against historical data
+  historical_comparison:
+    function: compare_with_history
+    config:
+      database: license_history.db
+      warn_on_change_percent: 10  # Warn if >10% change
+  
+  # Check for incomplete license sets
+  incomplete_license_check:
+    function: check_required_licenses
+    config:
+      # PKS systems should have these minimum licenses
+      required_for_pks:
+        - PROCESSPOINTS
+        - DUAL
+        - STATIONS

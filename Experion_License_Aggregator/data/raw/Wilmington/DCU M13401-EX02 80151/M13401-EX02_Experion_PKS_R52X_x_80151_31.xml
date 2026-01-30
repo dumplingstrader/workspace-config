@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<licensefile>
+	<authority publisher="Honeywell International Sarl" sigkey="hwl:2" signature="35678bbc8ddf75054ae025526a9e3cbd111416f0ff8f16a1d0f7fcaf190634f010c051551bd2f9a1e727cd942ccf28d78795d8a627fab537e19f315074649ae4" />
+	<license format="1">
+		<details>
+			<detail name="number" desc="System number" value="80151" />
+			<detail name="version" desc="License version" value="31" />
+			<detail name="msid" desc="MSID/ESID" value="M13401-EX02" />
+			<detail name="name" desc="License description" value="M13401-EX02" />
+			<detail name="customer" desc="Customer name" value="Tesoro Refining and Marketing Co" />
+			<detail name="generated" desc="Generated date" value="2025-12-16" />
+			<detail name="product" desc="Product name" value="EXP_PKS" />
+			<detail name="proddesc" desc="Product" value="Experion PKS Server" />
+			<detail name="release" desc="Release" value="520" />
+		</details>
+		<options>
+			<option name="API" value="1" />
+			<option name="CDA" value="1" />
+			<option name="CDA_APPCONENV" value="1" />
+			<option name="CDA_BULKBUILD" value="1" />
+			<option name="CDA_C300SOLVER" value="3" />
+			<option name="CDA_CABDEVELOPER" value="1" />
+			<option name="CDA_CBTEMPLATE" value="1" />
+			<option name="CDA_CLIENTACCESS" value="2" />
+			<option name="CDA_IO_ANA" value="200" />
+			<option name="CDA_IO_DIG" value="600" />
+			<option name="CDA_PROF_CNTRL_MV" value="5" />
+			<option name="CDA_UMBTCP" value="3" />
+			<option name="CONTROLEDGE_PLC_INTEGRATION" value="1" />
+			<option name="DAS" value="1" />
+			<option name="DIRECTSTATIONS" value="6" />
+			<option name="DISPLAY_REPOSITORY" value="1" />
+			<option name="DSPBLD" value="1" />
+			<option name="DUAL" value="1" />
+			<option name="EQUIPMENT_DISPLAY" value="1" />
+			<option name="FSC" value="1" />
+			<option name="LAS" value="1" />
+			<option name="LOTRPT" value="1" />
+			<option name="MEDE" value="1" />
+			<option name="MODICON" value="1" />
+			<option name="MULTI_COUNT" value="60" />
+			<option name="MULTI_SERVER" value="1" />
+			<option name="NET_SERVER" value="1" />
+			<option name="ODBCDRIVER" value="1" />
+			<option name="ONPROCESSMIGRATE" value="1" />
+			<option name="OPCINTEGRATOR" value="1" />
+			<option name="OPC_DA" value="4" />
+			<option name="OPC_HDA" value="1" />
+			<option name="OPER_TOUCH_PANEL" value="1" />
+			<option name="PROCESSPOINTS" value="8050" />
+			<option name="QB_CLIENT" value="1" />
+			<option name="SCADAPOINTS" value="4050" />
+			<option name="SQL" value="1" />
+			<option name="STATIONS" value="2" />
+			<option name="SVR_PEER_RESPONDER" value="1" />
+			<option name="TPS" value="1" />
+			<option name="TPS_AM_AP" value="1" />
+			<option name="TPS_ELCN" value="10" />
+			<option name="TPS_HM_AP" value="1" />
+			<option name="TPS_VIRT_AP" value="1" />
+			<option name="USR_SCAN" value="1" />
+			<option name="VIRTUALIZATION" value="7" />
+			<option name="VIRTUALIZATION_CLIENT" value="4" />
+		</options>
+	</license>
+	<dictionary format="1">
+		<productfamily name="hps_server" desc="Experion Server Products" />
+		<groups>
+			<group name="license" desc="License certificate" order="100" type="heading1" />
+			<group name="seckey" desc="Security key" order="200" type="heading1" />
+			<group name="general" desc="General" order="300" type="heading1" />
+			<group name="sizing" desc="System sizing" order="400" type="heading1">
+				<group name="points" desc="Points" order="401" type="heading2" />
+				<group name="stations" desc="Stations" order="402" type="heading2" />
+				<group name="sysother" desc="Other" order="403" type="heading2" />
+			</group>
+			<group name="operassist" desc="Operations Assistant" order="450" type="heading1" />
+			<group name="options" desc="Options" order="500" type="heading1">
+				<group name="redun" desc="Redundancy" order="501" type="grouping" />
+				<group name="opapps" desc="Operational application suite" order="502" type="grouping" />
+				<group name="em" desc="Energy manager" order="503" type="grouping" />
+				<group name="idp" desc="Identipoint" order="504" type="grouping" />
+			</group>
+			<group name="interfaces" desc="Interfaces" order="600" type="heading1">
+				<group name="abb" desc="ABB Totalflow" order="601" type="grouping" />
+				<group name="albrad" desc="Allen Bradley" order="602" type="grouping" />
+				<group name="bb" desc="Bristol Babcock" order="603" type="grouping" />
+				<group name="devadapter" desc="Development adapter" order="604" type="grouping" />
+				<group name="dnp3" desc="DNP3" order="605" type="grouping" />
+				<group name="enron" desc="Enron Modbus" order="606" type="grouping" />
+				<group name="roc" desc="Fisher ROC" order="607" type="grouping" />
+				<group name="flowx" desc="FlowX" order="608" type="grouping" />
+				<group name="mqtt" desc="MQTT" order="609" type="grouping" />
+				<group name="omni" desc="Omni" order="610" type="grouping" />
+				<group name="opcua" desc="OPC UA" order="611" type="grouping" />
+				<group name="tema" desc="Tema" order="612" type="grouping" />
+				<group name="umb" desc="Universal Modbus" order="613" type="grouping" />
+			</group>
+			<group name="engtools" desc="Engineering tools" order="700" type="heading1">
+				<group name="dspbld" desc="HMIWeb display builder" order="701" type="heading2" />
+				<group name="qckbld" desc="Quick builder" order="702" type="heading2" />
+				<group name="etfeatures" desc="Features" order="703" type="heading2" />
+				<group name="etlibs" desc="Libraries" order="704" type="heading2" />
+				<group name="ettemplates" desc="Templates" order="705" type="heading2" />
+				<group name="elcn" desc="ELCN" order="706" type="heading2" />
+				<group name="etcccinside" desc="CCC Inside Features" order="707" type="heading2" />
+			</group>
+			<group name="rcm" desc="Recipe control module" order="800" type="heading1" />
+		</groups>
+		<types>
+			<type name="bool">
+				<enum name="bool_unlicensed" value="0" desc="Unlicensed" />
+				<enum name="bool_licensed" value="1" desc="Licensed" />
+				<enum name="bool_notconfigured" usage="0" desc="Not configured" />
+				<enum name="bool_configured" usage="1" desc="Configured" />
+			</type>
+		</types>
+		<alerts>
+			<alert name="licnumchg" type="warning" trigger="onchange" traits="outputeach,outputsummary" issue="System Number" desc="The system number associated with the new license does not match the existing system number." />
+			<alert name="licverdec" type="warning" trigger="ondecrease" traits="outputeach,outputsummary" issue="License Version" desc="The new license is an older version than the existing license." />
+			<alert name="seckeychg" type="warning" trigger="onchange" traits="outputeach,outputsummary" issue="Dongle changes" desc="The software protection key option(s) have changed." />
+			<alert name="redunchg" type="warning" trigger="onchange" traits="outputeach,outputsummary" issue="Redundancy changes" desc="The redundancy option(s) have changed." />
+			<alert name="eachdec" type="info" trigger="ondecrease" traits="outputeach" issue="License reduction" desc="License option has been reduced or removed." />
+			<alert name="eachrestart" type="info" trigger="onrestart" traits="outputeach" issue="Restart required" desc="License option requires server(s) to be restarted." />
+			<alert name="somedec" type="info" trigger="ondecrease" traits="outputsummary" issue="License reductions" desc="The new license has fewer options or reduced counts than the existing license." />
+			<alert name="somerestart" type="info" trigger="onrestart" traits="outputsummary" issue="Restart required" desc="The new license has options that requires the server(s) to be restarted for them to become active." />
+			<alert name="devmodechg" type="warning" trigger="custom" traits="outputsummary" issue="Development mode" desc="Are you sure you want to replace the runtime license? If you just want to perform online engineering, please use ser_stdm utility to enable development mode." />
+			<alert name="copyprotchk" type="warning" trigger="custom" traits="outputsummary" issue="Software protection" desc="The new license requires a software protection key which is currently unavailable." />
+			<alert name="demosyschk" type="warning" trigger="custom" traits="outputsummary" issue="Demo system" desc="The new license is a demo license which will shut the system down after 5 hours." />
+			<alert name="eachusageexceeds" type="error" trigger="custom" traits="outputeach" issue="Usage exceeds limit" desc="Current usage exceeds the limit for this license option." />
+			<alert name="someusageexceeds" type="error" trigger="custom" traits="outputsummary" issue="Usage exceeds limit(s)" desc="Current system usage exceeds some limits in the new license. Reduce system usage to be able to apply the new license." />
+			<alert name="productchg" type="error" trigger="custom" traits="outputeach,outputsummary" issue="Product change" desc="The new license product does not match the existing product and cannot be applied." />
+			<alert name="releasechg" type="error" trigger="custom" traits="outputeach,outputsummary" issue="Release change" desc="The new license release does not match the existing release and cannot be applied." />
+		</alerts>
+		<details>
+			<detail name="number" type="uint" group="license" desc="System number" alerts="licnumchg" />
+			<detail name="version" type="uint" group="license" desc="License version" alerts="licverdec" />
+			<detail name="msid" type="text" group="license" desc="MSID/ESID" />
+			<detail name="name" type="text" group="license" desc="License description" />
+			<detail name="customer" type="text" group="license" desc="Customer name" />
+			<detail name="generated" type="date" group="license" desc="Generated date" />
+			<detail name="startby" type="date" group="license" desc="Start by date" />
+			<detail name="durationmonths" type="uint" group="license" desc="Duration (months)" />
+			<detail name="degradationdays" type="uint" group="license" desc="Degradation period (days)" />
+			<detail name="expirywarningdays" type="uint" group="license" desc="Expiry warning period (days)" />
+			<detail name="commissioning" type="bool" group="license" desc="Commissioning license" />
+			<detail name="renewal" type="bool" group="license" desc="Renewal license" />
+			<detail name="resettracking" type="bool" group="license" desc="Reset tracking" />
+			<detail name="hardware" type="text" group="license" desc="Hardware key" />
+			<detail name="product" type="text" group="license" desc="Product name" />
+			<detail name="proddesc" type="text" group="license" desc="Product" alerts="productchg" />
+			<detail name="release" type="uint" group="license" desc="Release" alerts="releasechg" />
+		</details>
+		<products>
+			<product name="EXP_ELEV" desc="Experion Elevate Server" line="EPKS" type="SVR">
+				<release number="500" altnames="PDS:EXP-ELEV-500" />
+				<release number="510" altnames="PDS:EXP-ELEV-510" />
+				<release number="520" altnames="PDS:EXP-ELEV-520" />
+				<release number="530" altnames="PDS:EXP-ELEV-530" />
+			</product>
+			<product name="EXP_PKS" desc="Experion PKS Server" line="EPKS" type="SVR">
+				<release number="500" altnames="PDS:EXP-PKS-500,PDS:EXP-SDC-500,PDS:EXP-R500-ECOP" />
+				<release number="510" altnames="PDS:EXP-PKS-510,PDS:EXP-SDC-510,PDS:EXP-R510-ECOP" />
+				<release number="520" altnames="PDS:EXP-PKS-520,PDS:EXP-SDC-520,PDS:EXP-R520-ECOP,PDS:EXP-MXP-100,PDS:EXP-EMS-100,PDS:EXP-MXP-110,PDS:EXP-MXP-200,PDS:EXP-MXP-201,PDS:EXP-TWM-100" />
+				<release number="530" altnames="PDS:EXP-PKS-530,PDS:EXP-SDC-530,PDS:EXP-R530-ECOP,PDS:EXP-HOA-100" />
+			</product>
+			<product name="EXP_SCE" desc="Experion PKS Simulation Server" line="EPKS" type="SVR">
+				<release number="500" altnames="PDS:EXP-SCE-500" />
+				<release number="510" altnames="PDS:EXP-SCE-510" />
+				<release number="520" altnames="PDS:EXP-SCE-520" />
+				<release number="530" altnames="PDS:EXP-SCE-530" />
+			</product>
+			<product name="EXP_CSTN" desc="Experion PKS Console Station" line="EPKS" type="CSTN">
+				<release number="500" />
+				<release number="510" />
+				<release number="520" />
+				<release number="530" />
+			</product>
+			<product name="EXP_ESVR" desc="Experion PKS eServer" line="EPKS" type="ESVR">
+				<release number="500" altnames="PDS:EXP-eServer-500" />
+				<release number="510" altnames="PDS:EXP-eServer-510" />
+				<release number="520" altnames="PDS:EXP-eServer-520" />
+				<release number="530" altnames="PDS:EXP-eServer-530" />
+			</product>
+			<product name="EXP_EAS" desc="Experion PKS Application Server" line="EPKS" type="APP_SVR">
+				<release number="500" altnames="PDS:EXP-EAS-500" />
+				<release number="510" altnames="PDS:EXP-EAS-510" />
+				<release number="520" altnames="PDS:EXP-EAS-520" />
+				<release number="530" altnames="PDS:EXP-EAS-530" />
+			</product>
+			<product name="EXP_HS" desc="Experion HS Server" line="EHS" type="SVR">
+				<release number="500" altnames="PDS:EXP-HS-500" />
+				<release number="510" altnames="PDS:EXP-HS-510" />
+				<release number="520" altnames="PDS:EXP-HS-520" />
+				<release number="530" altnames="PDS:EXP-HS-530" />
+			</product>
+			<product name="EXP_HS_ESVR" desc="Experion HS eServer" line="EHS" type="ESVR">
+				<release number="500" altnames="PDS:EXP-HSeServer-500" />
+				<release number="510" altnames="PDS:EXP-HSeServer-510" />
+				<release number="520" altnames="PDS:EXP-HSeServer-520" />
+				<release number="530" altnames="PDS:EXP-HSeServer-530" />
+			</product>
+			<product name="EXP_LX" desc="Experion LX Server" line="EPC" type="SVR">
+				<release number="500" altnames="PDS:EXP-LX-500" />
+				<release number="510" altnames="PDS:EXP-LX-510" />
+				<release number="520" altnames="PDS:EXP-LX-520" />
+				<release number="530" altnames="PDS:EXP-LX-530" />
+			</product>
+			<product name="EXP_LX_ESVR" desc="Experion LX eServer" line="EPC" type="ESVR">
+				<release number="500" altnames="PDS:EXP-LXeServer-500" />
+				<release number="510" altnames="PDS:EXP-LXeServer-510" />
+				<release number="520" altnames="PDS:EXP-LXeServer-520" />
+				<release number="530" altnames="PDS:EXP-LXeServer-530" />
+			</product>
+			<product name="EXP_PC" desc="PlantCruise Server" line="EPC" type="SVR">
+				<release number="500" altnames="PDS:EXP-PC-500" />
+				<release number="510" altnames="PDS:EXP-PC-510" />
+				<release number="520" altnames="PDS:EXP-PC-520" />
+				<release number="530" altnames="PDS:EXP-PC-530" />
+			</product>
+			<product name="EXP_PC_ESVR" desc="PlantCruise eServer" line="EPC" type="ESVR">
+				<release number="500" altnames="PDS:EXP-PCeServer-500" />
+				<release number="510" altnames="PDS:EXP-PCeServer-510" />
+				<release number="520" altnames="PDS:EXP-PCeServer-520" />
+				<release number="530" altnames="PDS:EXP-PCeServer-530" />
+			</product>
+		</products>
+		<options productlines="(EPKS:500-),(EHS:500-),(EPC:500-)" alerts="eachdec,eachrestart,somedec,somerestart">
+			<option name="COPYPROT" type="bool" group="seckey" desc="Security key required" traits="exportonlyonuse" alerts="seckeychg" />
+			<option name="ABSEXPIRY" type="bool" group="seckey" desc="Absolute expiry date" traits="exportonlyonuse" alerts="seckeychg" />
+			<option name="RELEXPIRY" type="bool" group="seckey" desc="Relative expiry period" traits="exportonlyonuse" alerts="seckeychg" />
+			<option name="DEMO_SYSTEM" type="bool" group="general" desc="Demonstration system only" traits="exportonlyonuse" />
+			<option name="DIRECTSTATIONLICENCE" type="bool" group="general" desc="Console station license" traits="exportonlyonuse" />
+			<option name="INTERNAL" type="bool" group="general" desc="Internal testing license" traits="exportonlyonuse" />
+			<option name="DSPBLD" type="bool" group="general" desc="Engineering permitted" />
+			<option name="UNLICENSED_POINTS" type="count" group="points" desc="Other point(s)" traits="virtual" />
+			<option name="TOTAL_POINTS" type="count" group="points" desc="Total point(s)" traits="virtual" />
+			<option name="MULTI_COUNT" type="count" group="sysother" desc="Distributed server(s)" />
+			<option name="STATIONS" type="count" group="stations" desc="Flex station(s)" />
+			<option name="EXPAPPCLIENTS" type="count" group="stations" desc="Experion app client(s)" />
+			<option name="ADVDDE" type="bool" group="options" desc="Advanced DDE interface" />
+			<option name="ALM_SHLV" type="bool" group="options" desc="Alarm shelving" />
+			<option name="ALM_TRND" type="bool" group="options" desc="Alarm tracker" />
+			<option name="API" type="bool" group="options" desc="Server automation object" />
+			<option name="CYBERSECURITY" type="bool" group="options" desc="Cyber security and update service" />
+			<option name="DVMPS" type="bool" group="options" desc="DVM integration" />
+			<option name="ELEC_SIGNATURE" type="bool" group="options" desc="Electronic signatures" />
+			<option name="EQUIPMENT_DISPLAY" type="bool" group="options" desc="Equipment display" traits="exportonlyonuse" />
+			<option name="LAS" type="bool" group="options" desc="Layered application services" />
+			<option name="LOTRPT" type="bool" group="options" desc="Batch reporting" />
+			<option name="MEDE" type="count" group="options" desc="Microsoft Excel data exchange" />
+			<option name="MULTI_SERVER" type="bool" group="options" desc="DSA enabling license" />
+			<option name="NET_SERVER" type="bool" group="options" desc="Network server" />
+			<option name="ODA" type="count" group="options" desc="Open data access instance(s)" />
+			<option name="ODBCDRIVER" type="bool" group="options" desc="ODBC driver" />
+			<option name="OPC_HDA" type="count" group="options" desc="OPC classic history data access client application instance(s)" />
+			<option name="OPC_DA" type="count" group="options" desc="OPC classic data access client application instance(s)" />
+			<option name="OPC_AE" type="count" group="options" desc="OPC classic alarm and event client application instance(s)" />
+			<option name="OPC_UA_DA_SERVER" type="count" group="options" desc="OPC UA data access client application instance(s)" />
+			<option name="OPC_UA_HA_SERVER" type="count" group="options" desc="OPC UA history access client application instance(s)" />
+			<option name="OPCINTEGRATOR" type="count" group="options" desc="OPC integrator server application instance(s)" />
+			<option name="OPER_TOUCH_PANEL" type="count" group="options" desc="Operator touch panel(s)" />
+			<option name="PAGER" type="bool" group="options" desc="Alarm pager" />
+			<option name="PAN_ZOOM" type="bool" group="options" desc="Pan and zoom" />
+			<option name="RDS" type="bool" group="options" desc="Real-time data services" />
+			<option name="SCHEDULER" type="bool" group="options" desc="Point control scheduler" />
+			<option name="SQL" type="bool" group="options" desc="ODBC data exchange" />
+			<option name="USR_SCAN" type="bool" group="interfaces" desc="User scan task" />
+			<option name="DUAL" type="bool" group="redun" desc="Server redundancy" alerts="redunchg" />
+			<option name="APACS" type="bool" group="interfaces" desc="Moore APAC" />
+			<option name="ASEA" type="bool" group="interfaces" desc="Asea PLC" />
+			<option name="APPLICOM" type="bool" group="interfaces" desc="Applicom" />
+			<option name="DPR" type="bool" group="interfaces" desc="DPR" />
+			<option name="MODICON" type="bool" group="interfaces" desc="Modbus" />
+			<option name="MOORE" type="bool" group="interfaces" desc="Moore" />
+			<option name="MA500" type="bool" group="interfaces" desc="Yamatake MA500" />
+			<option name="MICROMAX" type="bool" group="interfaces" desc="Micromax" />
+			<option name="OPCADVCLIENT" type="bool" group="interfaces" desc="OPC advanced client" />
+			<option name="OPCCLIENT" type="bool" group="interfaces" desc="OPC client interface" />
+			<option name="SIEMENS" type="bool" group="interfaces" desc="Siemens PLC" />
+			<option name="DISPLAY_BUILDER" type="count" group="dspbld" desc="Display builder" />
+			<option name="DISPLAY_REPOSITORY" type="bool" group="dspbld" desc="Display repository" />
+			<option name="QB_CLIENT" type="count" group="qckbld" desc="Quick builder client(s)" />
+		</options>
+		<options productlines="(EPKS:500-),(EHS:500-),(EPC:500-)" alerts="eachdec,eachrestart,somedec,somerestart">
+			<option name="SCADAPOINTS" type="count" group="points" desc="SCADA point(s)" />
+			<option name="EQUIPMENT_POINTS" type="count" group="points" desc="Equipment point(s)" />
+			<option name="MULTISTATIONS" type="count" group="stations" desc="Multi window flex station(s)" />
+			<option name="READONLYSTATIONS" type="count" group="stations" desc="Read only station(s)" />
+			<option name="ADVSOLPACK" type="bool" group="options" desc="HMIWeb advanced solutions pack" />
+			<option name="ALM_DSA" type="bool" group="options" desc="Alarm DSA report" />
+			<option name="ALM_GRP" type="bool" group="options" desc="Alarm groups" />
+			<option name="ALM_GUIDANCE" type="bool" group="operassist" desc="Alarm guidance" />
+			<option name="APPEX" type="bool" group="options" desc="Application execution service" />
+			<option name="APPSERV" type="bool" group="options" desc="Batch application services" />
+			<option name="CROSSREF_RPT" type="bool" group="options" desc="Cross reference report" />
+			<option name="DAS" type="bool" group="options" desc="Dynamic alarm suppression" />
+			<option name="DPM" type="bool" group="general" desc="Digital Production Management Integration" />
+			<option name="EHM_ENABLER" type="bool" group="options" desc="Equipment Health Monitoring Enabler" />
+			<option name="ERG" type="bool" group="general" desc="Experion Remote Gateway" />
+			<option name="EWI" type="bool" group="options" desc="Electronic Work Instructions" />
+			<option name="FUTURE_EVENTS" type="bool" group="operassist" desc="Future events" />
+			<option name="GCI_CAMERA_INTEGRATION" type="bool" group="options" desc="GCI Camera Integration" />
+			<option name="HALO" type="bool" group="operassist" desc="Highly Augmented Lookahead Operations Enabler" />
+			<option name="HSR" type="bool" group="options" desc="High availability seamless redundancy protocol" />
+			<option name="LRI" type="bool" group="options" desc="Limit repository integration" />
+			<option name="MOVILIZER_INTEGRATION" type="bool" group="options" desc="Movilizer Integration" />
+			<option name="PANEL_SERVER" type="bool" group="options" desc="Panel PC server" />
+			<option name="PROFIT_LOOP" type="bool" group="options" desc="Profit loop" />
+			<option name="PRP" type="bool" group="options" desc="Parallel redundancy protocol" />
+			<option name="RARITAN_KVM_CLIENT" type="count" group="options" desc="Remote PC KVM Client" />
+			<option name="RECIPE" type="bool" group="options" desc="Recipe management" />
+			<option name="VIRTUALIZATION" type="count" group="options" desc="Virtualization Server CAL" />
+			<option name="VIRTUALIZATION_CLIENT" type="count" group="options" desc="Virtualization Client CAL" />
+			<option name="WEBAPI" type="bool" group="options" desc="Experion web application interface" />
+			<option name="GAS_APP_SEGMENT_CAPACITY" type="count" group="opapps" desc="Segment capacity" />
+			<option name="GAS_COMP_CAPACITY" type="count" group="opapps" desc="Compressor capacity" />
+			<option name="LEAK_DETECTION" type="count" group="opapps" desc="Leak detection" />
+			<option name="BCKP_CNTRL_CENTER" type="count" group="redun" desc="Backup control center(s)" alerts="redunchg" />
+			<option name="BURNER_CONTROL" type="bool" group="interfaces" desc="RM7800 flame safeguard" />
+			<option name="CONTROLEDGE_PLC_INTEGRATION" type="bool" group="interfaces" desc="ControlEdge PLC integration" />
+			<option name="FMC_SUBSEA" type="bool" group="interfaces" desc="FMC subsea interface" />
+			<option name="FSC" type="bool" group="interfaces" desc="Safety manager and FSC integration" />
+			<option name="GE90" type="bool" group="interfaces" desc="GE Fanuc 90 PLC" />
+			<option name="GEM80" type="bool" group="interfaces" desc="GEM 80" />
+			<option name="HITACHI" type="bool" group="interfaces" desc="Hitachi" />
+			<option name="IEC60870" type="bool" group="interfaces" desc="IEC60870 system interface" />
+			<option name="IEC61850" type="bool" group="interfaces" desc="IEC61850 system interface" />
+			<option name="LCN" type="bool" group="interfaces" desc="TDC 3000 LCN interface" />
+			<option name="LCS620" type="bool" group="interfaces" desc="LCS 620" />
+			<option name="MLSERVER" type="bool" group="interfaces" desc="MasterLogic server" />
+			<option name="PMD" type="bool" group="interfaces" desc="PMD integration" />
+			<option name="QCS" type="bool" group="interfaces" desc="QCS integration" />
+			<option name="RELATIONALPNTSVR" type="bool" group="interfaces" desc="Relational point server" />
+			<option name="S9000" type="bool" group="interfaces" desc="Series 9000" />
+			<option name="TDC" type="bool" group="interfaces" desc="TDC Data Hiway interface" />
+			<option name="UDC" type="bool" group="interfaces" desc="UDC" />
+			<option name="ABB_TOTALFLOW" type="bool" group="abb" desc="Interface" />
+			<option name="ABB_TOTALFLOW_EFM_ENABLER" type="bool" group="abb" desc="EFM enabler" />
+			<option name="AB" type="bool" group="albrad" desc="Serial" />
+			<option name="AB_ETH" type="bool" group="albrad" desc="Rslinx" />
+			<option name="AB_INT" type="bool" group="albrad" desc="Interface" />
+			<option name="BB" type="bool" group="bb" desc="Interface" />
+			<option name="BB_OPENBSI_EFM_ENABLER" type="bool" group="bb" desc="EFM enabler (Open BSI)" />
+			<option name="DEVADAPTER" type="bool" group="devadapter" desc="Development adapter interface" traits="exportonlyonuse" />
+			<option name="DEVADAPTER_EFM_ENABLER" type="bool" group="devadapter" desc="Development adapter EFM enabler" traits="exportonlyonuse" />
+			<option name="DEVADAPTER_HISTBACKFILL" type="bool" group="devadapter" desc="Development adapter history backfill" traits="exportonlyonuse" />
+			<option name="DNP3" type="bool" group="dnp3" desc="Interface" />
+			<option name="DNP3_HISTBACKFILL" type="bool" group="dnp3" desc="History backfill" />
+			<option name="RTU2020_DNP3_EFM_ENABLER" type="bool" group="dnp3" desc="EFM enabler" />
+			<option name="ENRON_MODBUS" type="bool" group="enron" desc="Interface" />
+			<option name="ENRON_EFM_ENABLER" type="bool" group="enron" desc="EFM enabler" />
+			<option name="FISHER_ROC" type="bool" group="roc" desc="Interface" />
+			<option name="FISHER_ROC_EFM_ENABLER" type="bool" group="roc" desc="EFM enabler" />
+			<option name="FLOWX" type="bool" group="flowx" desc="Interface" />
+			<option name="FLOWX_EFM_ENABLER" type="bool" group="flowx" desc="EFM enabler" />
+			<option name="MQTT_SPARKPLUG" type="bool" group="mqtt" desc="Interface" />
+			<option name="OMNI" type="bool" group="omni" desc="Interface" />
+			<option name="OMNI_EFM_ENABLER" type="bool" group="omni" desc="EFM enabler" />
+			<option name="OPC_UA_CLIENT" type="bool" group="opcua" desc="Interface" traits="exportonlyonuse" />
+			<option name="UMB" type="bool" group="umb" desc="Interface" />
+			<option name="HC900_UMB_HISTBACKFILL" type="bool" group="umb" desc="History backfill" />
+		</options>
+		<options productlines="(EPKS:500-),(EPC:500-)" alerts="eachdec,eachrestart,somedec,somerestart">
+			<option name="OFFPROCESS_ENABLER" type="bool" group="general" desc="Off-process capability" />
+			<option name="PROCESSPOINTS" type="count" group="points" desc="Process point(s)" />
+			<option name="CDA_IO_ANA" type="count" group="points" desc="Analog IO Point(s)" />
+			<option name="CDA_IO_DIG" type="count" group="points" desc="Digital IO Point(s)" />
+			<option name="CDA_COMPOSITEDEVICE" type="count" group="points" desc="Composite Device point(s)" />
+			<option name="DIRECTSTATIONS" type="count" group="stations" desc="Console station(s)" />
+			<option name="DIRECTCLIENTS" type="count" group="stations" desc="Console extension station(s)" />
+			<option name="COLLABORATION_STATION" type="count" group="stations" desc="Collaboration station(s)" />
+			<option name="CB_RECIPES" type="bool" group="options" desc="Class based recipes" />
+			<option name="ONPROCESSMIGRATE" type="bool" group="options" desc="On process migration" />
+			<option name="SVR_PEER_RESPONDER" type="bool" group="options" desc="Experion server peer responder" />
+			<option name="CDA" type="bool" group="interfaces" desc="CDA subsystems interface" />
+			<option name="TPS" type="bool" group="interfaces" desc="TPS enabler" />
+			<option name="CDA_ADVBATCH" type="count" group="etfeatures" desc="Advanced Batch Point(s)" />
+			<option name="CDA_BATCH1" type="count" group="etfeatures" desc="Batch option - tier 1 point(s) " />
+			<option name="CDA_CABDEVELOPER" type="count" group="etfeatures" desc="CAB developer license(s)" />
+			<option name="CDA_CLIENTACCESS" type="count" group="etfeatures" desc="Control builder client(s)" />
+			<option name="CDA_BULKBUILD" type="bool" group="etfeatures" desc="Control builder bulk build support" />
+			<option name="CDA_BULKBUILD_TOOL" type="bool" group="etfeatures" desc="Control builder bulk configuration tools add-in support" />
+			<option name="CDA_CBTEMPLATE" type="bool" group="etfeatures" desc="Control builder template support" />
+			<option name="CDA_REGCOMPLIANCE" type="count" group="etfeatures" desc="Regulatory compliance license(s)" />
+			<option name="CDA_VERSIONMGMT" type="bool" group="etfeatures" desc="Qualification and version control" />
+			<option name="COMMSENCRYPT" type="bool" group="etfeatures" desc="Controller communications encryption" />
+			<option name="CDA_CN100_CONTROL_IOSOLVER_SMALL" type="count" group="etfeatures" desc="CN100 control and IO solver(s) - small" />
+			<option name="CDA_CN100_CONTROL_IOSOLVER_MEDIUM" type="count" group="etfeatures" desc="CN100 control and IO solver(s) - medium" />
+			<option name="CDA_CN100_CONTROL_IOSOLVER_SIM" type="count" group="etfeatures" desc="CN100 control and IO solver(s) - simulation" />
+			<option name="CDA_UOC_CS_PROFINET" type="count" group="etfeatures" desc="UOC Control Solver(s) with Profinet" />
+			<option name="CDA_ABDRIVELIB" type="bool" group="etlibs" desc="Allen bradley drive interface library" />
+			<option name="CDA_QIMPACT" type="bool" group="etlibs" desc="Mettler toledo Q.impact library" />
+			<option name="CDA_INTERLOCKFBLIB" type="bool" group="etlibs" desc="Interlock FB library" />
+			<option name="CDA_JAGXTREME" type="bool" group="etlibs" desc="Mettler toledo jagxtreme library" />
+			<option name="CDA_METERSUITE" type="count" group="etlibs" desc="Meter suite library" />
+			<option name="CDA_PATHCTL" type="bool" group="etlibs" desc="Path control library" />
+			<option name="CEM_LIBRARY_ENABLER" type="bool" group="etlibs" desc="Control and energy management standard library enabler" />
+			<option name="CEM_CUSTOM_LIBRARY_ENABLER" type="bool" group="etlibs" desc="Control and energy management custom library enabler" />
+			<option name="CDA_APPCONENV" type="count" group="ettemplates" desc="Application control environment(s)" />
+			<option name="CDA_ACESIM" type="count" group="ettemplates" desc="ACE simulation environment(s)" />
+			<option name="CDA_ACE_TPS" type="count" group="ettemplates" desc="ACE TPS" />
+			<option name="CDA_ARR" type="bool" group="ettemplates" desc="ACE rapid restart" />
+			<option name="CDA_FFSIM" type="count" group="ettemplates" desc="Foundation fieldbus simulation interface(s)" />
+			<option name="CDA_HIWAYFB" type="bool" group="ettemplates" desc="Hiway output function blocks" />
+			<option name="CDA_OPCFBLIB" type="bool" group="ettemplates" desc="OPC extension library" />
+			<option name="CDA_UCNFBLIB" type="bool" group="ettemplates" desc="UCN output function blocks" />
+			<option name="CDA_50CONTROLSOLVER" type="count" group="ettemplates" desc="C200/C200E control solver(s)" />
+			<option name="CDA_C300SOLVER" type="count" group="ettemplates" desc="C300 control solver(s)" />
+			<option name="CDA_HIWAYGATEWAY" type="count" group="ettemplates" desc="Experion hiway gateway(s) and SIM-EHG(s)" />
+			<option name="CDA_DEVICENET" type="count" group="ettemplates" desc="Devicenet interface(s)" />
+			<option name="CDA_FIELDBUS" type="count" group="ettemplates" desc="Foundation fieldbus interface(s)" />
+			<option name="CDA_PROFIBUS" type="count" group="ettemplates" desc="Profibus interface(s)" />
+			<option name="CDA_SIMCONENV" type="count" group="ettemplates" desc="CX00 simulation environment(s)" />
+			<option name="CDA_UMBTCP" type="count" group="ettemplates" desc="Peer control data interface(s)" />
+			<option name="CDA_C300SOLVER20MS" type="count" group="ettemplates" desc="C300 control solver(s) 20 ms" />
+			<option name="CDA_C300SOLVER_IP" type="count" group="ettemplates" desc="C300 control solver(s) ethernet/IP" />
+			<option name="CDA_CONTROL_HIVE_CONTROLLER" type="count" group="ettemplates" desc="Control HIVE controller(s)" />
+			<option name="CDA_CONTROL_HIVE_CS_VIRTUAL" type="count" group="ettemplates" desc="Control HIVE virtual controller(s)" />
+			<option name="CDA_EHPM" type="count" group="ettemplates" desc="EHPM connection(s)" />
+			<option name="CDA_EIM_ETHERNET_IP" type="count" group="ettemplates" desc="Ethernet interface module(s) - ethernet/IP" />
+			<option name="CDA_EIM_IEC61850" type="count" group="ettemplates" desc="Ethernet interface module(s) - IEC61850" />
+			<option name="CDA_EIM_MODBUSTCP" type="count" group="ettemplates" desc="Ethernet interface module(s) - Modbus TCP" />
+			<option name="CDA_EIM_PROFINET" type="count" group="ettemplates" desc="Ethernet interface module(s) - Profinet" />
+			<option name="SEC_COM_EMBED_COUNT" type="count" group="ettemplates" desc="Secure communication embedded count" />
+			<option name="SEC_COM_WINDOWS_COUNT" type="count" group="ettemplates" desc="Secure communication windows count" />
+			<option name="CDA_PROF_CNTRL_MV" type="count" group="ettemplates" desc="CEE profit control MV(s)" />
+			<option name="CDA_TRICONEX" type="count" group="ettemplates" desc="TCMI triconex" />
+			<option name="CDA_HFDCM" type="bool" group="ettemplates" desc="H-FDCM direct access" />
+			<option name="CDA_INTELLIGENTCHOKE" type="count" group="ettemplates" desc="Intelligent choke function block(s)" />
+			<option name="CDA_PROCOP" type="bool" group="ettemplates" desc="Procedural operations" />
+			<option name="CDA_POWERFB" type="bool" group="ettemplates" desc="Power function blocks" />
+			<option name="CDA_UOCCEE" type="count" group="ettemplates" desc="ControlEdge UOC process solver(s)" />
+			<option name="UCO_ELECTROLYZER" type="count" group="ettemplates" desc="Optimizer electrolyzer(s)" />
+			<option name="HECS" type="count" group="ettemplates" desc="Hydrogen electrolyzer control system block(s)" />
+			<option name="RCM" type="count" group="rcm" desc="Maximum active RCM instance(s)" />
+			<option name="TPS_AM_AP" type="count" group="elcn" desc="ELCN AM single" />
+			<option name="TPS_AM_AP_RED" type="count" group="elcn" desc="ELCN AM redundant" />
+			<option name="TPS_ELCN" type="count" group="elcn" desc="ELCN enabler(s)" />
+			<option name="TPS_ENIM_AP" type="count" group="elcn" desc="ELCN ENIM single" />
+			<option name="TPS_ENIM_AP_RED" type="count" group="elcn" desc="ELCN ENIM redundant" />
+			<option name="TPS_HM_AP" type="count" group="elcn" desc="ELCN HM single" />
+			<option name="TPS_EPLCG_AP" type="count" group="elcn" desc="ELCN EPLCG single" />
+			<option name="TPS_EPLCG_AP_RED" type="count" group="elcn" desc="ELCN EPLCG redundant" />
+			<option name="TPS_EHB_AP" type="count" group="elcn" desc="ELCN EHB single" />
+			<option name="TPS_EHB_AP_RED" type="count" group="elcn" desc="ELCN EHB redundant" />
+			<option name="TPS_VIRT_AP" type="count" group="elcn" desc="Virtualization ELCN appliance(s)" />
+			<option name="TPS_NG_AP" type="count" group="elcn" desc="ELCN NG single" />
+			<option name="CCC_AS_MAIN" type="count" group="etcccinside" desc="CCC Inside Antisurge CAB" />
+			<option name="CCC_PF_MAIN" type="count" group="etcccinside" desc="CCC Inside Perfomance CAB" />
+			<option name="CCC_MST_MAIN" type="count" group="etcccinside" desc="CCC Inside Master CAB" />
+			<option name="CCC_SC_MAIN" type="count" group="etcccinside" desc="CCC Inside Speed CAB" />
+			<option name="CCC_EX_MAIN" type="count" group="etcccinside" desc="CCC Inside Extraction CAB" />
+			<option name="CCC_GEN_MAIN" type="count" group="etcccinside" desc="CCC Inside Generator CAB" />
+			<option name="CCC_GT_MAIN" type="count" group="etcccinside" desc="CCC Inside Gas Turbine CAB" />
+			<option name="CCC_PRT_MAIN" type="count" group="etcccinside" desc="CCC Inside Power Recovery Train CAB" />
+			<option name="CCC_QE_MAIN" type="count" group="etcccinside" desc="CCC Inside Quench CAB" />
+			<option name="CCC_VSC_MAIN" type="count" group="etcccinside" desc="CCC Inside Vorecon Speed CAB" />
+			<option name="CCC_VAEX_MAIN" type="count" group="etcccinside" desc="CCC Inside Valve Exerciser CAB" />
+			<option name="CCC_TRFR_MAIN" type="count" group="etcccinside" desc="CCC Inside Transmitter Freeze CAB" />
+			<option name="CCC_TRDR_MAIN" type="count" group="etcccinside" desc="CCC Inside Transmitter Drift CAB" />
+		</options>
+		<offprocessmappings>
+			<option offprocess="CDA_ACESIM" onprocess="CDA_APPCONENV" />
+			<option offprocess="CDA_FFSIM" onprocess="CDA_FIELDBUS" />
+			<option offprocess="CDA_SIMCONENV" onprocess="CDA_50CONTROLSOLVER" />
+			<option offprocess="CDA_SIMCONENV" onprocess="CDA_C300SOLVER" />
+			<option offprocess="CDA_SIMCONENV" onprocess="CDA_C300SOLVER20MS" />
+		</offprocessmappings>
+	</dictionary>
+</licensefile>

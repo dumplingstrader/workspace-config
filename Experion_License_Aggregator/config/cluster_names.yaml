@@ -1,0 +1,9 @@
+# Cluster Friendly Name Mapping
+# Maps technical cluster names to user-friendly display names for reports
+
+cluster_names:
+  Carson: "BP Carson Refinery"
+  Wilmington: "BP Wilmington Refinery"
+  # Add more sites as needed:
+  # LosAngeles: "BP Los Angeles Refinery"
+  # Texas: "BP Texas City Refinery"

@@ -48,6 +48,32 @@ This guide helps you minimize GitHub Copilot premium token usage by directing ta
 **Model:**
 - **Claude Opus 4.1**: Reserved for rare, complex tasks
 
+## Task-to-Model Mapping
+
+Quick reference for common development tasks:
+
+| Task Type | Recommended Model | Cost | Rationale |
+|-----------|------------------|------|-----------|
+| **Architecture decisions** | Claude Opus 4.1 | 10x | Needs broad reasoning across large codebases |
+| **Writing new functions** | Claude Sonnet 4.5 / GPT-5 Codex | 1x | Good quality, balanced cost |
+| **Debugging with context** | Claude Sonnet 4.5 | 1x | Depends on complexity; escalate if needed |
+| **Autocomplete/IntelliSense** | GPT-5 mini | 0x | Speed over depth; inline suggestions |
+| **Documentation writing** | GPT-4.1 | 0x | Quality writing at zero cost |
+| **Code review** | GPT-5 mini / GPT-4.1 | 0x | Pattern matching and style checks |
+| **Complex refactoring** | Claude Opus 4.1 / Sonnet 4.5 | 10x/1x | Large context; choose based on scope |
+| **Simple refactoring** | GPT-4.1 | 0x | Renaming, extracting methods |
+| **SQL optimization** | GPT-5 Codex | 1x | Algorithmic query tuning |
+| **Excel formulas** | Claude Sonnet 4.5 | 1x | Accuracy critical for calculations |
+| **Unit test generation** | GPT-5 Codex | 1x | Requires understanding of edge cases |
+| **Boilerplate code** | GPT-5 mini | 0x | Repetitive patterns, low complexity |
+| **API integration** | Claude Sonnet 4.5 | 1x | Authentication, error handling complexity |
+| **Data transformation** | GPT-4.1 | 0x | Pandas, openpyxl operations |
+
+**Decision Rules:**
+- **Start with free models** (GPT-4.1, GPT-5 mini) for most tasks
+- **Escalate to Sonnet 4.5** when free models produce errors or incomplete solutions
+- **Use Opus 4.1 only** for system-wide architecture or when refactoring 10+ files
+
 ## Current Configuration
 
 ### Skills (Document Processing)

@@ -1,0 +1,66 @@
+{
+  "_comment": "MPC 2026 pricing overrides. Values here supersede cost_catalog.json baseline.",
+  "_usage": "Only add items with confirmed 2026 MPC PO pricing. Blank entries fall back to baseline.",
+  "_format": "unit_cost is cost per 'per' units. E.g., $45 per 50 points.",
+  "_last_updated": "2026-01-28",
+
+  "PROCESSPOINTS": {
+    "unit_cost": 45.00,
+    "per": 50,
+    "category": "Points",
+    "description": "Process I/O points - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+  
+  "SCADAPOINTS": {
+    "unit_cost": 35.00,
+    "per": 50,
+    "category": "Points",
+    "description": "SCADA/remote points - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+
+  "STATIONS": {
+    "unit_cost": 2500.00,
+    "per": 1,
+    "category": "Stations",
+    "description": "Flex stations - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+
+  "DUAL": {
+    "unit_cost": 15000.00,
+    "per": 1,
+    "category": "Redundancy",
+    "description": "Server redundancy - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+
+  "TPS": {
+    "unit_cost": 12000.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "TPS/TDC Integration - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+
+  "OPC_DA": {
+    "unit_cost": 3500.00,
+    "per": 1,
+    "category": "Interfaces",
+    "description": "OPC DA Server - MPC 2026 pricing",
+    "source": "2026 MPC PO",
+    "effective_date": "2026-01-01"
+  },
+
+  "_instructions": {
+    "note": "Add additional overrides here as 2026 MPC pricing becomes available.",
+    "example": "When you receive 2026 PO with DAS pricing, add/update the DAS entry.",
+    "priority": "MPC 2026 pricing > Honeywell 2021-2022 baseline > placeholder from settings.json"
+  }
+}
