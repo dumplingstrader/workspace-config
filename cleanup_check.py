@@ -48,7 +48,7 @@ PROJECT_MAIN_SCRIPTS = {
     'run_production_analysis.py',
 }
 
-# Prefixes/patterns that indicate one-off/debug work → _scratch/
+# Prefixes/patterns that indicate one-off/debug work -> _scratch/
 SCRATCH_PREFIXES = ['check_', 'debug_', 'test_', 'temp_', 'tmp_', 'experiment_']
 SCRATCH_SUFFIXES = ['_test', '_debug', '_temp', '_tmp', '_old', '_backup', '_v1', '_v2', '_v3']
 SCRATCH_PATTERNS = [
@@ -73,7 +73,7 @@ SCRATCH_KEYWORDS = [
     'draft', 'backup', 'old', 'scratch', 'wip'
 ]
 
-# Patterns that indicate generated output → _output/
+# Patterns that indicate generated output -> _output/
 OUTPUT_PATTERNS = [
     '*_output.*',
     '*_result.*',
@@ -270,17 +270,17 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
     total_suggestions = len(results['scratch']) + len(results['output']) + len(results['input'])
     
     if total_suggestions == 0:
-        print("✓ No cleanup suggestions - project is well organized!")
+        print("[OK] No cleanup suggestions - project is well organized!")
         print()
         if results['correct']:
-            print(f"✓ {len(results['correct'])} files at root (correct)")
+            print(f"[OK] {len(results['correct'])} files at root (correct)")
     else:
-        print(f"⚠️  {total_suggestions} files could be organized:")
+        print(f"[!] {total_suggestions} files could be organized:")
         print()
         
         # Print scratch suggestions
         if results['scratch']:
-            print("  → _scratch/  (experiments, tests, work in progress)")
+            print("  -> _scratch/  (experiments, tests, work in progress)")
             for file, reason in results['scratch']:
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
@@ -288,7 +288,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
         
         # Print output suggestions
         if results['output']:
-            print("  → _output/  (generated files)")
+            print("  -> _output/  (generated files)")
             for file, reason in results['output']:
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
@@ -296,7 +296,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
         
         # Print input suggestions
         if results['input']:
-            print("  → data/ or _input/  (input data files)")
+            print("  -> data/ or _input/  (input data files)")
             for file, reason in results['input']:
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
@@ -304,7 +304,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
         
         # Print files staying at root
         if results['correct']:
-            print("✓ Files staying at root (correct):")
+            print("[OK] Files staying at root (correct):")
             for file, reason in results['correct']:
                 print(f"      {file.name} ({reason})")
             print()
@@ -325,14 +325,14 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
         print()
         
         if not unused_imports:
-            print("✓ No unused imports detected")
+            print("[OK] No unused imports detected")
         else:
-            print(f"⚠️  Found unused imports in {len(unused_imports)} files:")
+            print(f"[!] Found unused imports in {len(unused_imports)} files:")
             print()
             for file, imports in sorted(unused_imports.items()):
                 print(f"  {file}:")
                 for imp in sorted(imports):
-                    print(f"    • {imp}")
+                    print(f"    - {imp}")
                 print()
             print("Consider removing these imports to keep code clean.")
 
@@ -410,7 +410,7 @@ Examples:
     # Execute moves if --fix flag is set
     if args.fix:
         moved_count = execute_moves(results, project_path)
-        print(f"\n✓ Moved {moved_count} files")
+        print(f"\n[OK] Moved {moved_count} files")
 
 
 if __name__ == '__main__':
