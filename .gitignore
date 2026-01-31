@@ -1,32 +1,31 @@
-# Temporary files
-*.tmp
-*.log
-~$*
+# ============================================
+# Project folders (each has its own GitHub repo)
+# ============================================
+ControlsBMW/
+controls-docs/
+finances/
+healthassistant/
+Documentation/
 
-# Word files and converted text
-*.docx
-Experion_HMI_FAT_Support.txt
-
-# OS files
+# ============================================
+# OS / Editor
+# ============================================
 .DS_Store
 Thumbs.db
 desktop.ini
+.vscode/
 
-# Editor files
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-
-# Node modules (if any tools installed locally)
+# ============================================
+# Temporary / Generated
+# ============================================
+*.tmp
+*.log
+~$*
 node_modules/
+__pycache__/
+*.pyc
 
-# PDF outputs (optional - remove if you want to track PDFs)
-*.pdf
-
-# PC Value Tracker - Private files (personal opinions, raw data)
-PC_Value_Tracker/docs/HANDOFF_INTERNAL.md
-PC_Value_Tracker/data/*.xlsx
-PC_Value_Tracker/data/*.csv
-PC_Value_Tracker/data/*.json
-PC_Value_Tracker/output/*.xlsx
-PC_Value_Tracker/output/*.json
+# ============================================
+# Resource-tools generated indexes
+# ============================================
+resource-tools/indexes/

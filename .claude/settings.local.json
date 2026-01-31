@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull:*)",
+      "Bash(git status:*)",
+      "Bash(git clean:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(cmd /c \"cd /d E:\\\\_Development && ren controls-docs controls-docs-OLD\")",
+      "Bash(git clone:*)"
+    ]
+  }
+}

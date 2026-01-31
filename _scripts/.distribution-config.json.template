@@ -1,0 +1,21 @@
+{
+  "_comment": "Project-specific distribution configuration",
+  "_instructions": "Copy this file to your project root as .distribution-config.json",
+  
+  "LargeFileThresholdMB": 50,
+  "MaxPackageSizeMB": 500,
+  
+  "AdditionalExcludes": [
+    "*.bak",
+    "*.tmp",
+    "_scratch",
+    "_archive"
+  ],
+  
+  "ExcludePatterns": [
+    "test_*",
+    "*.test.py"
+  ],
+  
+  "CustomReadme": "# Project Name Distribution\n\nCustom README content here.\n\n## Setup\n1. Extract\n2. Run setup\n3. Start using"
+}

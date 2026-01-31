@@ -1,0 +1,31 @@
+{
+  "name": "resource-tools",
+  "version": "1.0.0",
+  "description": "Cost-effective resource management for AI models - indexes and retrieves skills, agents, prompts, and instructions",
+  "main": "resource-loader.js",
+  "bin": {
+    "index-resources": "./index-builder.js",
+    "load-resource": "./resource-loader.js",
+    "resource-mcp": "./mcp-server.js"
+  },
+  "scripts": {
+    "build-index": "node index-builder.js",
+    "search": "node resource-loader.js search",
+    "get": "node resource-loader.js get",
+    "list": "node resource-loader.js list",
+    "stats": "node resource-loader.js stats",
+    "mcp": "node mcp-server.js"
+  },
+  "keywords": [
+    "mcp",
+    "ai",
+    "resources",
+    "skills",
+    "agents",
+    "prompts",
+    "claude",
+    "copilot"
+  ],
+  "author": "",
+  "license": "MIT"
+}

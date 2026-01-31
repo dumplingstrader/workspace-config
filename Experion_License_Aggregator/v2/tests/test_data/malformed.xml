@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<licensefile>
-	<license format="1">
-		<!-- Missing <details> element -->
-		<options>
-			<option name="PROCESSPOINTS" value="100" />
-		</options>
-	</license>
-</licensefile>

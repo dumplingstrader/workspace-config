@@ -1,7 +1,0 @@
-{
-  "files.watcherExclude": {
-    "**/_scratch/**": true,
-    "**/_output/**": true,
-    "**/_archive/**": true
-  }
-}
