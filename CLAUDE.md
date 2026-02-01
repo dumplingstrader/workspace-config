@@ -45,6 +45,16 @@ Each repo also has a `CLAUDE.md` with project-specific context for Claude: tech 
 - Folders: `lowercase-hyphens` (e.g., `resource-tools`, `knowledge-bases`)
 - Documentation: `UPPER_CASE.md` for root-level docs, `lowercase-hyphens.md` for nested docs
 
+## Workflow Rules
+- If an approach isn't working after one attempt, stop and re-plan instead of pushing forward
+- For non-trivial changes, diff against main before marking complete
+- Simplicity first: minimal code impact, root-cause fixes, no temporary workarounds
+- Don't ask for hand-holding on bugs — read logs/errors and resolve autonomously
+
+## Learned Corrections
+<!-- When you correct Claude, say "add that to CLAUDE.md" and it gets added here as a concrete rule. -->
+<!-- Project-specific corrections go in that project's CLAUDE.md instead. -->
+
 ## Session Habit
 Before closing any session, update the project's `HANDOFF.md` with:
 - What was accomplished
