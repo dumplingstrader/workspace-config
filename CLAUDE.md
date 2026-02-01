@@ -50,6 +50,7 @@ Each repo also has a `CLAUDE.md` with project-specific context for Claude: tech 
 - For non-trivial changes, diff against main before marking complete
 - Simplicity first: minimal code impact, root-cause fixes, no temporary workarounds
 - Don't ask for hand-holding on bugs — read logs/errors and resolve autonomously
+- For bug reports in projects with test suites: write a failing test that reproduces the bug before fixing it
 
 ## Learned Corrections
 <!-- When you correct Claude, say "add that to CLAUDE.md" and it gets added here as a concrete rule. -->
