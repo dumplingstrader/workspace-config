@@ -2,7 +2,7 @@
 
 > **Purpose:** AI context restoration. Update at end of each session.
 
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-02-01
 
 ---
 
@@ -12,19 +12,11 @@ Home development workspace with 4 active projects plus a work documentation expo
 
 ## Current State
 
-### Workspace Standardization (completed this session)
-All 4 home projects now follow the AI_WORKSPACE_GUIDE standards:
-- Core Three files (README, HANDOFF, _TODO) present and populated in all projects
-- HANDOFF files slimmed to standard format (all under 200 lines)
-- Folder naming follows `lowercase-hyphens` convention
-- `_output/` convention applied (healthassistant renamed from `outputs/`)
-
-### Shared Resources (consolidated this session)
-- **Claude skills** (16) moved from ControlsBMW to workspace root `.claude/skills/`
-- **resource-tools** indexer moved from ControlsBMW to workspace root `resource-tools/`
-- **awesome-copilot** reference collection moved from project `.github/` folders to `_reference/awesome-copilot/`
-- Duplicate `.claude/` and `.github/` contents removed from ControlsBMW and controls-docs
-- Copilot-only docs (MODEL_COST_OPTIMIZATION.md, .userguides, .vscode prompts) moved to `_reference/`
+### CLAUDE.md Improvements (this session)
+- Added **Workflow Rules** section with 5 rules: re-plan on failure, diff against main, simplicity first, autonomous bug fixing, test-first bug fixes
+- Added **Learned Corrections** section — persistent place for behavioral corrections that carry across sessions (say "add that to CLAUDE.md" when correcting Claude)
+- Evaluated `claude-mem` plugin for session memory — decided against it (overkill for the problem; CLAUDE.md is the right tool for curated corrections)
+- Added `_reference/claude-mem-main/` to `.gitignore`
 
 ### Project Status
 | Project | State | Key Detail |
@@ -40,6 +32,7 @@ All 4 home projects now follow the AI_WORKSPACE_GUIDE standards:
 
 ## Next Steps
 
+- Start populating Learned Corrections as issues come up across projects
 - Practice push-before-leave, pull-when-arrive git workflow across machines
 - Run `claude mcp list` to audit connected MCP servers
 - Consider whether `healthassistant` folder should be renamed to `health-assistant` (convention)
