@@ -92,10 +92,10 @@ param(
 )
 
 # Color output functions
-function Write-Success { param($Message) Write-Host "✓ $Message" -ForegroundColor Green }
-function Write-Info { param($Message) Write-Host "ℹ $Message" -ForegroundColor Cyan }
-function Write-Warning { param($Message) Write-Host "⚠ $Message" -ForegroundColor Yellow }
-function Write-Error { param($Message) Write-Host "✗ $Message" -ForegroundColor Red }
+function Write-Success { param($Message) Write-Host "[OK] $Message" -ForegroundColor Green }
+function Write-Info { param($Message) Write-Host "[..] $Message" -ForegroundColor Cyan }
+function Write-Warn { param($Message) Write-Host "[!!] $Message" -ForegroundColor Yellow }
+function Write-Err { param($Message) Write-Host "[XX] $Message" -ForegroundColor Red }
 function Write-FileSize { param($Message, $Size) Write-Host "  $Message" -NoNewline; Write-Host " ($([math]::Round($Size, 2)) MB)" -ForegroundColor Gray }
 
 # Get script location and set working directory to caller's location
@@ -124,7 +124,7 @@ if ($UseConfig -and (Test-Path ".distribution-config.json")) {
         Write-Host ""
     }
     catch {
-        Write-Warning "Failed to load .distribution-config.json: $_"
+        Write-Warn "Failed to load .distribution-config.json: $_"
         Write-Host ""
     }
 }
@@ -267,7 +267,7 @@ Write-Host ""
 
 # Warn about large files
 if ($FileScanResults.LargeFiles.Count -gt 0) {
-    Write-Warning "Found $($FileScanResults.LargeFiles.Count) large file(s) (>$MaxFileSize MB):"
+    Write-Warn "Found $($FileScanResults.LargeFiles.Count) large file(s) (>$MaxFileSize MB):"
     foreach ($LargeFile in $FileScanResults.LargeFiles) {
         if ($ExcludeLargeFiles) {
             Write-Host "  [SKIPPED] " -NoNewline -ForegroundColor Yellow
@@ -280,22 +280,22 @@ if ($FileScanResults.LargeFiles.Count -gt 0) {
     Write-Host ""
     
     if (-not $ExcludeLargeFiles) {
-        Write-Warning "Use -ExcludeLargeFiles to skip files larger than $MaxFileSize MB"
+        Write-Warn "Use -ExcludeLargeFiles to skip files larger than $MaxFileSize MB"
         Write-Host ""
     }
 }
 
 # Check total package size
 if ($FileScanResults.TotalSize -gt $MaxPackageSize) {
-    Write-Warning "Package size ($([math]::Round($FileScanResults.TotalSize, 2)) MB) exceeds recommended limit ($MaxPackageSize MB)"
-    Write-Warning "Consider using -ExcludeLargeFiles or reducing content"
+    Write-Warn "Package size ($([math]::Round($FileScanResults.TotalSize, 2)) MB) exceeds recommended limit ($MaxPackageSize MB)"
+    Write-Warn "Consider using -ExcludeLargeFiles or reducing content"
     Write-Host ""
 }
 
 # Display items to include
 Write-Info "Items to include in package:"
 foreach ($item in $ItemsToInclude) {
-    Write-Host "  • $item" -ForegroundColor Gray
+    Write-Host "  - $item" -ForegroundColor Gray
 }
 Write-Host ""
 
@@ -384,12 +384,12 @@ foreach ($Item in $ItemsToInclude) {
             }
         }
         catch {
-            Write-Warning "Failed to copy: $Item ($_)"
+            Write-Warn "Failed to copy: $Item ($_)"
             $SkippedCount++
         }
     }
     else {
-        Write-Warning "Not found: $Item"
+        Write-Warn "Not found: $Item"
         $SkippedCount++
     }
 }
@@ -472,11 +472,11 @@ try {
     
     if ($ZipSize -gt $MaxPackageSize) {
         Write-Host ""
-        Write-Warning "Package size exceeds recommended $MaxPackageSize MB for USB transfer"
+        Write-Warn "Package size exceeds recommended $MaxPackageSize MB for USB transfer"
     }
 }
 catch {
-    Write-Error "Failed to create ZIP archive: $_"
+    Write-Err "Failed to create ZIP archive: $_"
     exit 1
 }
 finally {
