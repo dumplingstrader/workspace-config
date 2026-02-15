@@ -18,6 +18,8 @@ Home development workspace with 4 active projects plus a work documentation expo
   - Filename sanitization for spaces (`risk dial.png` -> `risk_dial.png`)
   - `--skip-images` flag, best-effort warnings on failure
 - **Scheduled Week 4** (Feb 16-22) — 6 posts live in Typefully, 3 with images attached
+- **Set up GitHub auth** — `gh auth login` (HTTPS) + SSH key (ed25519) for `controlsbmw-sys`
+- **Switched all repos to SSH remotes** — workspace-config, Documentation, openclaw-knowledge, openclaw-sandbox
 - **Initialized git repo for OpenClaw sandbox** at `~/.openclaw/sandboxes/agent-main-main-20ceb99b/`
   - Pushed to `https://github.com/controlsbmw-sys/openclaw-sandbox` (private)
   - 50 skills + agent config tracked, `config.json` excluded via `.gitignore`
