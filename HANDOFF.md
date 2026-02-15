@@ -18,6 +18,7 @@ Home development workspace with 4 active projects plus a work documentation expo
   - Filename sanitization for spaces (`risk dial.png` -> `risk_dial.png`)
   - `--skip-images` flag, best-effort warnings on failure
 - **Scheduled Week 4** (Feb 16-22) — 6 posts live in Typefully, 3 with images attached
+- **Controls + AI series launch** — swapped Week 4 Thu to intro (000), assigned launch sequence: Week 5 Vendor PDF Win (001), Week 6 Discovery Loop (011), Week 7 Poll (020)
 - **Set up GitHub auth** — `gh auth login` (HTTPS) + SSH key (ed25519) for `controlsbmw-sys`
 - **Switched all repos to SSH remotes** — workspace-config, Documentation, openclaw-knowledge, openclaw-sandbox
 - **Cloned ControlsBMW and controls-docs as standalone repos** — replaced symlinks into openclaw-knowledge with direct clones from GitHub; updated workspace symlinks to match
