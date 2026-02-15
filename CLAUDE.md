@@ -56,6 +56,7 @@ Each repo also has a `CLAUDE.md` with project-specific context for Claude: tech 
 <!-- When you correct Claude, say "add that to CLAUDE.md" and it gets added here as a concrete rule. -->
 <!-- Project-specific corrections go in that project's CLAUDE.md instead. -->
 - Never use Unicode characters (emojis, checkmarks, info symbols, arrows) in PowerShell scripts or any script that may be invoked through bash. The bash-to-PowerShell encoding mangles them, causing function definitions to break. Use plain ASCII text instead (e.g., `[OK]` not `✓`, `[!]` not `⚠`).
+- Never write to a file literally named `nul` on Windows — it's a reserved device name. Scripts that accidentally create `nul` files produce undeletable artifacts. If found, delete them using the Win32 `DeleteFileW` API with the `\\?\` extended-length path prefix (see workspace memory for the snippet).
 
 ## Session Habit
 Before closing any session, update the project's `HANDOFF.md` with:
