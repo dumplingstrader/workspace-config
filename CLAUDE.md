@@ -9,7 +9,7 @@
 | `finances/` | Coin portfolio CLI tool (Python + SQLite + Click) |
 | `healthassistant/` | Personal health tracking app (React + FastAPI) |
 | `Documentation/` | Work-related documentation and project templates (exported from work laptop) |
-| `~/.openclaw/sandboxes/agent-main-main-20ceb99b/` | OpenClaw sandbox — 50 skills, agent config ([GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox)) |
+| `openclaw-sandbox/` | OpenClaw sandbox — 50 skills, agent config ([GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox)) |
 
 ## Shared Workspace Resources
 
