@@ -2,7 +2,7 @@
 
 > **Purpose:** AI context restoration. Update at end of each session.
 
-**Last Updated:** 2026-02-01
+**Last Updated:** 2026-02-15
 
 ---
 
@@ -12,16 +12,27 @@ Home development workspace with 4 active projects plus a work documentation expo
 
 ## Current State
 
-### CLAUDE.md Improvements (this session)
-- Added **Workflow Rules** section with 5 rules: re-plan on failure, diff against main, simplicity first, autonomous bug fixing, test-first bug fixes
-- Added **Learned Corrections** section — persistent place for behavioral corrections that carry across sessions (say "add that to CLAUDE.md" when correcting Claude)
-- Evaluated `claude-mem` plugin for session memory — decided against it (overkill for the problem; CLAUDE.md is the right tool for curated corrections)
-- Added `_reference/claude-mem-main/` to `.gitignore`
+### OpenClaw Model Migration (2026-02-15)
+- **Promoted `minimax/MiniMax-M2.5` to primary model** — qwen3:8b was underpowered for agent tasks
+- **Created `local` agent** (`ollama/qwen3:8b`) for lightweight tasks (lookups, math, boilerplate)
+- **Fallback chain:** `ollama/qwen3:8b` -> `moonshot/kimi-k2.5`
+- **Added delegation rules** in `~/.openclaw/workspace/AGENTS.md` — main agent auto-delegates simple tasks to local agent via `sessions_spawn`
+- **Cost validated:** ~$0.0003/turn cached, projected <$2/mo heavy use
+- **Tested end-to-end:** Discord and Telegram confirmed working on MiniMax M2.5
+- **MiniMax API funds added** — balance confirmed working
+
+### Git Setup (2026-02-15)
+- Global git identity: `controlsbmw-sys <controlsbmw@gmail.com>`
+- Claude settings committed (tool permissions for brew, pip3, python3, npm, WebSearch, WebFetch)
+
+### Strategic Plan Decisions (2026-02-15)
+- **LanceDB stays disabled** — not needed until digital products / micro-SaaS phase (6-12 months)
+- **`Documentation/` not yet ingested into OpenClaw** — must first identify top 3 time-consuming doc types at work per Lane 1 priorities, then selectively ingest
 
 ### Project Status
 | Project | State | Key Detail |
 |---------|-------|------------|
-| ControlsBMW | Pre-launch | Content backlog being built, persona defined |
+| ControlsBMW | Pre-launch | Content backlog being built, OpenClaw now on MiniMax M2.5 |
 | controls-docs | Reference library | 8.8 GB vendor docs in _USB_SYNC_sources |
 | finances | Working | 66 coins, 29 tests passing, $376K portfolio value |
 | healthassistant | v3.0 deployed | React PWA + FastAPI, pushed to GitHub |
@@ -32,8 +43,9 @@ Home development workspace with 4 active projects plus a work documentation expo
 
 ## Next Steps
 
+- Identify top 3 time-consuming documentation tasks at work (Lane 1 — strategic plan priority 1)
+- Selectively ingest relevant doc types from `Documentation/` into OpenClaw
+- Monitor MiniMax M2.5 API usage and credit burn rate over next week
+- Build out ControlsBMW content backlog and establish posting cadence
 - Start populating Learned Corrections as issues come up across projects
-- Practice push-before-leave, pull-when-arrive git workflow across machines
-- Run `claude mcp list` to audit connected MCP servers
 - Consider whether `healthassistant` folder should be renamed to `health-assistant` (convention)
-- Review `.github/instructions/` at workspace root — 150+ Copilot instruction files that do nothing for Claude CLI
