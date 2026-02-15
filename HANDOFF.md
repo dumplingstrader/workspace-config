@@ -12,7 +12,18 @@ Home development workspace with 4 active projects plus a work documentation expo
 
 ## Current State
 
-### Documentation Repo Sync (2026-02-15, this session)
+### Typefully Image Uploads + OpenClaw Sandbox Repo (2026-02-15, this session)
+- **Added image attachment support to Typefully skill** — posts marked `[IMG]` now upload images via presigned S3 URL flow
+  - S3 PUT uses `curl` subprocess (Python urllib injects Content-Type breaking the signature)
+  - Filename sanitization for spaces (`risk dial.png` -> `risk_dial.png`)
+  - `--skip-images` flag, best-effort warnings on failure
+- **Scheduled Week 4** (Feb 16-22) — 6 posts live in Typefully, 3 with images attached
+- **Initialized git repo for OpenClaw sandbox** at `~/.openclaw/sandboxes/agent-main-main-20ceb99b/`
+  - Pushed to `https://github.com/controlsbmw-sys/openclaw-sandbox` (private)
+  - 50 skills + agent config tracked, `config.json` excluded via `.gitignore`
+- **Added openclaw-sandbox** to workspace index in CLAUDE.md
+
+### Documentation Repo Sync (2026-02-15, earlier session)
 - **Synced Documentation repo from work laptop export** — extracted 60,000+ files from Documentation.zip
 - Preserved local `.git/` and `.claude/`, replaced all working content
 - **New folders added:** Communication/, Display_Callup/, ProcessorMonitoring/, Sharepoint/, Alarm Reporting/Alarm Metrics/
@@ -32,7 +43,8 @@ Home development workspace with 4 active projects plus a work documentation expo
 ### Project Status
 | Project | State | Key Detail |
 |---------|-------|------------|
-| ControlsBMW | Pre-launch | Content backlog being built, OpenClaw now on MiniMax M2.5 |
+| ControlsBMW | Pre-launch | Week 4 scheduled (Feb 16-22), image uploads working |
+| openclaw-sandbox | Tracked | 50 skills + agent config, [GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox) |
 | controls-docs | Reference library | 8.8 GB vendor docs in _USB_SYNC_sources |
 | Documentation | Synced | Fresh export from work laptop, pushed to GitHub |
 | finances | Working | 66 coins, 29 tests passing, $376K portfolio value |
@@ -47,6 +59,7 @@ Home development workspace with 4 active projects plus a work documentation expo
 - Identify top 3 time-consuming documentation tasks at work (Lane 1 — strategic plan priority 1)
 - Selectively ingest relevant doc types from `Documentation/` into OpenClaw
 - Monitor MiniMax M2.5 API usage and credit burn rate over next week
+- Schedule Week 5 when content is ready; manual replies needed Feb 16 + 22 at 4 PM
 - Build out ControlsBMW content backlog and establish posting cadence
 - Consider cleaning up unused imports flagged by cleanup_check.py (223 files at workspace level, mostly in skills/reference/archive code — low priority)
 - Consider whether `healthassistant` folder should be renamed to `health-assistant` (convention)
