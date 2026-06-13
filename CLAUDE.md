@@ -53,6 +53,19 @@ Each repo also has a `CLAUDE.md` with project-specific context for Claude: tech 
 - Don't ask for hand-holding on bugs — read logs/errors and resolve autonomously
 - For bug reports in projects with test suites: write a failing test that reproduces the bug before fixing it
 
+## Writing Style Defaults
+
+When writing any communication on behalf of the user (emails, messages, summaries, documentation):
+
+- Replace em-dashes (--) with double hyphens (--)
+- Use only standard QWERTY keyboard symbols -- no Unicode, no curly/smart quotes, no decorative symbols
+- Replace Unicode symbols (checkmarks, bullets, ellipsis) with ASCII equivalents: asterisks (*), periods (...), hyphens (-)
+- Use straight quotes ("") not smart quotes ("")
+- No emojis in written output unless the user explicitly requests them
+- Prefer bullets over long paragraphs; add whitespace between sections
+- Hedge predictions: "likely," "probably," "in my opinion" -- avoid absolute declarations
+- See memory `user-voice-tony` for the full voice profile and replication formula
+
 ## Learned Corrections
 <!-- When you correct Claude, say "add that to CLAUDE.md" and it gets added here as a concrete rule. -->
 <!-- Project-specific corrections go in that project's CLAUDE.md instead. -->
