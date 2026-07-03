@@ -6,6 +6,7 @@ controls-docs/
 finances/
 healthassistant/
 Documentation/
+openclaw-sandbox/
 
 # ============================================
 # OS / Editor
@@ -26,9 +27,12 @@ _reference/claude-mem-main/
 *.tmp
 *.log
 ~$*
+*.7z
 node_modules/
 __pycache__/
 *.pyc
+_scratch/
+_output/
 
 # ============================================
 # Resource-tools generated indexes

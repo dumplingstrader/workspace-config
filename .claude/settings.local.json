@@ -6,7 +6,10 @@
       "Bash(git clean:*)",
       "Bash(git ls-tree:*)",
       "Bash(cmd /c \"cd /d E:\\\\_Development && ren controls-docs controls-docs-OLD\")",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }
