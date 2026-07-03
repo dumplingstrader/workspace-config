@@ -1,0 +1,12 @@
+{
+  "name": "gu-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gods Unchained marketplace bot",
+  "main": "gu_bot.js",
+  "dependencies": {
+    "@imtbl/sdk": "^2.14.3",
+    "dotenv": "^17.4.0",
+    "ethers": "^6.16.0"
+  }
+}

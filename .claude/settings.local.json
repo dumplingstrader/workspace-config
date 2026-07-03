@@ -9,7 +9,17 @@
       "Bash(git clone:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(du:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)"
     ]
   }
 }
