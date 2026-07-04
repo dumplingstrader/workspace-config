@@ -5,7 +5,7 @@ Quick setup guide for starting a new project in this workspace.
 ## 1. Create Project Folder
 
 ```powershell
-cd C:\Users\GF99\Documentation
+cd C:\_Documentation
 mkdir NewProjectName
 cd NewProjectName
 ```
@@ -21,9 +21,9 @@ cp ..\_templates\_TODO.md _TODO.md
 
 ## 3. Customize Core Files
 
-- [ ] Edit `README.md` - Replace placeholders with project details
-- [ ] Edit `HANDOFF.md` - Add initial project context
-- [ ] Edit `_TODO.md` - Add first tasks
+* Edit `README.md` - Replace placeholders with project details
+* Edit `HANDOFF.md` - Add initial project context
+* Edit `_TODO.md` - Add first tasks
 
 ## 4. Create Standard Folders
 
@@ -59,8 +59,8 @@ pip freeze > requirements.txt
 
 ## 7. Update Workspace Documentation
 
-- [ ] Add project to workspace README or main documentation
-- [ ] Update `.gitignore` if project has special files to exclude
+* Add project to workspace README or main documentation
+* Update `.gitignore` if project has special files to exclude
 
 ## 8. Initial Commit
 

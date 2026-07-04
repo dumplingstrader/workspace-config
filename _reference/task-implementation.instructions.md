@@ -1,4 +1,4 @@
----
+﻿---
 applyTo: '**/.copilot-tracking/changes/*.md'
 description: 'Instructions for implementing task plans with progressive tracking and change record - Brought to you by microsoft/edge-ai'
 ---
@@ -14,10 +14,10 @@ Implementation progress MUST be tracked in a corresponding changes files located
 ### 1. Plan Analysis and Preparation
 
 **MUST complete before starting implementation:**
-- **MANDATORY**: Read and fully understand the complete plan file including scope, objectives, all phases, and every checklist item
-- **MANDATORY**: Read and fully understand the corresponding changes file completely - if any parts are missing from context, read the entire file back in using `read_file`
-- **MANDATORY**: Identify all referenced files mentioned in the plan and examine them for context
-- **MANDATORY**: Understand current project structure and conventions
+* **MANDATORY**: Read and fully understand the complete plan file including scope, objectives, all phases, and every checklist item
+* **MANDATORY**: Read and fully understand the corresponding changes file completely - if any parts are missing from context, read the entire file back in using `read_file`
+* **MANDATORY**: Identify all referenced files mentioned in the plan and examine them for context
+* **MANDATORY**: Understand current project structure and conventions
 
 ### 2. Systematic Implementation Process
 
@@ -44,12 +44,12 @@ Implementation progress MUST be tracked in a corresponding changes files located
 ### 3. Implementation Quality Standards
 
 **Every implementation MUST:**
-- Follow existing workspace patterns and conventions (check `copilot/` folder for standards)
-- Implement complete, working functionality that meets all task requirements
-- Include appropriate error handling and validation
-- Use consistent naming conventions and code structure from the workspace
-- Add necessary documentation and comments for complex logic
-- Ensure compatibility with existing systems and dependencies
+* Follow existing workspace patterns and conventions (check `copilot/` folder for standards)
+* Implement complete, working functionality that meets all task requirements
+* Include appropriate error handling and validation
+* Use consistent naming conventions and code structure from the workspace
+* Add necessary documentation and comments for complex logic
+* Ensure compatibility with existing systems and dependencies
 
 ### 4. Continuous Progress and Validation
 
@@ -61,43 +61,43 @@ Implementation progress MUST be tracked in a corresponding changes files located
 5. Continue to the next unchecked task
 
 **Continue until:**
-- All tasks in the plan are marked complete `[x]`
-- All specified files have been created or updated with working code
-- All success criteria from the plan have been verified
+* All tasks in the plan are marked complete `[x]`
+* All specified files have been created or updated with working code
+* All success criteria from the plan have been verified
 
 ### 5. Reference Gathering Guidelines
 
 **When gathering external references:**
-- Focus on practical implementation examples over theoretical documentation
-- Validate that external sources contain actual usable patterns
-- Adapt external patterns to match workspace conventions and standards
+* Focus on practical implementation examples over theoretical documentation
+* Validate that external sources contain actual usable patterns
+* Adapt external patterns to match workspace conventions and standards
 
 **When implementing from references:**
-- Follow workspace patterns and conventions first, external patterns second
-- Implement complete, working functionality rather than just examples
-- Ensure all dependencies and configurations are properly integrated
-- Ensure implementations work within the existing project structure
+* Follow workspace patterns and conventions first, external patterns second
+* Implement complete, working functionality rather than just examples
+* Ensure all dependencies and configurations are properly integrated
+* Ensure implementations work within the existing project structure
 
 ### 6. Completion and Documentation
 
 **Implementation is complete when:**
-- All plan tasks are marked complete `[x]`
-- All specified files exist with working code
-- All success criteria from the plan are verified
-- No implementation errors remain
+* All plan tasks are marked complete `[x]`
+* All specified files exist with working code
+* All success criteria from the plan are verified
+* No implementation errors remain
 
 **Final step - update changes file with release summary:**
-- Add Release Summary section only after ALL phases are marked complete `[x]`
-- Document complete file inventory and overall implementation summary for release documentation
+* Add Release Summary section only after ALL phases are marked complete `[x]`
+* Document complete file inventory and overall implementation summary for release documentation
 
 ### 7. Problem Resolution
 
 **When encountering implementation issues:**
-- Document the specific problem clearly
-- Try alternative approaches or search terms
-- Use workspace patterns as fallback when external references fail
-- Continue with available information rather than stopping completely
-- Note any unresolved issues in the plan file for future reference
+* Document the specific problem clearly
+* Try alternative approaches or search terms
+* Use workspace patterns as fallback when external references fail
+* Continue with available information rather than stopping completely
+* Note any unresolved issues in the plan file for future reference
 
 ## Implementation Workflow
 
@@ -119,12 +119,12 @@ Implementation progress MUST be tracked in a corresponding changes files located
 ## Success Criteria
 
 Implementation is complete when:
-- ✅ All plan tasks are marked complete `[x]`
-- ✅ All specified files contain working code
-- ✅ Code follows workspace patterns and conventions
-- ✅ All functionality works as expected within the project
-- ✅ Changes file is updated after every task completion with Added, Modified, or Removed entries
-- ✅ Changes file documents all phases with detailed release-ready documentation and final release summary
+* âœ… All plan tasks are marked complete `[x]`
+* âœ… All specified files contain working code
+* âœ… Code follows workspace patterns and conventions
+* âœ… All functionality works as expected within the project
+* âœ… Changes file is updated after every task completion with Added, Modified, or Removed entries
+* âœ… Changes file documents all phases with detailed release-ready documentation and final release summary
 
 ## Template Changes File
 
@@ -150,15 +150,15 @@ Replace `{{ }}` with appropriate values. Create this file in `./.copilot-trackin
 
 ### Added
 
-- {{relative-file-path}} - {{one sentence summary of what was implemented}}
+* {{relative-file-path}} - {{one sentence summary of what was implemented}}
 
 ### Modified
 
-- {{relative-file-path}} - {{one sentence summary of what was changed}}
+* {{relative-file-path}} - {{one sentence summary of what was changed}}
 
 ### Removed
 
-- {{relative-file-path}} - {{one sentence summary of what was removed}}
+* {{relative-file-path}} - {{one sentence summary of what was removed}}
 
 ## Release Summary
 
@@ -166,25 +166,26 @@ Replace `{{ }}` with appropriate values. Create this file in `./.copilot-trackin
 
 ### Files Created ({{count}})
 
-- {{file-path}} - {{purpose}}
+* {{file-path}} - {{purpose}}
 
 ### Files Modified ({{count}})
 
-- {{file-path}} - {{changes-made}}
+* {{file-path}} - {{changes-made}}
 
 ### Files Removed ({{count}})
 
-- {{file-path}} - {{reason}}
+* {{file-path}} - {{reason}}
 
 ### Dependencies & Infrastructure
 
-- **New Dependencies**: {{list-of-new-dependencies}}
-- **Updated Dependencies**: {{list-of-updated-dependencies}}
-- **Infrastructure Changes**: {{infrastructure-updates}}
-- **Configuration Updates**: {{configuration-changes}}
+* **New Dependencies**: {{list-of-new-dependencies}}
+* **Updated Dependencies**: {{list-of-updated-dependencies}}
+* **Infrastructure Changes**: {{infrastructure-updates}}
+* **Configuration Updates**: {{configuration-changes}}
 
 ### Deployment Notes
 
 {{Any specific deployment considerations or steps}}
 ```
 <!-- </changes-template> -->
+

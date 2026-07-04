@@ -1,4 +1,4 @@
-# Skills Audit Results
+﻿# Skills Audit Results
 
 Date: January 30, 2026
 
@@ -8,51 +8,51 @@ Out of 4 document processing skills, only **1 is used frequently** enough to jus
 
 ## Detailed Audit
 
-### ✅ KEEP: xlsx
-- **Used weekly?** YES
-- **Projects using it:** Training, SpendTracker, PC_Value_Tracker, Skill Matrix, Integrity Audits
-- **Teaches AI something it doesn't know?** YES - openpyxl formula recalculation, complex formatting
-- **Tools exist?** YES - recalc.py verified in skill folder
-- **Action:** Keep in `.github/skills/xlsx/`
-- **Token cost:** ~2,500 tokens (justified by frequent use)
+### âœ… KEEP: xlsx
+* **Used weekly?** YES
+* **Projects using it:** Training, SpendTracker, PC_Value_Tracker, Skill Matrix, Integrity Audits
+* **Teaches AI something it doesn't know?** YES - openpyxl formula recalculation, complex formatting
+* **Tools exist?** YES - recalc.py verified in skill folder
+* **Action:** Keep in `.github/skills/xlsx/`
+* **Token cost:** ~2,500 tokens (justified by frequent use)
 
-### ⚠️ MOVE: pptx
-- **Used weekly?** NO - Single use case (Skill Matrix promotion, 01/30/26)
-- **Teaches AI something it doesn't know?** YES - html2pptx workflow, template manipulation
-- **Tools exist?** Needs verification (multiple Python scripts referenced)
-- **Action:** Move to `_reference/pptx-skill/` OR make project-specific at `Skill Matrix/.github/skills/pptx/`
-- **Token cost:** ~2,500 tokens (wasted on 99% of sessions)
-- **Savings:** ~2,500 tokens per session when not needed
+### âš ï¸ MOVE: pptx
+* **Used weekly?** NO - Single use case (Skill Matrix promotion, 01/30/26)
+* **Teaches AI something it doesn't know?** YES - html2pptx workflow, template manipulation
+* **Tools exist?** Needs verification (multiple Python scripts referenced)
+* **Action:** Move to `_reference/pptx-skill/` OR make project-specific at `Skill Matrix/.github/skills/pptx/`
+* **Token cost:** ~2,500 tokens (wasted on 99% of sessions)
+* **Savings:** ~2,500 tokens per session when not needed
 
-### ⚠️ MOVE: docx
-- **Used weekly?** NO - No .docx creation/editing found in workspace scan
-- **Teaches AI something it doesn't know?** Likely YES - Tracked changes, comments, OOXML
-- **Tools exist?** Needs verification
-- **Action:** Move to `_reference/docx-skill/`
-- **Token cost:** ~2,500 tokens (wasted if not used)
-- **Savings:** ~2,500 tokens per session when not needed
+### âš ï¸ MOVE: docx
+* **Used weekly?** NO - No .docx creation/editing found in workspace scan
+* **Teaches AI something it doesn't know?** Likely YES - Tracked changes, comments, OOXML
+* **Tools exist?** Needs verification
+* **Action:** Move to `_reference/docx-skill/`
+* **Token cost:** ~2,500 tokens (wasted if not used)
+* **Savings:** ~2,500 tokens per session when not needed
 
-### ⚠️ MOVE: pdf
-- **Used weekly?** NO - Minimal use (occasional PDF text extraction)
-- **Teaches AI something it doesn't know?** Partially - Basic extraction is standard knowledge
-- **Tools exist?** Needs verification
-- **Action:** Move to `_reference/pdf-skill/`
-- **Token cost:** ~2,500 tokens (wasted if not used)
-- **Savings:** ~2,500 tokens per session when not needed
+### âš ï¸ MOVE: pdf
+* **Used weekly?** NO - Minimal use (occasional PDF text extraction)
+* **Teaches AI something it doesn't know?** Partially - Basic extraction is standard knowledge
+* **Tools exist?** Needs verification
+* **Action:** Move to `_reference/pdf-skill/`
+* **Token cost:** ~2,500 tokens (wasted if not used)
+* **Savings:** ~2,500 tokens per session when not needed
 
 ## Projected Token Savings
 
 **Current Setup:**
-- 4 skills × ~2,500 tokens each = ~10,000 tokens per session
-- All loaded automatically regardless of need
+* 4 skills Ã— ~2,500 tokens each = ~10,000 tokens per session
+* All loaded automatically regardless of need
 
 **Optimized Setup:**
-- 1 skill (xlsx) = ~2,500 tokens per session
-- Other 3 skills loaded on-demand only
+* 1 skill (xlsx) = ~2,500 tokens per session
+* Other 3 skills loaded on-demand only
 
 **Savings:**
-- ~7,500 tokens saved per session (75% reduction)
-- Only load pptx/docx/pdf when explicitly needed
+* ~7,500 tokens saved per session (75% reduction)
+* Only load pptx/docx/pdf when explicitly needed
 
 ## Implementation Plan
 
@@ -91,12 +91,12 @@ This makes the skill available ONLY when working in the Skill Matrix project.
 
 ## Next Steps
 
-- [ ] Verify which tools exist in each skill folder
-- [ ] Move docx, pdf, pptx to _reference
-- [ ] Update copilot-instructions.md
-- [ ] Test that xlsx skill still loads automatically
-- [ ] Test on-demand loading of moved skills
-- [ ] Monitor token usage after changes
+* Verify which tools exist in each skill folder
+* Move docx, pdf, pptx to _reference
+* Update copilot-instructions.md
+* Test that xlsx skill still loads automatically
+* Test on-demand loading of moved skills
+* Monitor token usage after changes
 
 ## Audit Questions Answered
 
@@ -123,3 +123,5 @@ This makes the skill available ONLY when working in the Skill Matrix project.
 > Do you actually need all four document skills loaded globally?
 
 **Answer:** NO. Only xlsx is used frequently enough to justify auto-loading. The other three waste ~7,500 tokens per session for functionality rarely (or never) used.
+
+

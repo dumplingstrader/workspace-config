@@ -1,4 +1,4 @@
----
+﻿---
 description: 'Automatically update README.md and documentation files when application code changes require documentation updates'
 applyTo: '**/*.{md,js,mjs,cjs,ts,tsx,jsx,py,java,cs,go,rb,php,rs,cpp,c,h,hpp}'
 ---
@@ -61,23 +61,23 @@ of instructions that are independent of the entirety of this instruction file. C
 
 ### Instruction Configuration
 
-- **apply-doc-file-structure** : true
+* **apply-doc-file-structure** : true
   - **apply-condition** : unset
-- **apply-doc-verification** : true
+* **apply-doc-verification** : true
   - **apply-condition** : unset
-- **apply-doc-quality-standard** : true
+* **apply-doc-quality-standard** : true
   - **apply-condition** : unset
-- **apply-automation-tooling** : true
+* **apply-automation-tooling** : true
   - **apply-condition** : unset
-- **apply-doc-patterns** : true
+* **apply-doc-patterns** : true
   - **apply-condition** : unset
-- **apply-best-practices** : true
+* **apply-best-practices** : true
   - **apply-condition** : unset
-- **apply-validation-commands** : true
+* **apply-validation-commands** : true
   - **apply-condition** : unset
-- **apply-maintenance-schedule** : true
+* **apply-maintenance-schedule** : true
   - **apply-condition** : unset
-- **apply-git-integration** : false
+* **apply-git-integration** : false
   - **apply-condition** : unset
 
 <!--
@@ -99,14 +99,14 @@ of instructions that are independent of the entirety of this instruction file. C
 
 Automatically check if documentation updates are needed when:
 
-- New features or functionality are added
-- API endpoints, methods, or interfaces change
-- Breaking changes are introduced
-- Dependencies or requirements change
-- Configuration options or environment variables are modified
-- Installation or setup procedures change
-- Command-line interfaces or scripts are updated
-- Code examples in documentation become outdated
+* New features or functionality are added
+* API endpoints, methods, or interfaces change
+* Breaking changes are introduced
+* Dependencies or requirements change
+* Configuration options or environment variables are modified
+* Installation or setup procedures change
+* Command-line interfaces or scripts are updated
+* Code examples in documentation become outdated
 
 ## Documentation Update Rules
 
@@ -114,22 +114,22 @@ Automatically check if documentation updates are needed when:
 
 **Always update README.md when:**
 
-- Adding new features or capabilities
+* Adding new features or capabilities
   - Add feature description to "Features" section
   - Include usage examples if applicable
   - Update table of contents if present
 
-- Modifying installation or setup process
+* Modifying installation or setup process
   - Update "Installation" or "Getting Started" section
   - Revise dependency requirements
   - Update prerequisite lists
 
-- Adding new CLI commands or options
+* Adding new CLI commands or options
   - Document command syntax and examples
   - Include option descriptions and default values
   - Add usage examples
 
-- Changing configuration options
+* Changing configuration options
   - Update configuration examples
   - Document new environment variables
   - Update config file templates
@@ -138,17 +138,17 @@ Automatically check if documentation updates are needed when:
 
 **Sync API documentation when:**
 
-- New endpoints are added
+* New endpoints are added
   - Document HTTP method, path, parameters
   - Include request/response examples
   - Update OpenAPI/Swagger specs
 
-- Endpoint signatures change
+* Endpoint signatures change
   - Update parameter lists
   - Revise response schemas
   - Document breaking changes
 
-- Authentication or authorization changes
+* Authentication or authorization changes
   - Update authentication examples
   - Revise security requirements
   - Update API key/token documentation
@@ -157,17 +157,17 @@ Automatically check if documentation updates are needed when:
 
 **Verify and update code examples when:**
 
-- Function signatures change
+* Function signatures change
   - Update all code snippets using the function
   - Verify examples still compile/run
   - Update import statements if needed
 
-- API interfaces change
+* API interfaces change
   - Update example requests and responses
   - Revise client code examples
   - Update SDK usage examples
 
-- Best practices evolve
+* Best practices evolve
   - Replace outdated patterns in examples
   - Update to use current recommended approaches
   - Add deprecation notices for old patterns
@@ -176,17 +176,17 @@ Automatically check if documentation updates are needed when:
 
 **Update configuration docs when:**
 
-- New environment variables are added
+* New environment variables are added
   - Add to .env.example file
   - Document in README.md or docs/configuration.md
   - Include default values and descriptions
 
-- Config file structure changes
+* Config file structure changes
   - Update example config files
   - Document new options
   - Mark deprecated options
 
-- Deployment configuration changes
+* Deployment configuration changes
   - Update Docker/Kubernetes configs
   - Revise deployment guides
   - Update infrastructure-as-code examples
@@ -195,17 +195,17 @@ Automatically check if documentation updates are needed when:
 
 **Create migration guides when:**
 
-- Breaking API changes occur
+* Breaking API changes occur
   - Document what changed
   - Provide before/after examples
   - Include step-by-step migration instructions
 
-- Major version updates
+* Major version updates
   - List all breaking changes
   - Provide upgrade checklist
   - Include common migration issues and solutions
 
-- Deprecating features
+* Deprecating features
   - Mark deprecated features clearly
   - Suggest alternative approaches
   - Include timeline for removal
@@ -218,26 +218,26 @@ If `apply-doc-file-structure == true`, then apply the following configurable ins
 
 Maintain these documentation files and update as needed:
 
-- **README.md**: Project overview, quick start, basic usage
-- **CHANGELOG.md**: Version history and user-facing changes
-- **docs/**: Detailed documentation
+* **README.md**: Project overview, quick start, basic usage
+* **CHANGELOG.md**: Version history and user-facing changes
+* **docs/**: Detailed documentation
   - `installation.md`: Setup and installation guide
   - `configuration.md`: Configuration options and examples
   - `api.md`: API reference documentation
   - `contributing.md`: Contribution guidelines
   - `migration-guides/`: Version migration guides
-- **examples/**: Working code examples and tutorials
+* **examples/**: Working code examples and tutorials
 
 ### Changelog Management
 
 **Add changelog entries for:**
 
-- New features (under "Added" section)
-- Bug fixes (under "Fixed" section)
-- Breaking changes (under "Changed" section with **BREAKING** prefix)
-- Deprecated features (under "Deprecated" section)
-- Removed features (under "Removed" section)
-- Security fixes (under "Security" section)
+* New features (under "Added" section)
+* Bug fixes (under "Fixed" section)
+* Breaking changes (under "Changed" section with **BREAKING** prefix)
+* Deprecated features (under "Deprecated" section)
+* Removed features (under "Removed" section)
+* Security fixes (under "Security" section)
 
 **Changelog format:**
 
@@ -276,10 +276,10 @@ If `apply-doc-verification == true`, then apply the following configurable instr
 
 #### Example Tasks
 
-- Verify code examples in docs compile/run
-- Check for broken internal/external links
-- Validate configuration examples against schemas
-- Ensure API examples match current implementation
+* Verify code examples in docs compile/run
+* Check for broken internal/external links
+* Validate configuration examples against schemas
+* Ensure API examples match current implementation
 
     ```bash
     # Example validation commands
@@ -294,12 +294,12 @@ If `apply-doc-quality-standard == true`, then apply the following configurable i
 
 ### Writing Guidelines
 
-- Use clear, concise language
-- Include working code examples
-- Provide both basic and advanced examples
-- Use consistent terminology
-- Include error handling examples
-- Document edge cases and limitations
+* Use clear, concise language
+* Include working code examples
+* Provide both basic and advanced examples
+* Use consistent terminology
+* Include error handling examples
+* Document edge cases and limitations
 
 ### Code Example Format
 
@@ -354,30 +354,30 @@ If `apply-automation-tooling == true`, then apply the following configurable ins
 
 #### Automated Tool Examples
 
-- JSDoc/TSDoc for JavaScript/TypeScript
-- Sphinx/pdoc for Python
-- Javadoc for Java
-- xmldoc for C#
-- godoc for Go
-- rustdoc for Rust
+* JSDoc/TSDoc for JavaScript/TypeScript
+* Sphinx/pdoc for Python
+* Javadoc for Java
+* xmldoc for C#
+* godoc for Go
+* rustdoc for Rust
 
 ### Documentation Linting
 
 **Validate documentation with:**
 
-- Markdown linters (markdownlint)
-- Link checkers (markdown-link-check)
-- Spell checkers (cspell)
-- Code example validators
+* Markdown linters (markdownlint)
+* Link checkers (markdown-link-check)
+* Spell checkers (cspell)
+* Code example validators
 
 ### Pre-update Hooks
 
 **Add pre-commit checks for:**
 
-- Documentation build succeeds
-- No broken links
-- Code examples are valid
-- Changelog entry exists for changes
+* Documentation build succeeds
+* No broken links
+* Code examples are valid
+* Changelog entry exists for changes
 
 ## Common Documentation Patterns `apply-doc-patterns`
 
@@ -440,23 +440,23 @@ If `apply-best-practices == true`, then apply the following configurable instruc
 
 ### Do's
 
-- ✅ Update documentation in the same commit as code changes
-- ✅ Include before/after examples for changes to be reviewed before applying
-- ✅ Test code examples before committing
-- ✅ Use consistent formatting and terminology
-- ✅ Document limitations and edge cases
-- ✅ Provide migration paths for breaking changes
-- ✅ Keep documentation DRY (link instead of duplicating)
+* âœ… Update documentation in the same commit as code changes
+* âœ… Include before/after examples for changes to be reviewed before applying
+* âœ… Test code examples before committing
+* âœ… Use consistent formatting and terminology
+* âœ… Document limitations and edge cases
+* âœ… Provide migration paths for breaking changes
+* âœ… Keep documentation DRY (link instead of duplicating)
 
 ### Don'ts
 
-- ❌ Commit code changes without updating documentation
-- ❌ Leave outdated examples in documentation
-- ❌ Document features that don't exist yet
-- ❌ Use vague or ambiguous language
-- ❌ Forget to update changelog
-- ❌ Ignore broken links or failing examples
-- ❌ Document implementation details users don't need
+* âŒ Commit code changes without updating documentation
+* âŒ Leave outdated examples in documentation
+* âŒ Document features that don't exist yet
+* âŒ Use vague or ambiguous language
+* âŒ Forget to update changelog
+* âŒ Ignore broken links or failing examples
+* âŒ Document implementation details users don't need
 
 ## Validation Example Commands `apply-validation-commands`
 
@@ -483,10 +483,10 @@ If `apply-maintenance-schedule == true`, then apply the following configurable i
 
 ### Regular Reviews
 
-- **Monthly**: Review documentation for accuracy
-- **Per release**: Update version numbers and examples
-- **Quarterly**: Check for outdated patterns or deprecated features
-- **Annually**: Comprehensive documentation audit
+* **Monthly**: Review documentation for accuracy
+* **Per release**: Update version numbers and examples
+* **Quarterly**: Check for outdated patterns or deprecated features
+* **Annually**: Comprehensive documentation audit
 
 ### Deprecation Process
 
@@ -507,43 +507,45 @@ If `apply-git-integration == true`, then apply the following configurable instru
 
 **Documentation must be updated in the same PR as code changes:**
 
-- Document new features in the feature PR
-- Update examples when code changes
-- Add changelog entries with code changes
-- Update API docs when interfaces change
+* Document new features in the feature PR
+* Update examples when code changes
+* Add changelog entries with code changes
+* Update API docs when interfaces change
 
 ### Documentation Review
 
 **During code review, verify:**
 
-- Documentation accurately describes the changes
-- Examples are clear and complete
-- No undocumented breaking changes
-- Changelog entry is appropriate
-- Migration guides are provided if needed
+* Documentation accurately describes the changes
+* Examples are clear and complete
+* No undocumented breaking changes
+* Changelog entry is appropriate
+* Migration guides are provided if needed
 
 ## Review Checklist
 
 Before considering documentation complete, and concluding on the **final procedure**:
 
-- [ ] **Compiled instructions** are based on the sum of **constant instruction sections** and
+* **Compiled instructions** are based on the sum of **constant instruction sections** and
 **configurable instruction sections**
-- [ ] README.md reflects current project state
-- [ ] All new features are documented
-- [ ] Code examples are tested and work
-- [ ] API documentation is complete and accurate
-- [ ] Configuration examples are up to date
-- [ ] Breaking changes are documented with migration guide
-- [ ] CHANGELOG.md is updated
-- [ ] Links are valid and not broken
-- [ ] Installation instructions are current
-- [ ] Environment variables are documented
+* README.md reflects current project state
+* All new features are documented
+* Code examples are tested and work
+* API documentation is complete and accurate
+* Configuration examples are up to date
+* Breaking changes are documented with migration guide
+* CHANGELOG.md is updated
+* Links are valid and not broken
+* Installation instructions are current
+* Environment variables are documented
 
 ## Updating Documentation on Code Change GOAL
 
-- Keep documentation close to code when possible
-- Use documentation generators for API reference
-- Maintain living documentation that evolves with code
-- Consider documentation as part of feature completeness
-- Review documentation in code reviews
-- Make documentation easy to find and navigate
+* Keep documentation close to code when possible
+* Use documentation generators for API reference
+* Maintain living documentation that evolves with code
+* Consider documentation as part of feature completeness
+* Review documentation in code reviews
+* Make documentation easy to find and navigate
+
+

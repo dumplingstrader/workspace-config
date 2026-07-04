@@ -1,8 +1,8 @@
----
+﻿---
 applyTo: '**'
 ---
 
-# Dataverse SDK for Python — Authentication & Security Patterns
+# Dataverse SDK for Python â€” Authentication & Security Patterns
 
 Based on official Microsoft Azure SDK authentication documentation and Dataverse SDK best practices.
 
@@ -13,10 +13,10 @@ The Dataverse SDK for Python uses Azure Identity credentials for token-based aut
 ### Why Token-Based Authentication?
 
 **Advantages over connection strings**:
-- Establishes specific permissions needed by your app (principle of least privilege)
-- Credentials are scoped only to intended apps
-- With managed identity, no secrets to store or compromise
-- Works seamlessly across environments without code changes
+* Establishes specific permissions needed by your app (principle of least privilege)
+* Credentials are scoped only to intended apps
+* With managed identity, no secrets to store or compromise
+* Works seamlessly across environments without code changes
 
 ---
 
@@ -42,15 +42,15 @@ records = client.get("account")
 ```
 
 **When to use**:
-- ✅ Interactive development and testing
-- ✅ Desktop applications with UI
-- ❌ Background services or scheduled jobs
+* âœ… Interactive development and testing
+* âœ… Desktop applications with UI
+* âŒ Background services or scheduled jobs
 
 ---
 
 ### Default Azure Credential (Recommended for All Environments)
 
-**Use for**: Apps that run in multiple environments (dev → test → production).
+**Use for**: Apps that run in multiple environments (dev â†’ test â†’ production).
 
 ```python
 from azure.identity import DefaultAzureCredential
@@ -72,10 +72,10 @@ records = client.get("account")
 ```
 
 **Advantages**:
-- Single code path works everywhere
-- No environment-specific logic needed
-- Automatically detects available credentials
-- Preferred for production apps
+* Single code path works everywhere
+* No environment-specific logic needed
+* Automatically detects available credentials
+* Preferred for production apps
 
 **Credential chain**:
 1. Environment variables (`AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_CLIENT_SECRET`)
@@ -116,10 +116,10 @@ records = client.get("account")
 4. Store credentials in environment variables or secure vault
 
 **Security concerns**:
-- ⚠️ Never hardcode credentials in source code
-- ⚠️ Store secrets in Azure Key Vault or environment variables
-- ⚠️ Rotate credentials regularly
-- ⚠️ Use minimal required permissions
+* âš ï¸ Never hardcode credentials in source code
+* âš ï¸ Store secrets in Azure Key Vault or environment variables
+* âš ï¸ Rotate credentials regularly
+* âš ï¸ Use minimal required permissions
 
 ---
 
@@ -143,10 +143,10 @@ records = client.get("account")
 ```
 
 **Benefits**:
-- ✅ No secrets to manage
-- ✅ Automatic token refresh
-- ✅ Highly secure
-- ✅ Built-in to Azure services
+* âœ… No secrets to manage
+* âœ… Automatic token refresh
+* âœ… Highly secure
+* âœ… Built-in to Azure services
 
 **Setup**:
 1. Enable managed identity on Azure resource (App Service, VM, etc.)
@@ -271,14 +271,14 @@ client = DataverseClient(
 ### 1. Never Hardcode Credentials
 
 ```python
-# ❌ BAD - Don't do this!
+# âŒ BAD - Don't do this!
 credential = ClientSecretCredential(
     tenant_id="your-tenant-id",
     client_id="your-client-id",
     client_secret="your-secret-key"  # EXPOSED!
 )
 
-# ✅ GOOD - Use environment variables
+# âœ… GOOD - Use environment variables
 import os
 credential = ClientSecretCredential(
     tenant_id=os.environ["AZURE_TENANT_ID"],
@@ -512,10 +512,10 @@ def get_user_client(user_username: str) -> DataverseClient:
 ### Security Roles
 
 Assign minimal required roles:
-- **System Administrator**: Full access (avoid for apps)
-- **Sales Manager**: Sales tables + reporting
-- **Service Representative**: Service cases + knowledge
-- **Custom**: Create role with specific table permissions
+* **System Administrator**: Full access (avoid for apps)
+* **Sales Manager**: Sales tables + reporting
+* **Service Representative**: Service cases + knowledge
+* **Custom**: Create role with specific table permissions
 
 ---
 
@@ -525,3 +525,4 @@ Assign minimal required roles:
 - [Authenticate to Azure Services](https://learn.microsoft.com/en-us/azure/developer/python/sdk/authentication/overview)
 - [Azure Key Vault for Secrets](https://learn.microsoft.com/en-us/azure/key-vault/general/overview)
 - [Dataverse Security Model](https://learn.microsoft.com/en-us/power-platform/admin/security/security-overview)
+

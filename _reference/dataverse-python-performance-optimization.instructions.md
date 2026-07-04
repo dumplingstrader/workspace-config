@@ -1,18 +1,18 @@
----
+﻿---
 applyTo: '**'
 ---
 
-# Dataverse SDK for Python — Performance & Optimization Guide
+# Dataverse SDK for Python â€” Performance & Optimization Guide
 
 Based on official Microsoft Dataverse and Azure SDK performance guidance.
 
 ## 1. Performance Overview
 
 The Dataverse SDK for Python is optimized for Python developers but has some limitations in preview:
-- **Minimal retry policy**: Only network errors are retried by default
-- **No DeleteMultiple**: Use individual deletes or update status instead
-- **Limited OData batching**: General-purpose OData batching not supported
-- **SQL limitations**: No JOINs, limited WHERE/TOP/ORDER BY
+* **Minimal retry policy**: Only network errors are retried by default
+* **No DeleteMultiple**: Use individual deletes or update status instead
+* **Limited OData batching**: General-purpose OData batching not supported
+* **SQL limitations**: No JOINs, limited WHERE/TOP/ORDER BY
 
 Workarounds and optimization strategies address these limitations.
 
@@ -23,10 +23,10 @@ Workarounds and optimization strategies address these limitations.
 ### Use Select to Limit Columns
 
 ```python
-# ❌ SLOW - Retrieves all columns
+# âŒ SLOW - Retrieves all columns
 accounts = client.get("account", top=100)
 
-# ✅ FAST - Only retrieve needed columns
+# âœ… FAST - Only retrieve needed columns
 accounts = client.get(
     "account",
     select=["accountid", "name", "telephone1", "creditlimit"],
@@ -41,11 +41,11 @@ accounts = client.get(
 ### Use Filters Efficiently
 
 ```python
-# ❌ SLOW - Fetch all, filter in Python
+# âŒ SLOW - Fetch all, filter in Python
 all_accounts = client.get("account")
 active_accounts = [a for a in all_accounts if a.get("statecode") == 0]
 
-# ✅ FAST - Filter server-side
+# âœ… FAST - Filter server-side
 accounts = client.get(
     "account",
     filter="statecode eq 0",
@@ -91,7 +91,7 @@ for page in accounts:
 ### Lazy Pagination (Recommended)
 
 ```python
-# ✅ BEST - Generator yields one page at a time
+# âœ… BEST - Generator yields one page at a time
 pages = client.get(
     "account",
     top=5000,              # Total limit
@@ -104,18 +104,18 @@ for page in pages:  # Each iteration fetches one page
 ```
 
 **Benefits**:
-- Memory efficient (pages loaded on-demand)
-- Fast time-to-first-result
-- Can stop early if needed
+* Memory efficient (pages loaded on-demand)
+* Fast time-to-first-result
+* Can stop early if needed
 
 ### Avoid Loading Everything into Memory
 
 ```python
-# ❌ SLOW - Loads all 100,000 records at once
+# âŒ SLOW - Loads all 100,000 records at once
 all_records = list(client.get("account", top=100000))
 process(all_records)
 
-# ✅ FAST - Process as you go
+# âœ… FAST - Process as you go
 for page in client.get("account", top=100000, page_size=5000):
     process(page)
 ```
@@ -127,7 +127,7 @@ for page in client.get("account", top=100000, page_size=5000):
 ### Bulk Create (Recommended)
 
 ```python
-# ✅ BEST - Single call with multiple records
+# âœ… BEST - Single call with multiple records
 payloads = [
     {"name": f"Account {i}", "telephone1": f"555-{i:04d}"}
     for i in range(1000)
@@ -138,7 +138,7 @@ ids = client.create("account", payloads)  # One API call for many records
 ### Bulk Update - Broadcast Mode
 
 ```python
-# ✅ FAST - Same update applied to many records
+# âœ… FAST - Same update applied to many records
 account_ids = ["id1", "id2", "id3", "..."]
 client.update("account", account_ids, {"statecode": 1})  # One call
 ```
@@ -146,7 +146,7 @@ client.update("account", account_ids, {"statecode": 1})  # One call
 ### Bulk Update - Per-Record Mode
 
 ```python
-# ✅ ACCEPTABLE - Different updates for each record
+# âœ… ACCEPTABLE - Different updates for each record
 account_ids = ["id1", "id2", "id3"]
 updates = [
     {"telephone1": "555-0100"},
@@ -163,8 +163,8 @@ Based on table complexity (per Microsoft guidance):
 | Table Type | Batch Size | Max Threads |
 |------------|-----------|-------------|
 | OOB (Account, Contact, Lead) | 200-300 | 30 |
-| Simple (few lookups) | ≤10 | 50 |
-| Moderately complex | ≤100 | 30 |
+| Simple (few lookups) | â‰¤10 | 50 |
+| Moderately complex | â‰¤100 | 30 |
 | Large/complex (>100 cols, >20 lookups) | 10-20 | 10-20 |
 
 ```python
@@ -184,13 +184,13 @@ def bulk_create_optimized(client, table_name, payloads, batch_size=200):
 ### Reuse Client Instance
 
 ```python
-# ❌ BAD - Creates new connection each time
+# âŒ BAD - Creates new connection each time
 def process_batch():
     for batch in batches:
         client = DataverseClient(...)  # Expensive!
         client.create("account", batch)
 
-# ✅ GOOD - Reuse connection
+# âœ… GOOD - Reuse connection
 client = DataverseClient(...)  # Create once
 
 def process_batch():
@@ -272,7 +272,7 @@ accounts = asyncio.run(get_accounts_async(client))
 ### Small Files (<128 MB)
 
 ```python
-# ✅ FAST - Single request
+# âœ… FAST - Single request
 client.upload_file(
     table_name="account",
     record_id=record_id,
@@ -284,7 +284,7 @@ client.upload_file(
 ### Large Files (>128 MB)
 
 ```python
-# ✅ OPTIMIZED - Chunked upload
+# âœ… OPTIMIZED - Chunked upload
 client.upload_file(
     table_name="account",
     record_id=record_id,
@@ -307,7 +307,7 @@ client.upload_file(
 ### SQL Alternative (Simple Queries)
 
 ```python
-# ✅ SOMETIMES FASTER - Direct SQL for SELECT only
+# âœ… SOMETIMES FASTER - Direct SQL for SELECT only
 # Limited support: single SELECT, optional WHERE/TOP/ORDER BY
 records = client.get(
     "account",
@@ -318,10 +318,10 @@ records = client.get(
 ### Complex Queries
 
 ```python
-# ❌ NOT SUPPORTED - JOINs, complex WHERE
+# âŒ NOT SUPPORTED - JOINs, complex WHERE
 sql="SELECT a.accountid, c.fullname FROM account a JOIN contact c ON a.accountid = c.parentcustomerid"
 
-# ✅ WORKAROUND - Get accounts, then contacts for each
+# âœ… WORKAROUND - Get accounts, then contacts for each
 accounts = client.get("account", select=["accountid", "name"])
 for account in accounts:
     contacts = client.get(
@@ -417,7 +417,7 @@ ids = call_with_backoff(
 SDK doesn't have transactional guarantees:
 
 ```python
-# ⚠️ If bulk operation partially fails, some records may be created
+# âš ï¸ If bulk operation partially fails, some records may be created
 
 def create_with_consistency_check(client, table_name, payloads):
     """Create records and verify all succeeded."""
@@ -432,7 +432,7 @@ def create_with_consistency_check(client, table_name, payloads):
         )
         
         if len(ids) != count_created:
-            print(f"⚠️ Only {count_created}/{len(ids)} records created")
+            print(f"âš ï¸ Only {count_created}/{len(ids)} records created")
             # Handle partial failure
     except Exception as e:
         print(f"Creation failed: {e}")
@@ -479,16 +479,16 @@ def create_accounts(client, payloads):
 
 | Item | Status | Notes |
 |------|--------|-------|
-| Reuse client instance | ☐ | Create once, reuse |
-| Use select to limit columns | ☐ | Only retrieve needed data |
-| Filter server-side with OData | ☐ | Don't fetch all and filter |
-| Use pagination with page_size | ☐ | Process incrementally |
-| Batch operations | ☐ | Use create/update for multiple |
-| Tune batch size by table type | ☐ | OOB=200-300, Simple=≤10 |
-| Handle rate limiting (429) | ☐ | Implement exponential backoff |
-| Use chunked upload for large files | ☐ | SDK handles for >128MB |
-| Monitor operation duration | ☐ | Log timing for analysis |
-| Test with production-like data | ☐ | Performance varies with data volume |
+| Reuse client instance | â˜ | Create once, reuse |
+| Use select to limit columns | â˜ | Only retrieve needed data |
+| Filter server-side with OData | â˜ | Don't fetch all and filter |
+| Use pagination with page_size | â˜ | Process incrementally |
+| Batch operations | â˜ | Use create/update for multiple |
+| Tune batch size by table type | â˜ | OOB=200-300, Simple=â‰¤10 |
+| Handle rate limiting (429) | â˜ | Implement exponential backoff |
+| Use chunked upload for large files | â˜ | SDK handles for >128MB |
+| Monitor operation duration | â˜ | Log timing for analysis |
+| Test with production-like data | â˜ | Performance varies with data volume |
 
 ---
 
@@ -497,3 +497,4 @@ def create_accounts(client, payloads):
 - [Dataverse Web API Performance](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/optimize-performance-create-update)
 - [OData Query Options](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api)
 - [SDK Working with Data](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/work-data)
+

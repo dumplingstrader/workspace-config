@@ -1,4 +1,4 @@
----
+﻿---
 description: 'Guidelines for creating custom agent files for GitHub Copilot'
 applyTo: '**/*.agent.md'
 ---
@@ -9,12 +9,12 @@ Instructions for creating effective and maintainable custom agent files that pro
 
 ## Project Context
 
-- Target audience: Developers creating custom agents for GitHub Copilot
-- File format: Markdown with YAML frontmatter
-- File naming convention: lowercase with hyphens (e.g., `test-specialist.agent.md`)
-- Location: `.github/agents/` directory (repository-level) or `agents/` directory (organization/enterprise-level)
-- Purpose: Define specialized agents with tailored expertise, tools, and instructions for specific tasks
-- Official documentation: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
+* Target audience: Developers creating custom agents for GitHub Copilot
+* File format: Markdown with YAML frontmatter
+* File naming convention: lowercase with hyphens (e.g., `test-specialist.agent.md`)
+* Location: `.github/agents/` directory (repository-level) or `agents/` directory (organization/enterprise-level)
+* Purpose: Define specialized agents with tailored expertise, tools, and instructions for specific tasks
+* Official documentation: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
 
 ## Required Frontmatter
 
@@ -34,54 +34,54 @@ infer: true
 ### Core Frontmatter Properties
 
 #### **description** (REQUIRED)
-- Single-quoted string, clearly stating the agent's purpose and domain expertise
-- Should be concise (50-150 characters) and actionable
-- Example: `'Focuses on test coverage, quality, and testing best practices'`
+* Single-quoted string, clearly stating the agent's purpose and domain expertise
+* Should be concise (50-150 characters) and actionable
+* Example: `'Focuses on test coverage, quality, and testing best practices'`
 
 #### **name** (OPTIONAL)
-- Display name for the agent in the UI
-- If omitted, defaults to filename (without `.md` or `.agent.md`)
-- Use title case and be descriptive
-- Example: `'Testing Specialist'`
+* Display name for the agent in the UI
+* If omitted, defaults to filename (without `.md` or `.agent.md`)
+* Use title case and be descriptive
+* Example: `'Testing Specialist'`
 
 #### **tools** (OPTIONAL)
-- List of tool names or aliases the agent can use
-- Supports comma-separated string or YAML array format
-- If omitted, agent has access to all available tools
-- See "Tool Configuration" section below for details
+* List of tool names or aliases the agent can use
+* Supports comma-separated string or YAML array format
+* If omitted, agent has access to all available tools
+* See "Tool Configuration" section below for details
 
 #### **model** (STRONGLY RECOMMENDED)
-- Specifies which AI model the agent should use
-- Supported in VS Code, JetBrains IDEs, Eclipse, and Xcode
-- Example: `'Claude Sonnet 4.5'`, `'gpt-4'`, `'gpt-4o'`
-- Choose based on agent complexity and required capabilities
+* Specifies which AI model the agent should use
+* Supported in VS Code, JetBrains IDEs, Eclipse, and Xcode
+* Example: `'Claude Sonnet 4.5'`, `'gpt-4'`, `'gpt-4o'`
+* Choose based on agent complexity and required capabilities
 
 #### **target** (OPTIONAL)
-- Specifies target environment: `'vscode'` or `'github-copilot'`
-- If omitted, agent is available in both environments
-- Use when agent has environment-specific features
+* Specifies target environment: `'vscode'` or `'github-copilot'`
+* If omitted, agent is available in both environments
+* Use when agent has environment-specific features
 
 #### **infer** (OPTIONAL)
-- Boolean controlling whether Copilot can automatically use this agent based on context
-- Default: `true` if omitted
-- Set to `false` to require manual agent selection
+* Boolean controlling whether Copilot can automatically use this agent based on context
+* Default: `true` if omitted
+* Set to `false` to require manual agent selection
 
 #### **metadata** (OPTIONAL, GitHub.com only)
-- Object with name-value pairs for agent annotation
-- Example: `metadata: { category: 'testing', version: '1.0' }`
-- Not supported in VS Code
+* Object with name-value pairs for agent annotation
+* Example: `metadata: { category: 'testing', version: '1.0' }`
+* Not supported in VS Code
 
 #### **mcp-servers** (OPTIONAL, Organization/Enterprise only)
-- Configure MCP servers available only to this agent
-- Only supported for organization/enterprise level agents
-- See "MCP Server Configuration" section below
+* Configure MCP servers available only to this agent
+* Only supported for organization/enterprise level agents
+* See "MCP Server Configuration" section below
 
 #### **handoffs** (OPTIONAL, VS Code only)
-- Enable guided sequential workflows that transition between agents with suggested next steps
-- List of handoff configurations, each specifying a target agent and optional prompt
-- After a chat response completes, handoff buttons appear allowing users to move to the next agent
-- Only supported in VS Code (version 1.106+)
-- See "Handoffs Configuration" section below for details
+* Enable guided sequential workflows that transition between agents with suggested next steps
+* List of handoff configurations, each specifying a target agent and optional prompt
+* After a chat response completes, handoff buttons appear allowing users to move to the next agent
+* Only supported in VS Code (version 1.106+)
+* See "Handoffs Configuration" section below for details
 
 ## Handoffs Configuration
 
@@ -89,10 +89,10 @@ Handoffs enable you to create guided sequential workflows that transition seamle
 
 ### Common Handoff Patterns
 
-- **Planning → Implementation**: Generate a plan in a planning agent, then hand off to an implementation agent to start coding
-- **Implementation → Review**: Complete implementation, then switch to a code review agent to check for quality and security issues
-- **Write Failing Tests → Write Passing Tests**: Generate failing tests, then hand off to implement the code that makes those tests pass
-- **Research → Documentation**: Research a topic, then transition to a documentation agent to write guides
+* **Planning â†’ Implementation**: Generate a plan in a planning agent, then hand off to an implementation agent to start coding
+* **Implementation â†’ Review**: Complete implementation, then switch to a code review agent to check for quality and security issues
+* **Write Failing Tests â†’ Write Passing Tests**: Generate failing tests, then hand off to implement the code that makes those tests pass
+* **Research â†’ Documentation**: Research a topic, then transition to a documentation agent to write guides
 
 ### Handoff Frontmatter Structure
 
@@ -128,39 +128,39 @@ Each handoff in the list must include the following properties:
 
 ### Handoff Behavior
 
-- **Button Display**: Handoff buttons appear as interactive suggestions after a chat response completes
-- **Context Preservation**: When users select a handoff button, they switch to the target agent with conversation context maintained
-- **Pre-filled Prompt**: If a `prompt` is specified, it appears pre-filled in the target agent's chat input
-- **Manual vs Auto**: When `send: false`, users must review and manually send the pre-filled prompt; when `send: true`, the prompt is automatically submitted
+* **Button Display**: Handoff buttons appear as interactive suggestions after a chat response completes
+* **Context Preservation**: When users select a handoff button, they switch to the target agent with conversation context maintained
+* **Pre-filled Prompt**: If a `prompt` is specified, it appears pre-filled in the target agent's chat input
+* **Manual vs Auto**: When `send: false`, users must review and manually send the pre-filled prompt; when `send: true`, the prompt is automatically submitted
 
 ### Handoff Configuration Guidelines
 
 #### When to Use Handoffs
 
-- **Multi-step workflows**: Breaking down complex tasks across specialized agents
-- **Quality gates**: Ensuring review steps between implementation phases
-- **Guided processes**: Directing users through a structured development process
-- **Skill transitions**: Moving from planning/design to implementation/testing specialists
+* **Multi-step workflows**: Breaking down complex tasks across specialized agents
+* **Quality gates**: Ensuring review steps between implementation phases
+* **Guided processes**: Directing users through a structured development process
+* **Skill transitions**: Moving from planning/design to implementation/testing specialists
 
 #### Best Practices
 
-- **Clear Labels**: Use action-oriented labels that clearly indicate the next step
-  - ✅ Good: "Start Implementation", "Review for Security", "Write Tests"
-  - ❌ Avoid: "Next", "Go to agent", "Do something"
+* **Clear Labels**: Use action-oriented labels that clearly indicate the next step
+  - âœ… Good: "Start Implementation", "Review for Security", "Write Tests"
+  - âŒ Avoid: "Next", "Go to agent", "Do something"
 
-- **Relevant Prompts**: Provide context-aware prompts that reference the completed work
-  - ✅ Good: `'Now implement the plan outlined above.'`
-  - ❌ Avoid: Generic prompts without context
+* **Relevant Prompts**: Provide context-aware prompts that reference the completed work
+  - âœ… Good: `'Now implement the plan outlined above.'`
+  - âŒ Avoid: Generic prompts without context
 
-- **Selective Use**: Don't create handoffs to every possible agent; focus on logical workflow transitions
+* **Selective Use**: Don't create handoffs to every possible agent; focus on logical workflow transitions
   - Limit to 2-3 most relevant next steps per agent
   - Only add handoffs for agents that naturally follow in the workflow
 
-- **Agent Dependencies**: Ensure target agents exist before creating handoffs
+* **Agent Dependencies**: Ensure target agents exist before creating handoffs
   - Handoffs to non-existent agents will be silently ignored
   - Test handoffs to verify they work as expected
 
-- **Prompt Content**: Keep prompts concise and actionable
+* **Prompt Content**: Keep prompts concise and actionable
   - Refer to work from the current agent without duplicating content
   - Provide any necessary context the target agent might need
 
@@ -242,9 +242,9 @@ This workflow allows a developer to:
 
 ### Version Compatibility
 
-- **VS Code**: Handoffs are supported in VS Code 1.106 and later
-- **GitHub.com**: Not currently supported; agent transition workflows use different mechanisms
-- **Other IDEs**: Limited or no support; focus on VS Code implementations for maximum compatibility
+* **VS Code**: Handoffs are supported in VS Code 1.106 and later
+* **GitHub.com**: Not currently supported; agent transition workflows use different mechanisms
+* **Other IDEs**: Limited or no support; focus on VS Code implementations for maximum compatibility
 
 ## Tool Configuration
 
@@ -292,23 +292,23 @@ All aliases are case-insensitive:
 tools: ['github/*']  # All GitHub tools
 tools: ['github/get_file_contents', 'github/search_repositories']  # Specific tools
 ```
-- All read-only tools available by default
-- Token scoped to source repository
+* All read-only tools available by default
+* Token scoped to source repository
 
 **Playwright MCP Server**:
 ```yaml
 tools: ['playwright/*']  # All Playwright tools
 tools: ['playwright/navigate', 'playwright/screenshot']  # Specific tools
 ```
-- Configured to access localhost only
-- Useful for browser automation and testing
+* Configured to access localhost only
+* Useful for browser automation and testing
 
 ### Tool Selection Best Practices
 
-- **Principle of Least Privilege**: Only enable tools necessary for the agent's purpose
-- **Security**: Limit `execute` access unless explicitly required
-- **Focus**: Fewer tools = clearer agent purpose and better performance
-- **Documentation**: Comment why specific tools are required for complex configurations
+* **Principle of Least Privilege**: Only enable tools necessary for the agent's purpose
+* **Security**: Limit `execute` access unless explicitly required
+* **Focus**: Fewer tools = clearer agent purpose and better performance
+* **Documentation**: Comment why specific tools are required for complex configurations
 
 ## Sub-Agent Invocation (Agent Orchestration)
 
@@ -330,9 +330,9 @@ const result = await runSubagent({
   prompt: `You are the [Specialist] specialist.
 
 Context:
-- Parameter: ${parameterValue}
-- Input: ${inputPath}
-- Output: ${outputPath}
+* Parameter: ${parameterValue}
+* Input: ${inputPath}
+* Output: ${outputPath}
 
 Task:
 1. Do the specific work
@@ -349,11 +349,11 @@ Structure each sub-agent call with:
 2. **prompt**: Detailed instructions with substituted variables
 
 The prompt should include:
-- Who the sub-agent is (specialist role)
-- What context it needs (parameters, paths)
-- What to do (concrete tasks)
-- Where to write output
-- What to return (summary)
+* Who the sub-agent is (specialist role)
+* What context it needs (parameters, paths)
+* What to do (concrete tasks)
+* Where to write output
+* What to return (summary)
 
 ### Example: Multi-Step Processing
 
@@ -396,13 +396,13 @@ Return: Key findings and identified patterns`
 
 ### Key Points
 
-- **Pass variables in prompts**: Use `${variableName}` for all dynamic values
-- **Keep prompts focused**: Clear, specific tasks for each sub-agent
-- **Return summaries**: Each sub-agent should report what it accomplished
-- **Sequential execution**: Use `await` to maintain order when steps depend on each other
-- **Error handling**: Check results before proceeding to dependent steps
+* **Pass variables in prompts**: Use `${variableName}` for all dynamic values
+* **Keep prompts focused**: Clear, specific tasks for each sub-agent
+* **Return summaries**: Each sub-agent should report what it accomplished
+* **Sequential execution**: Use `await` to maintain order when steps depend on each other
+* **Error handling**: Check results before proceeding to dependent steps
 
-### ⚠️ Tool Availability Requirement
+### âš ï¸ Tool Availability Requirement
 
 **Critical**: If a sub-agent requires specific tools (e.g., `edit`, `execute`, `search`), the orchestrator must include those tools in its own `tools` list. Sub-agents cannot access tools that aren't available to their parent orchestrator.
 
@@ -414,13 +414,13 @@ tools: ['read', 'edit', 'search', 'execute', 'agent']
 
 The orchestrator's tool permissions act as a ceiling for all invoked sub-agents. Plan your tool list carefully to ensure all sub-agents have the tools they need.
 
-### ⚠️ Important Limitation
+### âš ï¸ Important Limitation
 
 **Sub-agent orchestration is NOT suitable for large-scale data processing.** Avoid using `runSubagent` when:
-- Processing hundreds or thousands of files
-- Handling large datasets
-- Performing bulk transformations on big codebases
-- Orchestrating more than 5-10 sequential steps
+* Processing hundreds or thousands of files
+* Handling large datasets
+* Performing bulk transformations on big codebases
+* Orchestrating more than 5-10 sequential steps
 
 Each sub-agent call adds latency and context overhead. For high-volume processing, implement logic directly in a single agent instead. Use orchestration only for coordinating specialized tasks on focused, manageable datasets.
 
@@ -436,11 +436,11 @@ The markdown content below the frontmatter defines the agent's behavior, experti
 
 ### Prompt Writing Best Practices
 
-- **Be Specific and Direct**: Use imperative mood ("Analyze", "Generate"); avoid vague terms
-- **Define Boundaries**: Clearly state scope limits and constraints
-- **Include Context**: Explain domain expertise and reference relevant frameworks
-- **Focus on Behavior**: Describe how the agent should think and work
-- **Use Structured Format**: Headers, bullets, and lists make prompts scannable
+* **Be Specific and Direct**: Use imperative mood ("Analyze", "Generate"); avoid vague terms
+* **Define Boundaries**: Clearly state scope limits and constraints
+* **Include Context**: Explain domain expertise and reference relevant frameworks
+* **Focus on Behavior**: Describe how the agent should think and work
+* **Use Structured Format**: Headers, bullets, and lists make prompts scannable
 
 ## Variable Definition and Extraction
 
@@ -449,18 +449,18 @@ Agents can define dynamic parameters to extract values from user input and use t
 ### When to Use Variables
 
 **Use variables when**:
-- Agent behavior depends on user input
-- Need to pass dynamic values to sub-agents
-- Want to make agents reusable across different contexts
-- Require parameterized workflows
-- Need to track or reference user-provided context
+* Agent behavior depends on user input
+* Need to pass dynamic values to sub-agents
+* Want to make agents reusable across different contexts
+* Require parameterized workflows
+* Need to track or reference user-provided context
 
 **Examples**:
-- Extract project name from user prompt
-- Capture certification name for pipeline processing
-- Identify file paths or directories
-- Extract configuration options
-- Parse feature names or module identifiers
+* Extract project name from user prompt
+* Capture certification name for pipeline processing
+* Identify file paths or directories
+* Extract configuration options
+* Parse feature names or module identifiers
 
 ### Variable Declaration Pattern
 
@@ -471,8 +471,8 @@ Define variables section early in the agent prompt to document expected paramete
 
 ## Dynamic Parameters
 
-- **Parameter Name**: Description and usage
-- **Another Parameter**: How it's extracted and used
+* **Parameter Name**: Description and usage
+* **Another Parameter**: How it's extracted and used
 
 ## Your Mission
 
@@ -491,9 +491,9 @@ Process the project by analyzing your codebase.
 
 ### Step 1: Identify Project
 If no project name is provided, **ASK THE USER** for:
-- Project name or identifier
-- Base path or directory location
-- Configuration type (if applicable)
+* Project name or identifier
+* Base path or directory location
+* Configuration type (if applicable)
 
 Use this information to contextualize all subsequent tasks.
 ```
@@ -536,9 +536,9 @@ Use template variables in agent prompts to make them dynamic:
 # Agent Name
 
 ## Dynamic Parameters
-- **Project Name**: ${projectName}
-- **Base Path**: ${basePath}
-- **Output Directory**: ${outputDir}
+* **Project Name**: ${projectName}
+* **Base Path**: ${basePath}
+* **Output Directory**: ${outputDir}
 
 ## Your Mission
 
@@ -553,8 +553,8 @@ Process the **${projectName}** project located at `${basePath}`.
 
 ## Quality Standards
 
-- Maintain project-specific coding standards for **${projectName}**
-- Follow directory structure: `${basePath}/[structure]`
+* Maintain project-specific coding standards for **${projectName}**
+* Follow directory structure: `${basePath}/[structure]`
 ```
 
 #### Passing Variables to Sub-Agents
@@ -661,16 +661,16 @@ Always document what variables are expected:
 
 ```markdown
 ## Required Variables
-- **projectName**: The name of the project (string, required)
-- **basePath**: Root directory for project files (path, required)
+* **projectName**: The name of the project (string, required)
+* **basePath**: Root directory for project files (path, required)
 
 ## Optional Variables
-- **mode**: Processing mode - quick/standard/detailed (enum, default: standard)
-- **outputFormat**: Output format - markdown/json/html (enum, default: markdown)
+* **mode**: Processing mode - quick/standard/detailed (enum, default: standard)
+* **outputFormat**: Output format - markdown/json/html (enum, default: markdown)
 
 ## Derived Variables
-- **outputDir**: Automatically set to ${basePath}/output
-- **logFile**: Automatically set to ${basePath}/.log.md
+* **outputDir**: Automatically set to ${basePath}/output
+* **logFile**: Automatically set to ${basePath}/.log.md
 ```
 
 #### 2. **Consistent Naming**
@@ -702,16 +702,16 @@ Document valid values and constraints:
 ## Variable Constraints
 
 **projectName**:
-- Type: string (alphanumeric, hyphens, underscores allowed)
-- Length: 1-100 characters
-- Required: yes
-- Pattern: `/^[a-zA-Z0-9_-]+$/`
+* Type: string (alphanumeric, hyphens, underscores allowed)
+* Length: 1-100 characters
+* Required: yes
+* Pattern: `/^[a-zA-Z0-9_-]+$/`
 
 **processingMode**:
-- Type: enum
-- Valid values: "quick" (< 5min), "standard" (5-15min), "detailed" (15+ min)
-- Default: "standard"
-- Required: no
+* Type: enum
+* Valid values: "quick" (< 5min), "standard" (5-15min), "detailed" (15+ min)
+* Default: "standard"
+* Required: no
 ```
 
 ## MCP Server Configuration (Organization/Enterprise Only)
@@ -738,11 +738,11 @@ mcp-servers:
 
 ### MCP Server Properties
 
-- **type**: Server type (`'local'` or `'stdio'`)
-- **command**: Command to start the MCP server
-- **args**: Array of command arguments
-- **tools**: Tools to enable from this server (`["*"]` for all)
-- **env**: Environment variables (supports secrets)
+* **type**: Server type (`'local'` or `'stdio'`)
+* **command**: Command to start the MCP server
+* **args**: Array of command arguments
+* **tools**: Tools to enable from this server (`["*"]` for all)
+* **env**: Environment variables (supports secrets)
 
 ### Environment Variables and Secrets
 
@@ -766,28 +766,28 @@ env:
 ## File Organization and Naming
 
 ### Repository-Level Agents
-- Location: `.github/agents/`
-- Scope: Available only in the specific repository
-- Access: Uses repository-configured MCP servers
+* Location: `.github/agents/`
+* Scope: Available only in the specific repository
+* Access: Uses repository-configured MCP servers
 
 ### Organization/Enterprise-Level Agents
-- Location: `.github-private/agents/` (then move to `agents/` root)
-- Scope: Available across all repositories in org/enterprise
-- Access: Can configure dedicated MCP servers
+* Location: `.github-private/agents/` (then move to `agents/` root)
+* Scope: Available across all repositories in org/enterprise
+* Access: Can configure dedicated MCP servers
 
 ### Naming Conventions
-- Use lowercase with hyphens: `test-specialist.agent.md`
-- Name should reflect agent purpose
-- Filename becomes default agent name (if `name` not specified)
-- Allowed characters: `.`, `-`, `_`, `a-z`, `A-Z`, `0-9`
+* Use lowercase with hyphens: `test-specialist.agent.md`
+* Name should reflect agent purpose
+* Filename becomes default agent name (if `name` not specified)
+* Allowed characters: `.`, `-`, `_`, `a-z`, `A-Z`, `0-9`
 
 ## Agent Processing and Behavior
 
 ### Versioning
-- Based on Git commit SHAs for the agent file
-- Create branches/tags for different agent versions
-- Instantiated using latest version for repository/branch
-- PR interactions use same agent version for consistency
+* Based on Git commit SHAs for the agent file
+* Create branches/tags for different agent versions
+* Instantiated using latest version for repository/branch
+* PR interactions use same agent version for consistency
 
 ### Name Conflicts
 Priority (highest to lowest):
@@ -798,11 +798,11 @@ Priority (highest to lowest):
 Lower-level configurations override higher-level ones with the same name.
 
 ### Tool Processing
-- `tools` list filters available tools (built-in and MCP)
-- No tools specified = all tools enabled
-- Empty list (`[]`) = all tools disabled
-- Specific list = only those tools enabled
-- Unrecognized tool names are ignored (allows environment-specific tools)
+* `tools` list filters available tools (built-in and MCP)
+* No tools specified = all tools enabled
+* Empty list (`[]`) = all tools disabled
+* Specific list = only those tools enabled
+* Unrecognized tool names are ignored (allows environment-specific tools)
 
 ### MCP Server Processing Order
 1. Out-of-the-box MCP servers (e.g., GitHub MCP)
@@ -814,38 +814,38 @@ Each level can override settings from previous levels.
 ## Agent Creation Checklist
 
 ### Frontmatter
-- [ ] `description` field present and descriptive (50-150 chars)
-- [ ] `description` wrapped in single quotes
-- [ ] `name` specified (optional but recommended)
-- [ ] `tools` configured appropriately (or intentionally omitted)
-- [ ] `model` specified for optimal performance
-- [ ] `target` set if environment-specific
-- [ ] `infer` set to `false` if manual selection required
+* `description` field present and descriptive (50-150 chars)
+* `description` wrapped in single quotes
+* `name` specified (optional but recommended)
+* `tools` configured appropriately (or intentionally omitted)
+* `model` specified for optimal performance
+* `target` set if environment-specific
+* `infer` set to `false` if manual selection required
 
 ### Prompt Content
-- [ ] Clear agent identity and role defined
-- [ ] Core responsibilities listed explicitly
-- [ ] Approach and methodology explained
-- [ ] Guidelines and constraints specified
-- [ ] Output expectations documented
-- [ ] Examples provided where helpful
-- [ ] Instructions are specific and actionable
-- [ ] Scope and boundaries clearly defined
-- [ ] Total content under 30,000 characters
+* Clear agent identity and role defined
+* Core responsibilities listed explicitly
+* Approach and methodology explained
+* Guidelines and constraints specified
+* Output expectations documented
+* Examples provided where helpful
+* Instructions are specific and actionable
+* Scope and boundaries clearly defined
+* Total content under 30,000 characters
 
 ### File Structure
-- [ ] Filename follows lowercase-with-hyphens convention
-- [ ] File placed in correct directory (`.github/agents/` or `agents/`)
-- [ ] Filename uses only allowed characters
-- [ ] File extension is `.agent.md`
+* Filename follows lowercase-with-hyphens convention
+* File placed in correct directory (`.github/agents/` or `agents/`)
+* Filename uses only allowed characters
+* File extension is `.agent.md`
 
 ### Quality Assurance
-- [ ] Agent purpose is unique and not duplicative
-- [ ] Tools are minimal and necessary
-- [ ] Instructions are clear and unambiguous
-- [ ] Agent has been tested with representative tasks
-- [ ] Documentation references are current
-- [ ] Security considerations addressed (if applicable)
+* Agent purpose is unique and not duplicative
+* Tools are minimal and necessary
+* Instructions are clear and unambiguous
+* Agent has been tested with representative tasks
+* Documentation references are current
+* Security considerations addressed (if applicable)
 
 ## Common Agent Patterns
 
@@ -877,30 +877,30 @@ Each level can override settings from previous levels.
 ## Common Mistakes to Avoid
 
 ### Frontmatter Errors
-- ❌ Missing `description` field
-- ❌ Description not wrapped in quotes
-- ❌ Invalid tool names without checking documentation
-- ❌ Incorrect YAML syntax (indentation, quotes)
+* âŒ Missing `description` field
+* âŒ Description not wrapped in quotes
+* âŒ Invalid tool names without checking documentation
+* âŒ Incorrect YAML syntax (indentation, quotes)
 
 ### Tool Configuration Issues
-- ❌ Granting excessive tool access unnecessarily
-- ❌ Missing required tools for agent's purpose
-- ❌ Not using tool aliases consistently
-- ❌ Forgetting MCP server namespace (`server-name/tool`)
+* âŒ Granting excessive tool access unnecessarily
+* âŒ Missing required tools for agent's purpose
+* âŒ Not using tool aliases consistently
+* âŒ Forgetting MCP server namespace (`server-name/tool`)
 
 ### Prompt Content Problems
-- ❌ Vague, ambiguous instructions
-- ❌ Conflicting or contradictory guidelines
-- ❌ Lack of clear scope definition
-- ❌ Missing output expectations
-- ❌ Overly verbose instructions (exceeding character limits)
-- ❌ No examples or context for complex tasks
+* âŒ Vague, ambiguous instructions
+* âŒ Conflicting or contradictory guidelines
+* âŒ Lack of clear scope definition
+* âŒ Missing output expectations
+* âŒ Overly verbose instructions (exceeding character limits)
+* âŒ No examples or context for complex tasks
 
 ### Organizational Issues
-- ❌ Filename doesn't reflect agent purpose
-- ❌ Wrong directory (confusing repo vs org level)
-- ❌ Using spaces or special characters in filename
-- ❌ Duplicate agent names causing conflicts
+* âŒ Filename doesn't reflect agent purpose
+* âŒ Wrong directory (confusing repo vs org level)
+* âŒ Using spaces or special characters in filename
+* âŒ Duplicate agent names causing conflicts
 
 ## Testing and Validation
 
@@ -913,18 +913,18 @@ Each level can override settings from previous levels.
 6. Confirm output meets expectations
 
 ### Integration Testing
-- Test agent with different file types in scope
-- Verify MCP server connectivity (if configured)
-- Check agent behavior with missing context
-- Test error handling and edge cases
-- Validate agent switching and handoffs
+* Test agent with different file types in scope
+* Verify MCP server connectivity (if configured)
+* Check agent behavior with missing context
+* Test error handling and edge cases
+* Validate agent switching and handoffs
 
 ### Quality Checks
-- Run through agent creation checklist
-- Review against common mistakes list
-- Compare with example agents in repository
-- Get peer review for complex agents
-- Document any special configuration needs
+* Run through agent creation checklist
+* Review against common mistakes list
+* Compare with example agents in repository
+* Get peer review for complex agents
+* Document any special configuration needs
 
 ## Additional Resources
 
@@ -946,16 +946,18 @@ Each level can override settings from previous levels.
 ## Version Compatibility Notes
 
 ### GitHub.com (Coding Agent)
-- ✅ Fully supports all standard frontmatter properties
-- ✅ Repository and org/enterprise level agents
-- ✅ MCP server configuration (org/enterprise)
-- ❌ Does not support `model`, `argument-hint`, `handoffs` properties
+* âœ… Fully supports all standard frontmatter properties
+* âœ… Repository and org/enterprise level agents
+* âœ… MCP server configuration (org/enterprise)
+* âŒ Does not support `model`, `argument-hint`, `handoffs` properties
 
 ### VS Code / JetBrains / Eclipse / Xcode
-- ✅ Supports `model` property for AI model selection
-- ✅ Supports `argument-hint` and `handoffs` properties
-- ✅ User profile and workspace-level agents
-- ❌ Cannot configure MCP servers at repository level
-- ⚠️ Some properties may behave differently
+* âœ… Supports `model` property for AI model selection
+* âœ… Supports `argument-hint` and `handoffs` properties
+* âœ… User profile and workspace-level agents
+* âŒ Cannot configure MCP servers at repository level
+* âš ï¸ Some properties may behave differently
 
 When creating agents for multiple environments, focus on common properties and test in all target environments. Use `target` property to create environment-specific agents when necessary.
+
+

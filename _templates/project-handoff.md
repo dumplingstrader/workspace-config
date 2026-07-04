@@ -27,9 +27,9 @@ What problem does this project solve? Who are the users?
 High-level description of the solution and approach taken.
 
 ### Success Metrics
-- Metric 1: [e.g., Processing time reduced from X to Y]
-- Metric 2: [e.g., Automates task that previously took Z hours]
-- Metric 3: [e.g., Accuracy improved by N%]
+* Metric 1: [e.g., Processing time reduced from X to Y]
+* Metric 2: [e.g., Automates task that previously took Z hours]
+* Metric 3: [e.g., Accuracy improved by N%]
 
 ## Technical Architecture
 
@@ -143,12 +143,12 @@ project-folder/
 ## Future Enhancements
 
 ### Short-term (Next 3 months)
-- [ ] Enhancement 1: Description
-- [ ] Enhancement 2: Description
+* Enhancement 1: Description
+* Enhancement 2: Description
 
 ### Long-term (6+ months)
-- [ ] Enhancement 1: Description
-- [ ] Enhancement 2: Description
+* Enhancement 1: Description
+* Enhancement 2: Description
 
 ## Dependencies and Integrations
 

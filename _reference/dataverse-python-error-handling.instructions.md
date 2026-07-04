@@ -1,8 +1,8 @@
----
+﻿---
 applyTo: '**'
 ---
 
-# Dataverse SDK for Python — Error Handling & Troubleshooting Guide
+# Dataverse SDK for Python â€” Error Handling & Troubleshooting Guide
 
 Based on official Microsoft documentation for Azure SDK error handling patterns and Dataverse SDK specifics.
 
@@ -201,18 +201,18 @@ except Exception as e:
 ### Implement Smart Retry Logic
 
 **Don't retry on**:
-- 401 Unauthorized (authentication failures)
-- 403 Forbidden (authorization failures)
-- 400 Bad Request (client errors)
-- 404 Not Found (unless resource should eventually appear)
+* 401 Unauthorized (authentication failures)
+* 403 Forbidden (authorization failures)
+* 400 Bad Request (client errors)
+* 404 Not Found (unless resource should eventually appear)
 
 **Consider retrying on**:
-- 408 Request Timeout
-- 429 Too Many Requests (with exponential backoff)
-- 500 Internal Server Error
-- 502 Bad Gateway
-- 503 Service Unavailable
-- 504 Gateway Timeout
+* 408 Request Timeout
+* 429 Too Many Requests (with exponential backoff)
+* 500 Internal Server Error
+* 502 Bad Gateway
+* 503 Service Unavailable
+* 504 Gateway Timeout
 
 ```python
 def should_retry(error: DataverseError) -> bool:
@@ -441,11 +441,11 @@ def monitor_operation(operation_name):
             try:
                 result = func(*args, **kwargs)
                 duration = time.time() - start_time
-                print(f"✓ {operation_name} completed in {duration:.2f}s")
+                print(f"âœ“ {operation_name} completed in {duration:.2f}s")
                 return result
             except DataverseError as e:
                 duration = time.time() - start_time
-                print(f"✗ {operation_name} failed after {duration:.2f}s")
+                print(f"âœ— {operation_name} failed after {duration:.2f}s")
                 print(f"  Error: {e.code} ({e.status_code}): {e.message}")
                 raise
         return wrapper
@@ -534,3 +534,4 @@ except DataverseError as e:
 - [Azure SDK Error Handling](https://learn.microsoft.com/en-us/azure/developer/python/sdk/fundamentals/errors)
 - [Dataverse SDK Getting Started](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/get-started)
 - [Service Protection API Limits](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/optimize-performance-create-update)
+

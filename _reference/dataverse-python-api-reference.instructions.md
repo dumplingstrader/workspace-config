@@ -1,7 +1,7 @@
----
+﻿---
 applyTo: '**'
 ---
-# Dataverse SDK for Python — API Reference Guide
+# Dataverse SDK for Python â€” API Reference Guide
 
 ## DataverseClient Class
 Main client for interacting with Dataverse. Initialize with base URL and Azure credentials.
@@ -169,11 +169,12 @@ except DataverseError as e:
 ```
 
 ## OData Filter Tips
-- Use exact logical names (lowercase) in filter expressions
-- Column names in `select` are auto-lowercased
-- Navigation property names in `expand` are case-sensitive
+* Use exact logical names (lowercase) in filter expressions
+* Column names in `select` are auto-lowercased
+* Navigation property names in `expand` are case-sensitive
 
 ## References
-- API docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.client.dataverseclient
-- Config docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core.config.dataverseconfig
-- Errors: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core.errors
+* API docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.client.dataverseclient
+* Config docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core.config.dataverseconfig
+* Errors: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core.errors
+

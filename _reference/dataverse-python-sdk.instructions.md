@@ -1,14 +1,14 @@
----
+﻿---
 applyTo: '**'
 ---
-# Dataverse SDK for Python — Official Quickstart
+# Dataverse SDK for Python â€” Official Quickstart
 
 This instruction summarizes Microsoft Learn guidance for the Dataverse SDK for Python (preview) and provides copyable snippets.
 
 ## Prerequisites
-- Dataverse environment with read/write
-- Python 3.10+
-- Network access to PyPI
+* Dataverse environment with read/write
+* Python 3.10+
+* Network access to PyPI
 
 ## Install
 ```bash
@@ -28,7 +28,7 @@ client = DataverseClient(
     config=cfg,
 )
 ```
-- Optional HTTP settings: `cfg.http_retries`, `cfg.http_backoff`, `cfg.http_timeout`.
+* Optional HTTP settings: `cfg.http_retries`, `cfg.http_backoff`, `cfg.http_timeout`.
 
 ## CRUD Examples
 ```python
@@ -94,6 +94,7 @@ client.delete_table("SampleItem")
 ```
 
 ## References
-- Getting started: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/get-started
-- Working with data: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/work-data
-- SDK source/examples: https://github.com/microsoft/PowerPlatform-DataverseClient-Python
+* Getting started: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/get-started
+* Working with data: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/work-data
+* SDK source/examples: https://github.com/microsoft/PowerPlatform-DataverseClient-Python
+

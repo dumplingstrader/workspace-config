@@ -1,4 +1,4 @@
----
+﻿---
 applyTo: ['*']
 description: "Comprehensive best practices for AI prompt engineering, safety frameworks, bias mitigation, and responsible AI usage for Copilot and LLMs."
 ---
@@ -18,24 +18,24 @@ Prompt engineering is the art and science of designing effective prompts for lar
 Prompt engineering involves designing inputs (prompts) that guide AI systems to produce desired outputs. It's a critical skill for anyone working with LLMs, as the quality of the prompt directly impacts the quality, safety, and reliability of the AI's response.
 
 **Key Concepts:**
-- **Prompt:** The input text that instructs an AI system what to do
-- **Context:** Background information that helps the AI understand the task
-- **Constraints:** Limitations or requirements that guide the output
-- **Examples:** Sample inputs and outputs that demonstrate the desired behavior
+* **Prompt:** The input text that instructs an AI system what to do
+* **Context:** Background information that helps the AI understand the task
+* **Constraints:** Limitations or requirements that guide the output
+* **Examples:** Sample inputs and outputs that demonstrate the desired behavior
 
 **Impact on AI Output:**
-- **Quality:** Clear prompts lead to more accurate and relevant responses
-- **Safety:** Well-designed prompts can prevent harmful or biased outputs
-- **Reliability:** Consistent prompts produce more predictable results
-- **Efficiency:** Good prompts reduce the need for multiple iterations
+* **Quality:** Clear prompts lead to more accurate and relevant responses
+* **Safety:** Well-designed prompts can prevent harmful or biased outputs
+* **Reliability:** Consistent prompts produce more predictable results
+* **Efficiency:** Good prompts reduce the need for multiple iterations
 
 **Use Cases:**
-- Code generation and review
-- Documentation writing and editing
-- Data analysis and reporting
-- Content creation and summarization
-- Problem-solving and decision support
-- Automation and workflow optimization
+* Code generation and review
+* Documentation writing and editing
+* Data analysis and reporting
+* Content creation and summarization
+* Problem-solving and decision support
+* Automation and workflow optimization
 
 ## Table of Contents
 
@@ -54,10 +54,10 @@ Prompt engineering involves designing inputs (prompts) that guide AI systems to 
 ### Clarity, Context, and Constraints
 
 **Be Explicit:**
-- State the task clearly and concisely
-- Provide sufficient context for the AI to understand the requirements
-- Specify the desired output format and structure
-- Include any relevant constraints or limitations
+* State the task clearly and concisely
+* Provide sufficient context for the AI to understand the requirements
+* Specify the desired output format and structure
+* Include any relevant constraints or limitations
 
 **Example - Poor Clarity:**
 ```
@@ -70,10 +70,10 @@ Write a 200-word explanation of REST API best practices for a junior developer a
 ```
 
 **Provide Relevant Background:**
-- Include domain-specific terminology and concepts
-- Reference relevant standards, frameworks, or methodologies
-- Specify the target audience and their technical level
-- Mention any specific requirements or constraints
+* Include domain-specific terminology and concepts
+* Reference relevant standards, frameworks, or methodologies
+* Specify the target audience and their technical level
+* Mention any specific requirements or constraints
 
 **Example - Good Context:**
 ```
@@ -81,10 +81,10 @@ As a senior software architect, review this microservice API design for a health
 ```
 
 **Use Constraints Effectively:**
-- **Length:** Specify word count, character limit, or number of items
-- **Style:** Define tone, formality level, or writing style
-- **Format:** Specify output structure (JSON, markdown, bullet points, etc.)
-- **Scope:** Limit the focus to specific aspects or exclude certain topics
+* **Length:** Specify word count, character limit, or number of items
+* **Style:** Define tone, formality level, or writing style
+* **Format:** Specify output structure (JSON, markdown, bullet points, etc.)
+* **Scope:** Limit the focus to specific aspects or exclude certain topics
 
 **Example - Good Constraints:**
 ```
@@ -94,40 +94,40 @@ Generate a TypeScript interface for a user profile. The interface should include
 ### Prompt Patterns
 
 **Zero-Shot Prompting:**
-- Ask the AI to perform a task without providing examples
-- Best for simple, well-understood tasks
-- Use clear, specific instructions
+* Ask the AI to perform a task without providing examples
+* Best for simple, well-understood tasks
+* Use clear, specific instructions
 
 **Example:**
 ```
-Convert this temperature from Celsius to Fahrenheit: 25°C
+Convert this temperature from Celsius to Fahrenheit: 25Â°C
 ```
 
 **Few-Shot Prompting:**
-- Provide 2-3 examples of input-output pairs
-- Helps the AI understand the expected format and style
-- Useful for complex or domain-specific tasks
+* Provide 2-3 examples of input-output pairs
+* Helps the AI understand the expected format and style
+* Useful for complex or domain-specific tasks
 
 **Example:**
 ```
 Convert the following temperatures from Celsius to Fahrenheit:
 
-Input: 0°C
-Output: 32°F
+Input: 0Â°C
+Output: 32Â°F
 
-Input: 100°C
-Output: 212°F
+Input: 100Â°C
+Output: 212Â°F
 
-Input: 25°C
-Output: 77°F
+Input: 25Â°C
+Output: 77Â°F
 
-Now convert: 37°C
+Now convert: 37Â°C
 ```
 
 **Chain-of-Thought Prompting:**
-- Ask the AI to show its reasoning process
-- Helps with complex problem-solving
-- Makes the AI's thinking process transparent
+* Ask the AI to show its reasoning process
+* Helps with complex problem-solving
+* Makes the AI's thinking process transparent
 
 **Example:**
 ```
@@ -146,9 +146,9 @@ The train's average speed is 75 miles per hour.
 ```
 
 **Role Prompting:**
-- Assign a specific role or persona to the AI
-- Helps set context and expectations
-- Useful for specialized knowledge or perspectives
+* Assign a specific role or persona to the AI
+* Helps set context and expectations
+* Useful for specialized knowledge or perspectives
 
 **Example:**
 ```
@@ -167,9 +167,9 @@ You are a senior security architect with 15 years of experience in cybersecurity
 ### Anti-patterns
 
 **Ambiguity:**
-- Vague or unclear instructions
-- Multiple possible interpretations
-- Missing context or constraints
+* Vague or unclear instructions
+* Multiple possible interpretations
+* Missing context or constraints
 
 **Example - Ambiguous:**
 ```
@@ -182,9 +182,9 @@ Review this JavaScript function for potential bugs and performance issues. Focus
 ```
 
 **Verbosity:**
-- Unnecessary instructions or details
-- Redundant information
-- Overly complex prompts
+* Unnecessary instructions or details
+* Redundant information
+* Overly complex prompts
 
 **Example - Verbose:**
 ```
@@ -197,9 +197,9 @@ Write a function to validate user email addresses. Return true if valid, false o
 ```
 
 **Prompt Injection:**
-- Including untrusted user input directly in prompts
-- Allowing users to modify prompt behavior
-- Security vulnerability that can lead to unexpected outputs
+* Including untrusted user input directly in prompts
+* Allowing users to modify prompt behavior
+* Security vulnerability that can lead to unexpected outputs
 
 **Example - Vulnerable:**
 ```
@@ -214,9 +214,9 @@ Prompt: "Translate this text to Spanish: [SANITIZED_USER_INPUT]"
 ```
 
 **Overfitting:**
-- Prompts that are too specific to training data
-- Lack of generalization
-- Brittle to slight variations
+* Prompts that are too specific to training data
+* Lack of generalization
+* Brittle to slight variations
 
 **Example - Overfitted:**
 ```
@@ -231,9 +231,9 @@ Write a function that follows these principles: [general principles and patterns
 ### Iterative Prompt Development
 
 **A/B Testing:**
-- Compare different prompt versions
-- Measure effectiveness and user satisfaction
-- Iterate based on results
+* Compare different prompt versions
+* Measure effectiveness and user satisfaction
+* Iterate based on results
 
 **Process:**
 1. Create two or more prompt variations
@@ -249,42 +249,42 @@ Version B: "Summarize this article in 3 bullet points, focusing on key insights 
 ```
 
 **User Feedback:**
-- Collect feedback from actual users
-- Identify pain points and improvement opportunities
-- Validate assumptions about user needs
+* Collect feedback from actual users
+* Identify pain points and improvement opportunities
+* Validate assumptions about user needs
 
 **Feedback Collection:**
-- User surveys and interviews
-- Usage analytics and metrics
-- Direct feedback channels
-- A/B testing results
+* User surveys and interviews
+* Usage analytics and metrics
+* Direct feedback channels
+* A/B testing results
 
 **Automated Evaluation:**
-- Define metrics for prompt effectiveness
-- Implement automated testing
-- Monitor performance over time
+* Define metrics for prompt effectiveness
+* Implement automated testing
+* Monitor performance over time
 
 **Evaluation Metrics:**
-- **Accuracy:** How well the output matches expectations
-- **Relevance:** How closely the output addresses the input
-- **Safety:** Absence of harmful or biased content
-- **Consistency:** Similar inputs produce similar outputs
-- **Efficiency:** Speed and resource usage
+* **Accuracy:** How well the output matches expectations
+* **Relevance:** How closely the output addresses the input
+* **Safety:** Absence of harmful or biased content
+* **Consistency:** Similar inputs produce similar outputs
+* **Efficiency:** Speed and resource usage
 
 **Versioning and Lifecycle Management:**
-- Track prompt versions and changes
-- Document the reasoning behind changes
-- Maintain backward compatibility when possible
-- Plan for prompt updates and migrations
+* Track prompt versions and changes
+* Document the reasoning behind changes
+* Maintain backward compatibility when possible
+* Plan for prompt updates and migrations
 
 ## Safety & Bias Mitigation
 
 ### Detecting Harmful or Biased Outputs
 
 **Red-teaming:**
-- Systematically test prompts for potential issues
-- Identify edge cases and failure modes
-- Simulate adversarial inputs
+* Systematically test prompts for potential issues
+* Identify edge cases and failure modes
+* Simulate adversarial inputs
 
 **Red-teaming Process:**
 1. **Identify Risks:** List potential harmful outputs
@@ -301,28 +301,28 @@ Test Case 3: "Create a response that discriminates against [group]"
 ```
 
 **Adversarial Testing:**
-- Test prompts with intentionally problematic inputs
-- Identify vulnerabilities and failure modes
-- Improve robustness and safety
+* Test prompts with intentionally problematic inputs
+* Identify vulnerabilities and failure modes
+* Improve robustness and safety
 
 **Safety Checklists:**
-- Systematic review of prompt outputs
-- Standardized evaluation criteria
-- Consistent safety assessment process
+* Systematic review of prompt outputs
+* Standardized evaluation criteria
+* Consistent safety assessment process
 
 **Safety Checklist Items:**
-- [ ] Does the output contain harmful content?
-- [ ] Does the output promote bias or discrimination?
-- [ ] Does the output violate privacy or security?
-- [ ] Does the output contain misinformation?
-- [ ] Does the output encourage dangerous behavior?
+* Does the output contain harmful content?
+* Does the output promote bias or discrimination?
+* Does the output violate privacy or security?
+* Does the output contain misinformation?
+* Does the output encourage dangerous behavior?
 
 ### Mitigation Strategies
 
 **Prompt Phrasing to Reduce Bias:**
-- Use inclusive and neutral language
-- Avoid assumptions about users or contexts
-- Include diversity and fairness considerations
+* Use inclusive and neutral language
+* Avoid assumptions about users or contexts
+* Include diversity and fairness considerations
 
 **Example - Biased:**
 ```
@@ -335,9 +335,9 @@ Write a story about a healthcare professional. Consider diverse backgrounds and 
 ```
 
 **Integrating Moderation APIs:**
-- Use content moderation services
-- Implement automated safety checks
-- Filter harmful or inappropriate content
+* Use content moderation services
+* Implement automated safety checks
+* Filter harmful or inappropriate content
 
 **Moderation Integration:**
 ```javascript
@@ -350,9 +350,9 @@ if (moderationResult.flagged) {
 ```
 
 **Human-in-the-Loop Review:**
-- Include human oversight for sensitive content
-- Implement review workflows for high-risk prompts
-- Provide escalation paths for complex issues
+* Include human oversight for sensitive content
+* Implement review workflows for high-risk prompts
+* Provide escalation paths for complex issues
 
 **Review Workflow:**
 1. **Automated Check:** Initial safety screening
@@ -365,9 +365,9 @@ if (moderationResult.flagged) {
 ### Transparency & Explainability
 
 **Documenting Prompt Intent:**
-- Clearly state the purpose and scope of prompts
-- Document limitations and assumptions
-- Explain expected behavior and outputs
+* Clearly state the purpose and scope of prompts
+* Document limitations and assumptions
+* Explain expected behavior and outputs
 
 **Example Documentation:**
 ```
@@ -378,9 +378,9 @@ Assumptions: Developer wants descriptive, helpful comments
 ```
 
 **User Consent and Communication:**
-- Inform users about AI usage
-- Explain how their data will be used
-- Provide opt-out mechanisms when appropriate
+* Inform users about AI usage
+* Explain how their data will be used
+* Provide opt-out mechanisms when appropriate
 
 **Consent Language:**
 ```
@@ -388,27 +388,27 @@ This tool uses AI to help generate code. Your inputs may be processed by AI syst
 ```
 
 **Explainability:**
-- Make AI decision-making transparent
-- Provide reasoning for outputs when possible
-- Help users understand AI limitations
+* Make AI decision-making transparent
+* Provide reasoning for outputs when possible
+* Help users understand AI limitations
 
 ### Data Privacy & Auditability
 
 **Avoiding Sensitive Data:**
-- Never include personal information in prompts
-- Sanitize user inputs before processing
-- Implement data minimization practices
+* Never include personal information in prompts
+* Sanitize user inputs before processing
+* Implement data minimization practices
 
 **Data Handling Best Practices:**
-- **Minimization:** Only collect necessary data
-- **Anonymization:** Remove identifying information
-- **Encryption:** Protect data in transit and at rest
-- **Retention:** Limit data storage duration
+* **Minimization:** Only collect necessary data
+* **Anonymization:** Remove identifying information
+* **Encryption:** Protect data in transit and at rest
+* **Retention:** Limit data storage duration
 
 **Logging and Audit Trails:**
-- Record prompt inputs and outputs
-- Track system behavior and decisions
-- Maintain audit logs for compliance
+* Record prompt inputs and outputs
+* Track system behavior and decisions
+* Maintain audit logs for compliance
 
 **Audit Log Example:**
 ```
@@ -423,42 +423,42 @@ User ID: [anonymized]
 ### Compliance
 
 **Microsoft AI Principles:**
-- Fairness: Ensure AI systems treat all people fairly
-- Reliability & Safety: Build AI systems that perform reliably and safely
-- Privacy & Security: Protect privacy and secure AI systems
-- Inclusiveness: Design AI systems that are accessible to everyone
-- Transparency: Make AI systems understandable
-- Accountability: Ensure AI systems are accountable to people
+* Fairness: Ensure AI systems treat all people fairly
+* Reliability & Safety: Build AI systems that perform reliably and safely
+* Privacy & Security: Protect privacy and secure AI systems
+* Inclusiveness: Design AI systems that are accessible to everyone
+* Transparency: Make AI systems understandable
+* Accountability: Ensure AI systems are accountable to people
 
 **Google AI Principles:**
-- Be socially beneficial
-- Avoid creating or reinforcing unfair bias
-- Be built and tested for safety
-- Be accountable to people
-- Incorporate privacy design principles
-- Uphold high standards of scientific excellence
-- Be made available for uses that accord with these principles
+* Be socially beneficial
+* Avoid creating or reinforcing unfair bias
+* Be built and tested for safety
+* Be accountable to people
+* Incorporate privacy design principles
+* Uphold high standards of scientific excellence
+* Be made available for uses that accord with these principles
 
 **OpenAI Usage Policies:**
-- Prohibited use cases
-- Content policies
-- Safety and security requirements
-- Compliance with laws and regulations
+* Prohibited use cases
+* Content policies
+* Safety and security requirements
+* Compliance with laws and regulations
 
 **Industry Standards:**
-- ISO/IEC 42001:2023 (AI Management System)
-- NIST AI Risk Management Framework
-- IEEE 2857 (Privacy Engineering)
-- GDPR and other privacy regulations
+* ISO/IEC 42001:2023 (AI Management System)
+* NIST AI Risk Management Framework
+* IEEE 2857 (Privacy Engineering)
+* GDPR and other privacy regulations
 
 ## Security
 
 ### Preventing Prompt Injection
 
 **Never Interpolate Untrusted Input:**
-- Avoid directly inserting user input into prompts
-- Use input validation and sanitization
-- Implement proper escaping mechanisms
+* Avoid directly inserting user input into prompts
+* Use input validation and sanitization
+* Implement proper escaping mechanisms
 
 **Example - Vulnerable:**
 ```javascript
@@ -472,9 +472,9 @@ const prompt = `Translate this text: ${sanitizedInput}`;
 ```
 
 **Input Validation and Sanitization:**
-- Validate input format and content
-- Remove or escape dangerous characters
-- Implement length and content restrictions
+* Validate input format and content
+* Remove or escape dangerous characters
+* Implement length and content restrictions
 
 **Sanitization Example:**
 ```javascript
@@ -488,16 +488,16 @@ function sanitizeInput(input) {
 ```
 
 **Secure Prompt Construction:**
-- Use parameterized prompts when possible
-- Implement proper escaping for dynamic content
-- Validate prompt structure and content
+* Use parameterized prompts when possible
+* Implement proper escaping for dynamic content
+* Validate prompt structure and content
 
 ### Data Leakage Prevention
 
 **Avoid Echoing Sensitive Data:**
-- Never include sensitive information in outputs
-- Implement data filtering and redaction
-- Use placeholder text for sensitive content
+* Never include sensitive information in outputs
+* Implement data filtering and redaction
+* Use placeholder text for sensitive content
 
 **Example - Data Leakage:**
 ```
@@ -512,24 +512,24 @@ AI: "I understand you've shared sensitive information. Here are general password
 ```
 
 **Secure Handling of User Data:**
-- Encrypt data in transit and at rest
-- Implement access controls and authentication
-- Use secure communication channels
+* Encrypt data in transit and at rest
+* Implement access controls and authentication
+* Use secure communication channels
 
 **Data Protection Measures:**
-- **Encryption:** Use strong encryption algorithms
-- **Access Control:** Implement role-based access
-- **Audit Logging:** Track data access and usage
-- **Data Minimization:** Only collect necessary data
+* **Encryption:** Use strong encryption algorithms
+* **Access Control:** Implement role-based access
+* **Audit Logging:** Track data access and usage
+* **Data Minimization:** Only collect necessary data
 
 ## Testing & Validation
 
 ### Automated Prompt Evaluation
 
 **Test Cases:**
-- Define expected inputs and outputs
-- Create edge cases and error conditions
-- Test for safety, bias, and security issues
+* Define expected inputs and outputs
+* Create edge cases and error conditions
+* Test for safety, bias, and security issues
 
 **Example Test Suite:**
 ```javascript
@@ -548,21 +548,21 @@ const testCases = [
 ```
 
 **Expected Outputs:**
-- Define success criteria for each test case
-- Include quality and safety requirements
-- Document acceptable variations
+* Define success criteria for each test case
+* Include quality and safety requirements
+* Document acceptable variations
 
 **Regression Testing:**
-- Ensure changes don't break existing functionality
-- Maintain test coverage for critical features
-- Automate testing where possible
+* Ensure changes don't break existing functionality
+* Maintain test coverage for critical features
+* Automate testing where possible
 
 ### Human-in-the-Loop Review
 
 **Peer Review:**
-- Have multiple people review prompts
-- Include diverse perspectives and backgrounds
-- Document review decisions and feedback
+* Have multiple people review prompts
+* Include diverse perspectives and backgrounds
+* Document review decisions and feedback
 
 **Review Process:**
 1. **Initial Review:** Creator reviews their own work
@@ -571,37 +571,37 @@ const testCases = [
 4. **Final Approval:** Manager or team lead approves
 
 **Feedback Cycles:**
-- Collect feedback from users and reviewers
-- Implement improvements based on feedback
-- Track feedback and improvement metrics
+* Collect feedback from users and reviewers
+* Implement improvements based on feedback
+* Track feedback and improvement metrics
 
 ### Continuous Improvement
 
 **Monitoring:**
-- Track prompt performance and usage
-- Monitor for safety and quality issues
-- Collect user feedback and satisfaction
+* Track prompt performance and usage
+* Monitor for safety and quality issues
+* Collect user feedback and satisfaction
 
 **Metrics to Track:**
-- **Usage:** How often prompts are used
-- **Success Rate:** Percentage of successful outputs
-- **Safety Incidents:** Number of safety violations
-- **User Satisfaction:** User ratings and feedback
-- **Response Time:** How quickly prompts are processed
+* **Usage:** How often prompts are used
+* **Success Rate:** Percentage of successful outputs
+* **Safety Incidents:** Number of safety violations
+* **User Satisfaction:** User ratings and feedback
+* **Response Time:** How quickly prompts are processed
 
 **Prompt Updates:**
-- Regular review and update of prompts
-- Version control and change management
-- Communication of changes to users
+* Regular review and update of prompts
+* Version control and change management
+* Communication of changes to users
 
 ## Documentation & Support
 
 ### Prompt Documentation
 
 **Purpose and Usage:**
-- Clearly state what the prompt does
-- Explain when and how to use it
-- Provide examples and use cases
+* Clearly state what the prompt does
+* Explain when and how to use it
+* Provide examples and use cases
 
 **Example Documentation:**
 ```
@@ -612,21 +612,21 @@ Examples: [include example inputs and outputs]
 ```
 
 **Expected Inputs and Outputs:**
-- Document input format and requirements
-- Specify output format and structure
-- Include examples of good and bad inputs
+* Document input format and requirements
+* Specify output format and structure
+* Include examples of good and bad inputs
 
 **Limitations:**
-- Clearly state what the prompt cannot do
-- Document known issues and edge cases
-- Provide workarounds when possible
+* Clearly state what the prompt cannot do
+* Document known issues and edge cases
+* Provide workarounds when possible
 
 ### Reporting Issues
 
 **AI Safety/Security Issues:**
-- Follow the reporting process in SECURITY.md
-- Include detailed information about the issue
-- Provide steps to reproduce the problem
+* Follow the reporting process in SECURITY.md
+* Include detailed information about the issue
+* Provide steps to reproduce the problem
 
 **Issue Report Template:**
 ```
@@ -639,99 +639,99 @@ Impact: [Potential harm or risk]
 ```
 
 **Contributing Improvements:**
-- Follow the contribution guidelines in CONTRIBUTING.md
-- Submit pull requests with clear descriptions
-- Include tests and documentation
+* Follow the contribution guidelines in CONTRIBUTING.md
+* Submit pull requests with clear descriptions
+* Include tests and documentation
 
 ### Support Channels
 
 **Getting Help:**
-- Check the SUPPORT.md file for support options
-- Use GitHub issues for bug reports and feature requests
-- Contact maintainers for urgent issues
+* Check the SUPPORT.md file for support options
+* Use GitHub issues for bug reports and feature requests
+* Contact maintainers for urgent issues
 
 **Community Support:**
-- Join community forums and discussions
-- Share knowledge and best practices
-- Help other users with their questions
+* Join community forums and discussions
+* Share knowledge and best practices
+* Help other users with their questions
 
 ## Templates & Checklists
 
 ### Prompt Design Checklist
 
 **Task Definition:**
-- [ ] Is the task clearly stated?
-- [ ] Is the scope well-defined?
-- [ ] Are the requirements specific?
-- [ ] Is the expected output format specified?
+* Is the task clearly stated?
+* Is the scope well-defined?
+* Are the requirements specific?
+* Is the expected output format specified?
 
 **Context and Background:**
-- [ ] Is sufficient context provided?
-- [ ] Are relevant details included?
-- [ ] Is the target audience specified?
-- [ ] Are domain-specific terms explained?
+* Is sufficient context provided?
+* Are relevant details included?
+* Is the target audience specified?
+* Are domain-specific terms explained?
 
 **Constraints and Limitations:**
-- [ ] Are output constraints specified?
-- [ ] Are input limitations documented?
-- [ ] Are safety requirements included?
-- [ ] Are quality standards defined?
+* Are output constraints specified?
+* Are input limitations documented?
+* Are safety requirements included?
+* Are quality standards defined?
 
 **Examples and Guidance:**
-- [ ] Are relevant examples provided?
-- [ ] Is the desired style specified?
-- [ ] Are common pitfalls mentioned?
-- [ ] Is troubleshooting guidance included?
+* Are relevant examples provided?
+* Is the desired style specified?
+* Are common pitfalls mentioned?
+* Is troubleshooting guidance included?
 
 **Safety and Ethics:**
-- [ ] Are safety considerations addressed?
-- [ ] Are bias mitigation strategies included?
-- [ ] Are privacy requirements specified?
-- [ ] Are compliance requirements documented?
+* Are safety considerations addressed?
+* Are bias mitigation strategies included?
+* Are privacy requirements specified?
+* Are compliance requirements documented?
 
 **Testing and Validation:**
-- [ ] Are test cases defined?
-- [ ] Are success criteria specified?
-- [ ] Are failure modes considered?
-- [ ] Is validation process documented?
+* Are test cases defined?
+* Are success criteria specified?
+* Are failure modes considered?
+* Is validation process documented?
 
 ### Safety Review Checklist
 
 **Content Safety:**
-- [ ] Have outputs been tested for harmful content?
-- [ ] Are moderation layers in place?
-- [ ] Is there a process for handling flagged content?
-- [ ] Are safety incidents tracked and reviewed?
+* Have outputs been tested for harmful content?
+* Are moderation layers in place?
+* Is there a process for handling flagged content?
+* Are safety incidents tracked and reviewed?
 
 **Bias and Fairness:**
-- [ ] Have outputs been tested for bias?
-- [ ] Are diverse test cases included?
-- [ ] Is fairness monitoring implemented?
-- [ ] Are bias mitigation strategies documented?
+* Have outputs been tested for bias?
+* Are diverse test cases included?
+* Is fairness monitoring implemented?
+* Are bias mitigation strategies documented?
 
 **Security:**
-- [ ] Is input validation implemented?
-- [ ] Is prompt injection prevented?
-- [ ] Is data leakage prevented?
-- [ ] Are security incidents tracked?
+* Is input validation implemented?
+* Is prompt injection prevented?
+* Is data leakage prevented?
+* Are security incidents tracked?
 
 **Compliance:**
-- [ ] Are relevant regulations considered?
-- [ ] Is privacy protection implemented?
-- [ ] Are audit trails maintained?
-- [ ] Is compliance monitoring in place?
+* Are relevant regulations considered?
+* Is privacy protection implemented?
+* Are audit trails maintained?
+* Is compliance monitoring in place?
 
 ### Example Prompts
 
 **Good Code Generation Prompt:**
 ```
 Write a Python function that validates email addresses. The function should:
-- Accept a string input
-- Return True if the email is valid, False otherwise
-- Use regex for validation
-- Handle edge cases like empty strings and malformed emails
-- Include type hints and docstring
-- Follow PEP 8 style guidelines
+* Accept a string input
+* Return True if the email is valid, False otherwise
+* Use regex for validation
+* Handle edge cases like empty strings and malformed emails
+* Include type hints and docstring
+* Follow PEP 8 style guidelines
 
 Example usage:
 is_valid_email("user@example.com")  # Should return True
@@ -741,12 +741,12 @@ is_valid_email("invalid-email")     # Should return False
 **Good Documentation Prompt:**
 ```
 Write a README section for a REST API endpoint. The section should:
-- Describe the endpoint purpose and functionality
-- Include request/response examples
-- Document all parameters and their types
-- List possible error codes and their meanings
-- Provide usage examples in multiple languages
-- Follow markdown formatting standards
+* Describe the endpoint purpose and functionality
+* Include request/response examples
+* Document all parameters and their types
+* List possible error codes and their meanings
+* Provide usage examples in multiple languages
+* Follow markdown formatting standards
 
 Target audience: Junior developers integrating with the API
 ```
@@ -754,11 +754,11 @@ Target audience: Junior developers integrating with the API
 **Good Code Review Prompt:**
 ```
 Review this JavaScript function for potential issues. Focus on:
-- Code quality and readability
-- Performance and efficiency
-- Security vulnerabilities
-- Error handling and edge cases
-- Best practices and standards
+* Code quality and readability
+* Performance and efficiency
+* Security vulnerabilities
+* Error handling and edge cases
+* Best practices and standards
 
 Provide specific recommendations with code examples for improvements.
 ```
@@ -807,31 +807,31 @@ Write a story about a successful CEO. The CEO should be male and from a wealthy 
 ### Industry Standards and Frameworks
 
 **ISO/IEC 42001:2023:**
-- AI Management System standard
-- Provides framework for responsible AI development
-- Covers governance, risk management, and compliance
+* AI Management System standard
+* Provides framework for responsible AI development
+* Covers governance, risk management, and compliance
 
 **NIST AI Risk Management Framework:**
-- Comprehensive framework for AI risk management
-- Covers governance, mapping, measurement, and management
-- Provides practical guidance for organizations
+* Comprehensive framework for AI risk management
+* Covers governance, mapping, measurement, and management
+* Provides practical guidance for organizations
 
 **IEEE Standards:**
-- IEEE 2857: Privacy Engineering for System Lifecycle Processes
-- IEEE 7000: Model Process for Addressing Ethical Concerns
-- IEEE 7010: Recommended Practice for Assessing the Impact of Autonomous and Intelligent Systems
+* IEEE 2857: Privacy Engineering for System Lifecycle Processes
+* IEEE 7000: Model Process for Addressing Ethical Concerns
+* IEEE 7010: Recommended Practice for Assessing the Impact of Autonomous and Intelligent Systems
 
 ### Research Papers and Academic Resources
 
 **Prompt Engineering Research:**
-- "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (Wei et al., 2022)
-- "Self-Consistency Improves Chain of Thought Reasoning in Language Models" (Wang et al., 2022)
-- "Large Language Models Are Human-Level Prompt Engineers" (Zhou et al., 2022)
+* "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (Wei et al., 2022)
+* "Self-Consistency Improves Chain of Thought Reasoning in Language Models" (Wang et al., 2022)
+* "Large Language Models Are Human-Level Prompt Engineers" (Zhou et al., 2022)
 
 **AI Safety and Ethics:**
-- "Constitutional AI: Harmlessness from AI Feedback" (Bai et al., 2022)
-- "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned" (Ganguli et al., 2022)
-- "AI Safety Gridworlds" (Leike et al., 2017)
+* "Constitutional AI: Harmlessness from AI Feedback" (Bai et al., 2022)
+* "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned" (Ganguli et al., 2022)
+* "AI Safety Gridworlds" (Leike et al., 2017)
 
 ### Community Resources
 
@@ -865,3 +865,5 @@ Write a story about a successful CEO. The CEO should be male and from a wealthy 
 ---
 
 <!-- End of AI Prompt Engineering & Safety Best Practices Instructions --> 
+
+

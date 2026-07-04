@@ -1,4 +1,4 @@
-# Dataverse SDK for Python - Best Practices Guide
+﻿# Dataverse SDK for Python - Best Practices Guide
 
 ## Overview
 Production-ready patterns and best practices extracted from Microsoft's official PowerPlatform-DataverseClient-Python repository, examples, and recommended workflows.
@@ -31,9 +31,9 @@ pip install pytest pytest-cov black isort mypy ruff
 ```
 
 ### Python Version Support
-- **Minimum**: Python 3.10
-- **Recommended**: Python 3.11+ for best performance
-- **Supported**: Python 3.10, 3.11, 3.12, 3.13, 3.14
+* **Minimum**: Python 3.10
+* **Recommended**: Python 3.11+ for best performance
+* **Supported**: Python 3.10, 3.11, 3.12, 3.13, 3.14
 
 ### Verify Installation
 ```python
@@ -108,13 +108,13 @@ client = DataverseClient("https://yourorg.crm.dynamics.com", credential)
 **Best Practice**: Create one `DataverseClient` instance and reuse it throughout your application.
 
 ```python
-# ❌ ANTI-PATTERN: Creating new clients repeatedly
+# âŒ ANTI-PATTERN: Creating new clients repeatedly
 def fetch_account(account_id):
     credential = InteractiveBrowserCredential()
     client = DataverseClient("https://yourorg.crm.dynamics.com", credential)
     return client.get("account", account_id)
 
-# ✅ PATTERN: Singleton client
+# âœ… PATTERN: Singleton client
 class DataverseService:
     _instance = None
     
@@ -152,7 +152,7 @@ client = DataverseClient("https://yourorg.crm.dynamics.com", credential, config)
 ```
 
 **Key configuration options:**
-- `language_code`: Language for API responses (default: 1033 for English)
+* `language_code`: Language for API responses (default: 1033 for English)
 
 ---
 
@@ -208,11 +208,11 @@ for page in client.get(
 ```
 
 **Key parameters:**
-- `filter`: OData filter (must use **lowercase** logical names)
-- `select`: Fields to retrieve (improves performance)
-- `orderby`: Sort results
-- `top`: Max records per page (default: 5000)
-- `page_size`: Override page size for pagination
+* `filter`: OData filter (must use **lowercase** logical names)
+* `select`: Fields to retrieve (improves performance)
+* `orderby`: Sort results
+* `top`: Max records per page (default: 5000)
+* `page_size`: Override page size for pagination
 
 #### SQL Queries (Read-Only)
 ```python
@@ -229,9 +229,9 @@ for row in results:
 ```
 
 **Limitations:**
-- Read-only (SELECT only, no DML)
-- Useful for complex joins and analytics
-- May be disabled by org policy
+* Read-only (SELECT only, no DML)
+* Useful for complex joins and analytics
+* May be disabled by org policy
 
 ### Update Operations
 
@@ -485,13 +485,13 @@ print(f"Chunked upload complete")
 
 ### Case Sensitivity Rules
 ```python
-# ❌ WRONG: Uppercase logical names
+# âŒ WRONG: Uppercase logical names
 results = client.get("account", filter="Name eq 'Contoso'")
 
-# ✅ CORRECT: Lowercase logical names
+# âœ… CORRECT: Lowercase logical names
 results = client.get("account", filter="name eq 'Contoso'")
 
-# ✅ Values ARE case-sensitive when needed
+# âœ… Values ARE case-sensitive when needed
 results = client.get("account", filter="name eq 'Contoso Ltd'")
 ```
 
@@ -547,7 +547,7 @@ client.flush_cache()
 
 ## 12. Performance Best Practices
 
-### Do's ✅
+### Do's âœ…
 1. **Use `select` parameter**: Only fetch needed columns
    ```python
    client.get("account", select=["name", "creditlimit"])
@@ -575,7 +575,7 @@ client.flush_cache()
    client.get("account", filter="creditlimit gt 50000")
    ```
 
-### Don'ts ❌
+### Don'ts âŒ
 1. **Don't fetch all columns**: Specify what you need
    ```python
    # Slow
@@ -651,20 +651,20 @@ def create_with_recovery(records):
 ## 14. Dependencies & Versions
 
 ### Core Dependencies
-- **azure-identity** >= 1.17.0 (Authentication)
-- **azure-core** >= 1.30.2 (HTTP client)
-- **requests** >= 2.32.0 (HTTP requests)
-- **Python** >= 3.10
+* **azure-identity** >= 1.17.0 (Authentication)
+* **azure-core** >= 1.30.2 (HTTP client)
+* **requests** >= 2.32.0 (HTTP requests)
+* **Python** >= 3.10
 
 ### Optional Dependencies
-- **pandas** (Data manipulation)
-- **reportlab** (PDF generation for file examples)
+* **pandas** (Data manipulation)
+* **reportlab** (PDF generation for file examples)
 
 ### Development Tools
-- **pytest** >= 7.0.0 (Testing)
-- **black** >= 23.0.0 (Code formatting)
-- **mypy** >= 1.0.0 (Type checking)
-- **ruff** >= 0.1.0 (Linting)
+* **pytest** >= 7.0.0 (Testing)
+* **black** >= 23.0.0 (Code formatting)
+* **mypy** >= 1.0.0 (Type checking)
+* **ruff** >= 0.1.0 (Linting)
 
 ---
 
@@ -692,9 +692,9 @@ credential = InteractiveBrowserCredential(
 )
 
 # Check org URL format
-# ✓ https://yourorg.crm.dynamics.com
-# ❌ https://yourorg.crm.dynamics.com/
-# ❌ https://yourorg.crm4.dynamics.com (regional)
+# âœ“ https://yourorg.crm.dynamics.com
+# âŒ https://yourorg.crm.dynamics.com/
+# âŒ https://yourorg.crm4.dynamics.com (regional)
 ```
 
 ### HTTP 429 Rate Limiting
@@ -733,3 +733,4 @@ except Exception:
 - [PyPI Package](https://pypi.org/project/PowerPlatform-Dataverse-Client/)
 - [Azure Identity Documentation](https://learn.microsoft.com/en-us/python/api/overview/azure/identity-readme)
 - [Dataverse Web API Documentation](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview)
+

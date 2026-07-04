@@ -1,6 +1,6 @@
-# Dataverse SDK for Python - Agentic Workflows Guide
+﻿# Dataverse SDK for Python - Agentic Workflows Guide
 
-## ⚠️ PREVIEW FEATURE NOTICE
+## âš ï¸ PREVIEW FEATURE NOTICE
 
 **Status**: This feature is in **Public Preview** as of December 2025  
 **Availability**: General Availability (GA) date TBD  
@@ -15,9 +15,9 @@ This guide covers the conceptual framework and planned capabilities for building
 ### What are Agentic Workflows?
 
 Agentic workflows are autonomous, intelligent processes where:
-- **Agents** make decisions and take actions based on data and rules
-- **Workflows** orchestrate complex, multi-step operations
-- **Dataverse** serves as the central source of truth for enterprise data
+* **Agents** make decisions and take actions based on data and rules
+* **Workflows** orchestrate complex, multi-step operations
+* **Dataverse** serves as the central source of truth for enterprise data
 
 The Dataverse SDK for Python is designed to enable data scientists and developers to build these intelligent systems without .NET expertise.
 
@@ -107,10 +107,10 @@ class DataPipeline:
 ### What is MCP?
 
 The Model Context Protocol (MCP) is an open standard for:
-- **Tool Definition** - Describe what tools/capabilities are available
-- **Tool Invocation** - Allow LLMs to call tools with parameters
-- **Context Management** - Manage context between agent and tools
-- **Error Handling** - Standardized error responses
+* **Tool Definition** - Describe what tools/capabilities are available
+* **Tool Invocation** - Allow LLMs to call tools with parameters
+* **Context Management** - Manage context between agent and tools
+* **Error Handling** - Standardized error responses
 
 ### MCP Integration Pattern (Conceptual)
 
@@ -448,22 +448,22 @@ governance.enforce_all_policies()
 
 While full agentic features are in preview, current SDK capabilities already support agent building:
 
-### ✅ Available Now
-- **CRUD Operations** - Create, retrieve, update, delete data
-- **Bulk Operations** - Process large datasets efficiently
-- **Query Capabilities** - OData and SQL for flexible data retrieval
-- **Metadata Operations** - Work with table and column definitions
-- **Error Handling** - Structured exception hierarchy
-- **Pagination** - Handle large result sets
-- **File Upload** - Manage document attachments
+### âœ… Available Now
+* **CRUD Operations** - Create, retrieve, update, delete data
+* **Bulk Operations** - Process large datasets efficiently
+* **Query Capabilities** - OData and SQL for flexible data retrieval
+* **Metadata Operations** - Work with table and column definitions
+* **Error Handling** - Structured exception hierarchy
+* **Pagination** - Handle large result sets
+* **File Upload** - Manage document attachments
 
-### 🔜 Coming in GA
-- Full MCP integration
-- A2A collaboration primitives
-- Enhanced authentication/impersonation
-- Governance policy enforcement
-- Native async/await support
-- Advanced caching strategies
+### ðŸ”œ Coming in GA
+* Full MCP integration
+* A2A collaboration primitives
+* Enhanced authentication/impersonation
+* Governance policy enforcement
+* Native async/await support
+* Advanced caching strategies
 
 ---
 
@@ -561,3 +561,4 @@ A: Unknown at this time. Check release notes closer to GA.
 5. **Migrate to full agentic** features when ready
 
 The Dataverse SDK for Python is positioning itself as the go-to platform for building intelligent, autonomous data systems on the Microsoft Power Platform.
+

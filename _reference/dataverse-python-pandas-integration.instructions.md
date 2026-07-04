@@ -1,4 +1,4 @@
-# Dataverse SDK for Python - Pandas Integration Guide
+﻿# Dataverse SDK for Python - Pandas Integration Guide
 
 ## Overview
 Guide to integrating the Dataverse SDK for Python with pandas DataFrames for data science and analysis workflows. The SDK's JSON response format maps seamlessly to pandas DataFrames, enabling data scientists to work with Dataverse data using familiar data manipulation tools.
@@ -9,10 +9,10 @@ Guide to integrating the Dataverse SDK for Python with pandas DataFrames for dat
 
 ### What is PandasODataClient?
 `PandasODataClient` is a thin wrapper around the standard `DataverseClient` that returns data in pandas DataFrame format instead of raw JSON dictionaries. This makes it ideal for:
-- Data scientists working with tabular data
-- Analytics and reporting workflows
-- Data exploration and cleaning
-- Integration with machine learning pipelines
+* Data scientists working with tabular data
+* Analytics and reporting workflows
+* Data exploration and cleaning
+* Integration with machine learning pipelines
 
 ### Installation Requirements
 ```bash
@@ -25,17 +25,17 @@ pip install pandas
 ```
 
 ### When to Use PandasODataClient
-✅ **Use when you need:**
-- Data exploration and analysis
-- Working with tabular data
-- Integration with statistical/ML libraries
-- Efficient data manipulation
+âœ… **Use when you need:**
+* Data exploration and analysis
+* Working with tabular data
+* Integration with statistical/ML libraries
+* Efficient data manipulation
 
-❌ **Use DataverseClient instead when you need:**
-- Real-time CRUD operations only
-- File upload operations
-- Metadata operations
-- Single record operations
+âŒ **Use DataverseClient instead when you need:**
+* Real-time CRUD operations only
+* File upload operations
+* Metadata operations
+* Single record operations
 
 ---
 
@@ -453,14 +453,14 @@ print(df.memory_usage(deep=True).sum() / 1024**2, "MB")
 ### Query Optimization
 ```python
 # Apply filters on server, not client
-# ✅ GOOD: Filter on server
+# âœ… GOOD: Filter on server
 accounts = client.get(
     "account",
     filter="creditlimit > 50000",  # Server-side filter
     select=["accountid", "name", "creditlimit"]
 )
 
-# ❌ BAD: Load all, filter locally
+# âŒ BAD: Load all, filter locally
 all_accounts = client.get("account")  # Loads everything
 filtered = [a for a in all_accounts if a['creditlimit'] > 50000]  # Client-side
 ```
@@ -532,10 +532,10 @@ print("Report saved to industry_analysis.csv")
 
 ## 11. Known Limitations
 
-- `PandasODataClient` currently requires manual DataFrame creation from query results
-- Very large DataFrames (millions of rows) may experience memory constraints
-- Pandas operations are client-side; server-side aggregation is more efficient for large datasets
-- File operations require standard `DataverseClient`, not pandas wrapper
+* `PandasODataClient` currently requires manual DataFrame creation from query results
+* Very large DataFrames (millions of rows) may experience memory constraints
+* Pandas operations are client-side; server-side aggregation is more efficient for large datasets
+* File operations require standard `DataverseClient`, not pandas wrapper
 
 ---
 
@@ -545,3 +545,4 @@ print("Report saved to industry_analysis.csv")
 - [Official Example: quickstart_pandas.py](https://github.com/microsoft/PowerPlatform-DataverseClient-Python/blob/main/examples/quickstart_pandas.py)
 - [SDK for Python README](https://github.com/microsoft/PowerPlatform-DataverseClient-Python/blob/main/README.md)
 - [Microsoft Learn: Working with data](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/sdk-python/work-data)
+

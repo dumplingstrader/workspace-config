@@ -1,21 +1,21 @@
----
+﻿---
 applyTo: '**'
 ---
-# Dataverse SDK for Python — Complete Module Reference
+# Dataverse SDK for Python â€” Complete Module Reference
 
 ## Package Hierarchy
 
 ```
 PowerPlatform.Dataverse
-├── client
-│   └── DataverseClient
-├── core
-│   ├── config (DataverseConfig)
-│   └── errors (DataverseError, ValidationError, MetadataError, HttpError, SQLParseError)
-├── data (OData operations, metadata, SQL, file upload)
-├── extensions (placeholder for future extensions)
-├── models (placeholder for data models and types)
-└── utils (placeholder for utilities and adapters)
+â”œâ”€â”€ client
+â”‚   â””â”€â”€ DataverseClient
+â”œâ”€â”€ core
+â”‚   â”œâ”€â”€ config (DataverseConfig)
+â”‚   â””â”€â”€ errors (DataverseError, ValidationError, MetadataError, HttpError, SQLParseError)
+â”œâ”€â”€ data (OData operations, metadata, SQL, file upload)
+â”œâ”€â”€ extensions (placeholder for future extensions)
+â”œâ”€â”€ models (placeholder for data models and types)
+â””â”€â”€ utils (placeholder for utilities and adapters)
 ```
 
 ## core.config Module
@@ -41,10 +41,10 @@ cfg_default = DataverseConfig.from_env()
 ```
 
 **Key attributes:**
-- `language_code: int = 1033` — LCID for localized labels and messages.
-- `http_retries: int | None` — (Reserved) Maximum retry attempts for transient errors.
-- `http_backoff: float | None` — (Reserved) Backoff multiplier between retries.
-- `http_timeout: float | None` — (Reserved) Request timeout in seconds.
+* `language_code: int = 1033` â€” LCID for localized labels and messages.
+* `http_retries: int | None` â€” (Reserved) Maximum retry attempts for transient errors.
+* `http_backoff: float | None` â€” (Reserved) Backoff multiplier between retries.
+* `http_timeout: float | None` â€” (Reserved) Request timeout in seconds.
 
 ## core.errors Module
 
@@ -126,10 +126,10 @@ except SQLParseError as e:
 Low-level OData protocol, metadata, SQL, and file operations (internal delegation).
 
 The `data` package is primarily internal; the high-level `DataverseClient` in the `client` module wraps and exposes:
-- CRUD operations via OData
-- Metadata management (create/update/delete tables and columns)
-- SQL query execution
-- File upload handling
+* CRUD operations via OData
+* Metadata management (create/update/delete tables and columns)
+* SQL query execution
+* File upload handling
 
 Users interact with these via `DataverseClient` methods (e.g., `create()`, `get()`, `update()`, `delete()`, `create_table()`, `query_sql()`, `upload_file()`).
 
@@ -180,25 +180,25 @@ client = DataverseClient(
 
 #### CRUD Methods
 
-- `create(table_schema_name, records)` → `list[str]` — Create records, return GUIDs.
-- `get(table_schema_name, record_id=None, select, filter, orderby, top, expand, page_size)` → Record(s).
-- `update(table_schema_name, ids, changes)` → `None` — Update records.
-- `delete(table_schema_name, ids, use_bulk_delete=True)` → `str | None` — Delete records.
+* `create(table_schema_name, records)` â†’ `list[str]` â€” Create records, return GUIDs.
+* `get(table_schema_name, record_id=None, select, filter, orderby, top, expand, page_size)` â†’ Record(s).
+* `update(table_schema_name, ids, changes)` â†’ `None` â€” Update records.
+* `delete(table_schema_name, ids, use_bulk_delete=True)` â†’ `str | None` â€” Delete records.
 
 #### Metadata Methods
 
-- `create_table(table_schema_name, columns, solution_unique_name, primary_column_schema_name)` → Metadata dict.
-- `create_columns(table_schema_name, columns)` → `list[str]`.
-- `delete_columns(table_schema_name, columns)` → `list[str]`.
-- `delete_table(table_schema_name)` → `None`.
-- `get_table_info(table_schema_name)` → Metadata dict or `None`.
-- `list_tables()` → `list[str]`.
+* `create_table(table_schema_name, columns, solution_unique_name, primary_column_schema_name)` â†’ Metadata dict.
+* `create_columns(table_schema_name, columns)` â†’ `list[str]`.
+* `delete_columns(table_schema_name, columns)` â†’ `list[str]`.
+* `delete_table(table_schema_name)` â†’ `None`.
+* `get_table_info(table_schema_name)` â†’ Metadata dict or `None`.
+* `list_tables()` â†’ `list[str]`.
 
 #### SQL & Utilities
 
-- `query_sql(sql)` → `list[dict]` — Execute read-only SQL.
-- `upload_file(table_schema_name, record_id, file_name_attribute, path, mode, mime_type, if_none_match)` → `None` — Upload to file column.
-- `flush_cache(kind)` → `int` — Clear SDK caches (e.g., `"picklist"`).
+* `query_sql(sql)` â†’ `list[dict]` â€” Execute read-only SQL.
+* `upload_file(table_schema_name, record_id, file_name_attribute, path, mode, mime_type, if_none_match)` â†’ `None` â€” Upload to file column.
+* `flush_cache(kind)` â†’ `int` â€” Clear SDK caches (e.g., `"picklist"`).
 
 ## Imports Summary
 
@@ -221,10 +221,11 @@ from PowerPlatform.Dataverse.core.errors import (
 
 ## References
 
-- Module docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/
-- Core: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core
-- Data: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.data
-- Extensions: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.extensions
-- Models: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.models
-- Utils: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.utils
-- Client: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.client
+* Module docs: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/
+* Core: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.core
+* Data: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.data
+* Extensions: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.extensions
+* Models: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.models
+* Utils: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.utils
+* Client: https://learn.microsoft.com/en-us/python/api/powerplatform-dataverse-client/powerplatform.dataverse.client
+
