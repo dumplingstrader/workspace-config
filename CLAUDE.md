@@ -10,7 +10,7 @@
 | `healthassistant/` | Personal health tracking app (React + FastAPI) |
 | `Documentation/` | Work-related documentation and project templates (exported from work laptop) |
 | `openclaw-sandbox/` | OpenClaw sandbox — 50 skills, agent config ([GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox)) |
-| `Gaming/` | Gaming reference tools (e.g. GodsUnchained card/blessing reference generator) |
+| `Gaming/` | Gaming reference tools (e.g. GodsUnchained card/blessing reference generator) ([GitHub](https://github.com/dumplingstrader/gaming)) |
 
 ## Shared Workspace Resources
 
