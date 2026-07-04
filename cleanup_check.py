@@ -277,7 +277,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
     else:
         print(f"[!] {total_suggestions} files could be organized:")
         print()
-        
+
         # Print scratch suggestions
         if results['scratch']:
             print("  -> _scratch/  (experiments, tests, work in progress)")
@@ -285,7 +285,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
             print()
-        
+
         # Print output suggestions
         if results['output']:
             print("  -> _output/  (generated files)")
@@ -293,7 +293,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
             print()
-        
+
         # Print input suggestions
         if results['input']:
             print("  -> data/ or _input/  (input data files)")
@@ -301,7 +301,7 @@ def print_results(results: Dict[str, List[Tuple[Path, str]]], project_path: Path
                 print(f"      {file.name}")
                 print(f"        (reason: {reason})")
             print()
-        
+
         # Print files staying at root
         if results['correct']:
             print("[OK] Files staying at root (correct):")
