@@ -7,6 +7,7 @@ finances/
 healthassistant/
 Documentation/
 openclaw-sandbox/
+Gaming/
 
 # ============================================
 # OS / Editor
@@ -39,8 +40,3 @@ _output/
 # ============================================
 resource-tools/indexes/
 
-# ============================================
-# Third-party installer binaries (not source, too large)
-# ============================================
-Gaming/GodsUnchained/SellingBot/*.exe
-Gaming/GodsUnchained/GUVrs/GUvrs-3.0.2-net7.0-windows/
