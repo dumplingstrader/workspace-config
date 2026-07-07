@@ -2,7 +2,7 @@
 
 > **Purpose:** AI context restoration. Update at end of each session.
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-07-07
 
 ---
 
@@ -12,7 +12,14 @@ Home development workspace with 4 active projects plus a work documentation expo
 
 ## Current State
 
-### Typefully Image Uploads + OpenClaw Sandbox Repo (2026-02-15, this session)
+### Cross-machine Claude Code settings (2026-07-07, this session)
+- **Added `claude-config/`** -- canonical, cross-workstation Claude Code user settings, replacing the previous state where approved permission rules accumulated only in per-project, gitignored `.claude/settings.local.json` files (some already stale, referencing paths from other workstations)
+- `claude-config/settings.user.json` -- the canonical `~/.claude/settings.json` content: a read-only-focused `permissions.allow` list (git status/diff/log/show/fetch/pull/add/commit/branch, `node --check`, PowerShell `Get-*`/`Select-Object`/`Sort-Object`/etc., version-probe commands, a scratchpad `Read` rule) built from scanning real transcripts across all local projects rather than guessed; `defaultMode: "auto"`
+- `claude-config/sync_claude_settings.ps1` -- copies the canonical file into `%USERPROFILE%\.claude\settings.json` on the current machine, backing up whatever was there first
+- `claude-config/README.md` -- usage instructions and what deliberately does NOT belong in the shared file (machine-specific paths, anything mutating/security-sensitive beyond the deliberately-chosen small git subset)
+- Pushed to `workspace-config` (`33dac45`) and synced on this machine; **still needs `git pull` + the sync script run on the other 2 workstations**
+
+### Typefully Image Uploads + OpenClaw Sandbox Repo (2026-02-15, earlier session)
 - **Added image attachment support to Typefully skill** — posts marked `[IMG]` now upload images via presigned S3 URL flow
   - S3 PUT uses `curl` subprocess (Python urllib injects Content-Type breaking the signature)
   - Filename sanitization for spaces (`risk dial.png` -> `risk_dial.png`)
