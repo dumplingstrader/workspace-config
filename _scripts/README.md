@@ -4,16 +4,54 @@ Root-level scripts for common tasks across all projects in this workspace.
 
 ## Available Scripts
 
+### extract_chat_logs.py
+
+Exports VS Code Copilot Chat conversations to readable Markdown files.
+
+Chat sessions are stored as JSONL files in VS Code's workspace storage. This script auto-locates them, lists all sessions for this workspace, and exports your picks to Markdown.
+
+**Features:**
+* Auto-discovers sessions for the current workspace (no path config needed)
+* Lists sessions with title, date, exchange count, and file size
+* Interactive pick, or batch export by session ID or `--all`
+* Cleans up VS Code internal noise (URL-encoded paths, duplicates)
+* One Markdown file per session: `Chat_Log_{title}_{date}.md`
+
+**Standard usage (from workspace root):**
+
+```powershell
+# List all sessions
+python _scripts\extract_chat_logs.py --list
+
+# Interactive export (shows list, you pick)
+python _scripts\extract_chat_logs.py
+
+# Export to a specific project folder
+python _scripts\extract_chat_logs.py --output APC\Chat_Logs
+
+# Export specific sessions by ID
+python _scripts\extract_chat_logs.py --sessions ID1 ID2 --output APC\Chat_Logs
+
+# Export all sessions
+python _scripts\extract_chat_logs.py --all --output _scratch\chat_logs
+```
+
+**When to use:** At the end of any project that will become an AI case study. Run before closing VS Code -- sessions are stored locally and may eventually be purged by VS Code.
+
+See `.github/AI_WORKSPACE_GUIDE.md` Section 13 for the full practice guide.
+
+---
+
 ### create_distribution_package.ps1
 
 Creates timestamped distribution packages (ZIP) for USB/manual transfer in air-gapped environments.
 
 **Features:**
-- Auto-detects project files to include
-- Size-aware: can exclude/warn about large files
-- Supports project-specific config via `.distribution-config.json`
-- Dry-run mode to preview before creating
-- Smart exclusions (`.venv`, `.git`, `__pycache__`, etc.)
+* Auto-detects project files to include
+* Size-aware: can exclude/warn about large files
+* Supports project-specific config via `.distribution-config.json`
+* Dry-run mode to preview before creating
+* Smart exclusions (`.venv`, `.git`, `__pycache__`, etc.)
 
 **Basic Usage:**
 
@@ -62,34 +100,34 @@ Copy `.distribution-config.json.template` to your project root as `.distribution
 
 ```powershell
 # SpendTracker distribution
-cd C:\Users\GF99\Documentation\SpendTracker
-..\_scripts\create_distribution_package.ps1
+cd C:\_Documentation\SpendTracker
+..\\...scripts\create_distribution_package.ps1
 
 # Skill Matrix with large file exclusion
-cd "C:\Users\GF99\Documentation\Skill Matrix"
-..\_scripts\create_distribution_package.ps1 -ExcludeLargeFiles
+cd "C:\_Documentation\Skill Matrix"
+..\\...scripts\create_distribution_package.ps1 -ExcludeLargeFiles
 
 # PC Value Tracker with custom settings
-cd C:\Users\GF99\Documentation\PC_Value_Tracker
+cd C:\_Documentation\PC_Value_Tracker
 ..\_scripts\create_distribution_package.ps1 -MaxFileSize 25 -PackageName "PC_Value_Tracker_v3.0"
 ```
 
 **What Gets Excluded (Always):**
 
-- `.venv` (virtual environments)
-- `.git` (git repositories)
-- `__pycache__` (Python cache)
-- `node_modules` (npm packages)
-- `.env` files (secrets)
-- `Distribution` folder (output location)
-- Log files, temp files, system files
+* `.venv` (virtual environments)
+* `.git` (git repositories)
+* `__pycache__` (Python cache)
+* `node_modules` (npm packages)
+* `.env` files (secrets)
+* `Distribution` folder (output location)
+* Log files, temp files, system files
 
 **Output:**
 
 Creates `Distribution/{PackageName}_{timestamp}.zip` containing:
-- All project files (except exclusions)
-- Auto-generated `DISTRIBUTION_README.txt`
-- Original project structure preserved
+* All project files (except exclusions)
+* Auto-generated `DISTRIBUTION_README.txt`
+* Original project structure preserved
 
 ---
 
