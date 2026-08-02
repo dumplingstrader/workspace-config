@@ -19,7 +19,10 @@
       "Bash(git branch:*)",
       "Bash(du:*)",
       "Bash(wc:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(ls -la \"/c/Users/levia/AppData/Roaming/gu-bot-ui/bot\" 2>&1)",
+      "Read(//c/Users/levia/AppData/Roaming/gu-bot-ui/bot/**)",
+      "Bash(python -c ' *)"
     ]
   }
 }
