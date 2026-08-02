@@ -22,7 +22,10 @@
       "Bash(find:*)",
       "Bash(python -m py_compile build_dashboard.py)",
       "Bash(python build_dashboard.py)",
-      "Bash(python \"C:\\\\Users\\\\ASRock\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e---Development\\\\bebe88bd-2194-4504-9740-6194f6ea6bdf\\\\scratchpad\\\\check_dashboard.py\")"
+      "Bash(python \"C:\\\\Users\\\\ASRock\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e---Development\\\\bebe88bd-2194-4504-9740-6194f6ea6bdf\\\\scratchpad\\\\check_dashboard.py\")",
+      "Bash(ls -la \"/c/Users/levia/AppData/Roaming/gu-bot-ui/bot\" 2>&1)",
+      "Read(//c/Users/levia/AppData/Roaming/gu-bot-ui/bot/**)",
+      "Bash(python -c ' *)"
     ]
   }
 }
