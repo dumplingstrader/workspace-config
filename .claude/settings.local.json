@@ -19,7 +19,10 @@
       "Bash(git branch:*)",
       "Bash(du:*)",
       "Bash(wc:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(python -m py_compile build_dashboard.py)",
+      "Bash(python build_dashboard.py)",
+      "Bash(python \"C:\\\\Users\\\\ASRock\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e---Development\\\\bebe88bd-2194-4504-9740-6194f6ea6bdf\\\\scratchpad\\\\check_dashboard.py\")"
     ]
   }
 }

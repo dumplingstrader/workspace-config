@@ -101,11 +101,11 @@ Copy `.distribution-config.json.template` to your project root as `.distribution
 ```powershell
 # SpendTracker distribution
 cd C:\_Documentation\SpendTracker
-..\\...scripts\create_distribution_package.ps1
+..\_scripts\create_distribution_package.ps1
 
 # Skill Matrix with large file exclusion
 cd "C:\_Documentation\Skill Matrix"
-..\\...scripts\create_distribution_package.ps1 -ExcludeLargeFiles
+..\_scripts\create_distribution_package.ps1 -ExcludeLargeFiles
 
 # PC Value Tracker with custom settings
 cd C:\_Documentation\PC_Value_Tracker
