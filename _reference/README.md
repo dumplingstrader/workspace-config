@@ -49,6 +49,24 @@ These skills were moved from `.github/skills/` to reduce token consumption. They
 * `update-code-from-shorthand.instructions.md` - Shorthand code expansion
 * `update-docs-on-code-change.instructions.md` - Auto-update documentation
 
+## AI Formatting & Voice Standards
+
+Guidelines for eliminating "obvious AI tells" across different document types while maintaining consistent quality and voice.
+
+### Document Formatting
+* `ai-formatting-tells-examples.md` - Before/after examples of AI formatting problems (10 scenarios)
+* `ai-tells-quick-checklist.md` - 1-page printable validation checklist for document styling
+
+### Email Communication  
+* `email-ai-tells-examples.md` - Before/after email examples showing how to maintain Tony's voice
+  - Examples: Status updates, urgent issues, technical explanations, decision requests, corrections
+  - Comparison tables showing AI style vs. Tony's style
+  - Validation checklist for email quality
+
+### Related (Auto-Loaded Instructions)
+* `.github/instructions/markdown-to-docx-styling.instructions.md` - Complete styling standards (14 sections)
+* `.github/instructions/emails.instructions.md` - Email communication standards (18 sections)
+
 ## Usage
 
 To use these instructions, explicitly reference them in your request:

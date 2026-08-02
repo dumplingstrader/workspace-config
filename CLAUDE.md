@@ -9,8 +9,7 @@
 | `finances/` | Coin portfolio CLI tool (Python + SQLite + Click) |
 | `healthassistant/` | Personal health tracking app (React + FastAPI) |
 | `Documentation/` | Work-related documentation and project templates (exported from work laptop) |
-| `openclaw-sandbox/` | OpenClaw sandbox — 50 skills, agent config ([GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox)) |
-| `Gaming/` | Gaming reference tools (e.g. GodsUnchained card/blessing reference generator) ([GitHub](https://github.com/dumplingstrader/gaming)) |
+| `~/.openclaw/sandboxes/agent-main-main-20ceb99b/` | OpenClaw sandbox — 50 skills, agent config ([GitHub](https://github.com/controlsbmw-sys/openclaw-sandbox)) |
 
 ## Shared Workspace Resources
 
@@ -54,25 +53,40 @@ Each repo also has a `CLAUDE.md` with project-specific context for Claude: tech 
 - Don't ask for hand-holding on bugs — read logs/errors and resolve autonomously
 - For bug reports in projects with test suites: write a failing test that reproduces the bug before fixing it
 
-## Writing Style Defaults
+## Tony's Writing Voice (All Projects)
 
-When writing any communication on behalf of the user (emails, messages, summaries, documentation):
+Any AI-assisted writing for Tony -- emails, social media, documentation, presentations -- must follow these rules:
 
-- Replace em-dashes (--) with double hyphens (--)
-- Use only standard QWERTY keyboard symbols -- no Unicode, no curly/smart quotes, no decorative symbols
-- Replace Unicode symbols (checkmarks, bullets, ellipsis) with ASCII equivalents: asterisks (*), periods (...), hyphens (-)
-- Use straight quotes ("") not smart quotes ("")
-- No emojis in written output unless the user explicitly requests them
-- Prefer bullets over long paragraphs; add whitespace between sections
-- Hedge predictions: "likely," "probably," "in my opinion" -- avoid absolute declarations
-- See memory `user-voice-tony` for the full voice profile and replication formula
+**Voice patterns:**
+- Direct and concise. Lead with facts, not feelings.
+- Use contractions naturally (I'm, we're, don't -- never "I am writing to inform you")
+- Vary paragraph length (1-5 sentences, never uniform blocks)
+- Bullets serve a purpose, not just formatting decoration
+- Hedging when appropriate: "likely," "probably," "in my opinion"
+- Concrete examples over vague generalities
+- Specific CTAs with deadlines, not "please let me know" or "feel free to reach out"
+
+**AI tells to eliminate:**
+- No em-dashes -- use double hyphens (--)
+- No Unicode symbols -- use ASCII only (*, [OK], ...)
+- No generic greetings ("Dear Stakeholders," "I trust this finds you well")
+- No AI-formal phrases ("apprise," "necessitate," "facilitate," "I would welcome the opportunity")
+- No perfectly uniform structure (all bullets same length, all paragraphs 3 sentences)
+- No "sandwich" feedback (compliment-criticism-compliment)
+- No closing mismatches (casual opening + "Respectfully yours" closing)
+
+**Full references:**
+- Voice DNA: `Documentation/Communication/AI/Email Writing Style/email-response-tony.md`
+- AI tells examples: `Documentation/_reference/email-ai-tells-examples.md`
+- Email standards: `Documentation/.github/instructions/emails.instructions.md`
+- Social media voice: `ControlsBMW/persona/tony-voice-dna.md`
+- Social media AI tells checklist: `ControlsBMW/persona/ai-tells-checklist.md`
 
 ## Learned Corrections
 <!-- When you correct Claude, say "add that to CLAUDE.md" and it gets added here as a concrete rule. -->
 <!-- Project-specific corrections go in that project's CLAUDE.md instead. -->
 - Never use Unicode characters (emojis, checkmarks, info symbols, arrows) in PowerShell scripts or any script that may be invoked through bash. The bash-to-PowerShell encoding mangles them, causing function definitions to break. Use plain ASCII text instead (e.g., `[OK]` not `✓`, `[!]` not `⚠`).
 - Never write to a file literally named `nul` on Windows — it's a reserved device name. Scripts that accidentally create `nul` files produce undeletable artifacts. If found, delete them using the Win32 `DeleteFileW` API with the `\\?\` extended-length path prefix (see workspace memory for the snippet).
-- All repos use SSH for GitHub remotes (`git@github.com:dumplingstrader/...`), not HTTPS. When cloning or adding remotes, always use the SSH URL.
 
 ## Session Habit
 Before closing any session, update the project's `HANDOFF.md` with:
