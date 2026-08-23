@@ -4,7 +4,51 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import sys
 from pathlib import Path
+
+
+def register_cuda_dll_dirs() -> None:
+    """Add pip-installed NVIDIA runtime lib dirs (cuBLAS/cuDNN/nvrtc) to the
+    Windows DLL search path so CTranslate2 can load the GPU backend. Without
+    this, `pip install nvidia-cublas-cu12 nvidia-cudnn-cu12` puts the DLLs in
+    site-packages\\nvidia\\*\\bin where CTranslate2 can't find them, and a
+    cuda run fails with "cublas64_12.dll is not found". No-op off Windows or
+    when the wheels aren't installed."""
+    if os.name != "nt" or not hasattr(os, "add_dll_directory"):
+        return
+    roots: list[str] = []
+    try:
+        import site
+
+        roots.extend(site.getsitepackages())
+        user = site.getusersitepackages()
+        if user:
+            roots.append(user)
+    except Exception:
+        pass
+    roots.append(str(Path(sys.prefix) / "Lib" / "site-packages"))
+    seen: set[str] = set()
+    found: list[str] = []
+    for root in roots:
+        nvidia = Path(root) / "nvidia"
+        if not nvidia.is_dir():
+            continue
+        for bin_dir in nvidia.glob("*/bin"):
+            key = str(bin_dir).lower()
+            if bin_dir.is_dir() and key not in seen:
+                seen.add(key)
+                found.append(str(bin_dir))
+                try:
+                    os.add_dll_directory(str(bin_dir))
+                except OSError:
+                    pass
+    # CTranslate2 loads cuBLAS/cuDNN lazily via the process PATH, which
+    # os.add_dll_directory alone does not cover for that load path, so prepend
+    # the dirs to PATH too.
+    if found:
+        os.environ["PATH"] = os.pathsep.join(found + [os.environ.get("PATH", "")])
 
 
 def parse_args() -> argparse.Namespace:
@@ -45,6 +89,8 @@ def main() -> int:
     input_path = args.input.resolve(strict=True)
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    register_cuda_dll_dirs()
 
     try:
         from faster_whisper import WhisperModel
